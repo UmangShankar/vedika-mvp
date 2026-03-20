@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  @apply bg-sandal text-ink antialiased;
+}
+
+a {
+  @apply underline-offset-4;
+}
+
+a:focus-visible,
+button:focus-visible {
+  @apply outline outline-2 outline-saffron outline-offset-2;
+}
