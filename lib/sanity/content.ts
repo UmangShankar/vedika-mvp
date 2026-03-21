@@ -1,8 +1,6 @@
 import { sanityFetch } from '@/lib/sanity/client';
-import type { Comparison, Essay, GlossaryEntry, Guide, TextEntry, Topic } from '@/lib/sanity/types';
+import type { Essay, GlossaryEntry, Guide, TextEntry, Topic } from '@/lib/sanity/types';
 import {
-  comparisonBySlugQuery,
-  comparisonListQuery,
   essayBySlugQuery,
   essayListQuery,
   glossaryBySlugQuery,
@@ -53,12 +51,4 @@ export async function getEssays(): Promise<Essay[]> {
 
 export async function getEssay(slug: string): Promise<Essay | null> {
   return await sanityFetch<Essay>(essayBySlugQuery, { slug });
-}
-
-export async function getComparisons(): Promise<Comparison[]> {
-  return (await sanityFetch<Comparison[]>(comparisonListQuery)) ?? [];
-}
-
-export async function getComparison(slug: string): Promise<Comparison | null> {
-  return await sanityFetch<Comparison>(comparisonBySlugQuery, { slug });
 }

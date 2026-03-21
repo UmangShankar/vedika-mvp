@@ -87,28 +87,3 @@ export const essayBySlugQuery = `*[_type == "essay" && slug.current == $slug][0]
   body,
   seo
 }`;
-
-export const comparisonListQuery = `*[_type == "comparison"] | order(title asc) {
-  _id,
-  title,
-  "slug": slug.current,
-  summary,
-  seo
-}`;
-
-export const comparisonBySlugQuery = `*[_type == "comparison" && slug.current == $slug][0] {
-  _id,
-  title,
-  "slug": slug.current,
-  summary,
-  analysis,
-  "leftTopicLabel": topicsCompared[0]->title,
-  "rightTopicLabel": topicsCompared[1]->title,
-  "sourceRefs": sourceRefs[]->{
-    _id,
-    label,
-    citationText,
-    url
-  },
-  seo
-}`;
