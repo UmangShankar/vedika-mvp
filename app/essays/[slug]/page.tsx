@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
+import { ArticleLayout } from '@/components/content/article-layout';
 import { EmptyState } from '@/components/content/empty-state';
-import { EssayTemplate } from '@/components/templates/essay-template';
+import { PortableContent } from '@/components/content/portable-content';
 import { getEssay } from '@/lib/sanity/content';
 import { buildMetadata } from '@/lib/sanity/metadata';
 
@@ -31,5 +32,9 @@ export default async function EssayDetailPage({ params }: EssayDetailPageProps) 
     );
   }
 
-  return <EssayTemplate essay={essay} />;
+  return (
+    <ArticleLayout title={essay.title} dek={essay.dek}>
+      <PortableContent blocks={essay.body} />
+    </ArticleLayout>
+  );
 }
