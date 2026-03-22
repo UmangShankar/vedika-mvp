@@ -4,7 +4,6 @@ import { GlossaryTemplate } from '@/components/templates/glossary-template';
 import { getGlossaryEntry } from '@/lib/sanity/content';
 import { buildMetadata } from '@/lib/sanity/metadata';
 
-
 type GlossaryDetailPageProps = {
   params: { slug: string };
 };

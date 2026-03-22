@@ -3,8 +3,6 @@ import { EmptyState } from '@/components/content/empty-state';
 import { GuideTemplate } from '@/components/templates/guide-template';
 import { getGuide, getGuides } from '@/lib/sanity/content';
 import { buildMetadata } from '@/lib/sanity/metadata';
-
-
 type GuideDetailPageProps = {
   params: { slug: string };
 };
@@ -38,4 +36,3 @@ export default async function GuideDetailPage({ params }: GuideDetailPageProps) 
     .map((item) => ({ title: item.title, href: `/guides/${item.slug}`, summary: item.excerpt }));
 
   return <GuideTemplate guide={guide} relatedReading={relatedReading} />;
-}

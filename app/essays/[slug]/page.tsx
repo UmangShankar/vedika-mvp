@@ -4,7 +4,6 @@ import { EssayTemplate } from '@/components/templates/essay-template';
 import { getEssay } from '@/lib/sanity/content';
 import { buildMetadata } from '@/lib/sanity/metadata';
 
-
 type EssayDetailPageProps = {
   params: { slug: string };
 };
