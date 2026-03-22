@@ -3,8 +3,6 @@ import type { Comparison, Essay, GlossaryEntry, Guide, TextEntry, Topic } from '
 import {
   comparisonBySlugQuery,
   comparisonListQuery,
-import type { Essay, GlossaryEntry, Guide, TextEntry, Topic } from '@/lib/sanity/types';
-import {
   essayBySlugQuery,
   essayListQuery,
   glossaryBySlugQuery,
@@ -57,13 +55,10 @@ export async function getEssay(slug: string): Promise<Essay | null> {
   return await sanityFetch<Essay>(essayBySlugQuery, { slug });
 }
 
-async function getComparisons(): Promise<Comparison[]> {
+export async function getComparisons(): Promise<Comparison[]> {
   return (await sanityFetch<Comparison[]>(comparisonListQuery)) ?? [];
 }
 
-async function getComparison(slug: string): Promise<Comparison | null> {
+export async function getComparison(slug: string): Promise<Comparison | null> {
   return await sanityFetch<Comparison>(comparisonBySlugQuery, { slug });
 }
-
-// Explicit re-exports for route imports and build tooling resolution.
-export { getComparison, getComparisons };

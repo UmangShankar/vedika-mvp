@@ -2,10 +2,6 @@ import type { Metadata } from 'next';
 import { EmptyState } from '@/components/content/empty-state';
 import { TopicTemplate } from '@/components/templates/topic-template';
 import { getGlossaryEntries, getGuides, getTopic } from '@/lib/sanity/content';
-import { ArticleLayout } from '@/components/content/article-layout';
-import { EmptyState } from '@/components/content/empty-state';
-import { PortableContent } from '@/components/content/portable-content';
-import { getTopic } from '@/lib/sanity/content';
 import { buildMetadata } from '@/lib/sanity/metadata';
 
 type TopicDetailPageProps = {
@@ -33,7 +29,6 @@ export async function generateMetadata({ params }: TopicDetailPageProps): Promis
 export default async function TopicDetailPage({ params }: TopicDetailPageProps) {
   const { slug } = params;
   const [topic, guides, glossary] = await Promise.all([getTopic(slug), getGuides(), getGlossaryEntries()]);
-  const topic = await getTopic(slug);
 
   if (!topic) {
     return (
@@ -50,9 +45,4 @@ export default async function TopicDetailPage({ params }: TopicDetailPageProps) 
   }));
 
   return <TopicTemplate topic={topic} relatedReading={relatedReading} glossarySpotlight={glossary[0] ?? null} />;
-  return (
-    <ArticleLayout title={topic.title} dek={topic.summary} meta={topic.difficulty ? `Level: ${topic.difficulty}` : undefined}>
-      <PortableContent blocks={topic.body} />
-    </ArticleLayout>
-  );
 }
