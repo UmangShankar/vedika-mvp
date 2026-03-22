@@ -1,0 +1,274 @@
+{
+  "meta": {
+    "name": "Vedika launch page matrix seed",
+    "version": 1,
+    "copyPolicy": {
+      "publish_ready": "Can be used directly with light editorial review.",
+      "placeholder": "Directional draft; replace before publishing."
+    }
+  },
+  "topics": [
+    {
+      "slug": "foundations-of-sanatan-dharma",
+      "title": "Foundations of Sanatan Dharma",
+      "summary": "A beginner-safe orientation to key principles, source layers, and study methods.",
+      "difficulty": "beginner",
+      "copyStatus": "publish_ready",
+      "keyTakeaways": [
+        "Begin with concepts before interpretation debates.",
+        "Anchor claims in primary and commentarial sources.",
+        "Progress from orientation to depth in clear steps."
+      ],
+      "relatedTopicSlugs": [
+        "dharma-ethical-frameworks",
+        "karma-and-action",
+        "atman-and-brahman"
+      ],
+      "relatedTextSlugs": [
+        "bhagavad-gita",
+        "upanishads-overview"
+      ]
+    },
+    {
+      "slug": "dharma-ethical-frameworks",
+      "title": "Dharma and Ethical Frameworks",
+      "summary": "How dharma is understood across duty, context, role, and universal ethics.",
+      "difficulty": "beginner",
+      "copyStatus": "publish_ready",
+      "relatedTopicSlugs": [
+        "foundations-of-sanatan-dharma",
+        "karma-and-action"
+      ],
+      "relatedTextSlugs": [
+        "bhagavad-gita"
+      ]
+    },
+    {
+      "slug": "karma-and-action",
+      "title": "Karma and Action",
+      "summary": "A practical overview of action, intention, and consequences in classical sources.",
+      "difficulty": "beginner",
+      "copyStatus": "publish_ready",
+      "relatedTopicSlugs": [
+        "dharma-ethical-frameworks",
+        "yoga-pathways"
+      ],
+      "relatedTextSlugs": [
+        "bhagavad-gita"
+      ]
+    },
+    {
+      "slug": "atman-and-brahman",
+      "title": "Atman and Brahman",
+      "summary": "A clear introduction to identity, ultimate reality, and major interpretive differences.",
+      "difficulty": "intermediate",
+      "copyStatus": "publish_ready",
+      "relatedTopicSlugs": [
+        "upanishadic-inquiry-pathways",
+        "foundations-of-sanatan-dharma"
+      ],
+      "relatedTextSlugs": [
+        "upanishads-overview"
+      ]
+    },
+    {
+      "slug": "upanishadic-inquiry-pathways",
+      "title": "Upanishadic Inquiry Pathways",
+      "summary": "How to approach philosophical depth in the Upanishads without losing orientation.",
+      "difficulty": "intermediate",
+      "copyStatus": "publish_ready",
+      "relatedTopicSlugs": [
+        "atman-and-brahman",
+        "yoga-pathways"
+      ],
+      "relatedTextSlugs": [
+        "upanishads-overview"
+      ]
+    },
+    {
+      "slug": "yoga-pathways",
+      "title": "Yoga Pathways",
+      "summary": "A comparative map of karma, jnana, and bhakti-oriented pathways across texts.",
+      "difficulty": "intermediate",
+      "copyStatus": "placeholder",
+      "placeholderNotes": "Expand with lineage-aware references before publish.",
+      "relatedTopicSlugs": [
+        "karma-and-action",
+        "upanishadic-inquiry-pathways"
+      ],
+      "relatedTextSlugs": [
+        "bhagavad-gita",
+        "upanishads-overview"
+      ]
+    }
+  ],
+  "texts": [
+    {
+      "slug": "bhagavad-gita",
+      "title": "Bhagavad Gita",
+      "traditionLabel": "Smriti",
+      "overview": "The canonical entry point for studying duty, action, devotion, and knowledge in a single dialogue framework.",
+      "copyStatus": "publish_ready",
+      "featuredConceptSlugs": [
+        "dharma-ethical-frameworks",
+        "karma-and-action",
+        "yoga-pathways"
+      ],
+      "relatedGuideSlugs": [
+        "reading-the-gita-responsibly",
+        "gita-study-sequence"
+      ]
+    },
+    {
+      "slug": "upanishads-overview",
+      "title": "Upanishads Overview",
+      "traditionLabel": "Sruti",
+      "overview": "A guided way into the philosophical core of Vedika through layered reading paths and concept anchors.",
+      "copyStatus": "publish_ready",
+      "featuredConceptSlugs": [
+        "atman-and-brahman",
+        "upanishadic-inquiry-pathways"
+      ],
+      "relatedGuideSlugs": [
+        "beginning-the-upanishads",
+        "comparing-upanishadic-voices"
+      ]
+    },
+    {
+      "slug": "katha-upanishad",
+      "title": "Katha Upanishad",
+      "traditionLabel": "Sruti",
+      "overview": "A focused philosophical text on self-knowledge, death, and the path of discernment.",
+      "copyStatus": "placeholder",
+      "placeholderNotes": "Add section-level references and trusted commentary mapping.",
+      "featuredConceptSlugs": [
+        "atman-and-brahman"
+      ],
+      "relatedGuideSlugs": [
+        "beginning-the-upanishads"
+      ]
+    }
+  ],
+  "guides": [
+    {
+      "slug": "reading-the-gita-responsibly",
+      "title": "Reading the Gita Responsibly",
+      "excerpt": "A practical sequence for first-time readers to keep context and source grounding intact.",
+      "copyStatus": "publish_ready",
+      "topicSlugs": [
+        "dharma-ethical-frameworks",
+        "karma-and-action"
+      ],
+      "textSlugs": [
+        "bhagavad-gita"
+      ]
+    },
+    {
+      "slug": "gita-study-sequence",
+      "title": "Gita Study Sequence: Beginner to Depth",
+      "excerpt": "A chapter-cluster path that balances accessibility, rigor, and thematic continuity.",
+      "copyStatus": "publish_ready",
+      "topicSlugs": [
+        "yoga-pathways",
+        "karma-and-action"
+      ],
+      "textSlugs": [
+        "bhagavad-gita"
+      ]
+    },
+    {
+      "slug": "beginning-the-upanishads",
+      "title": "Beginning the Upanishads",
+      "excerpt": "A calm entry guide for readers who want philosophical depth without losing orientation.",
+      "copyStatus": "publish_ready",
+      "topicSlugs": [
+        "upanishadic-inquiry-pathways",
+        "atman-and-brahman"
+      ],
+      "textSlugs": [
+        "upanishads-overview",
+        "katha-upanishad"
+      ]
+    },
+    {
+      "slug": "comparing-upanishadic-voices",
+      "title": "Comparing Upanishadic Voices",
+      "excerpt": "A framework for comparing style and emphasis across major Upanishadic passages.",
+      "copyStatus": "placeholder",
+      "placeholderNotes": "Add passage-level citations before publish.",
+      "topicSlugs": [
+        "upanishadic-inquiry-pathways"
+      ],
+      "textSlugs": [
+        "upanishads-overview"
+      ]
+    }
+  ],
+  "comparisons": [
+    {
+      "slug": "svadharma-and-sadharana-dharma",
+      "title": "Svadharma and Sadharana Dharma",
+      "summary": "A source-grounded comparison of role-specific duty and universal ethical obligations.",
+      "copyStatus": "publish_ready",
+      "topicsComparedSlugs": [
+        "dharma-ethical-frameworks",
+        "karma-and-action"
+      ],
+      "textsComparedSlugs": [
+        "bhagavad-gita"
+      ],
+      "sourceRefSlugs": [
+        "gita-3-35",
+        "gita-18-47"
+      ]
+    },
+    {
+      "slug": "atman-brahman-across-upanishads",
+      "title": "Atman-Brahman Across Upanishads",
+      "summary": "A comparative reading map of core identity and reality language across selected Upanishadic passages.",
+      "copyStatus": "publish_ready",
+      "topicsComparedSlugs": [
+        "atman-and-brahman",
+        "upanishadic-inquiry-pathways"
+      ],
+      "textsComparedSlugs": [
+        "upanishads-overview",
+        "katha-upanishad"
+      ],
+      "sourceRefSlugs": [
+        "chandogya-6-8-7",
+        "katha-2-1-10"
+      ]
+    }
+  ],
+  "sourceRefs": [
+    {
+      "slug": "gita-3-35",
+      "label": "Bhagavad Gita 3.35",
+      "sourceType": "primary_text",
+      "citationText": "On the ethics of one’s own duty, even when imperfectly performed.",
+      "copyStatus": "publish_ready"
+    },
+    {
+      "slug": "gita-18-47",
+      "label": "Bhagavad Gita 18.47",
+      "sourceType": "primary_text",
+      "citationText": "On fidelity to svadharma within a larger ethical order.",
+      "copyStatus": "publish_ready"
+    },
+    {
+      "slug": "chandogya-6-8-7",
+      "label": "Chandogya Upanishad 6.8.7",
+      "sourceType": "primary_text",
+      "citationText": "A central mahavakya passage used in identity-reality discussions.",
+      "copyStatus": "publish_ready"
+    },
+    {
+      "slug": "katha-2-1-10",
+      "label": "Katha Upanishad 2.1.10",
+      "sourceType": "primary_text",
+      "citationText": "A key passage in Upanishadic inquiry into self and the ultimate.",
+      "copyStatus": "publish_ready"
+    }
+  ]
+}
