@@ -180,4 +180,4 @@ export default async function TextDetailPage({ params }: TextDetailPageProps) {
   }));
 
   return <TextOverviewTemplate text={text} relatedReading={relatedReading} />;
-}
+
