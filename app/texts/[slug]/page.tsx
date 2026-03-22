@@ -3,6 +3,10 @@ import { EmptyState } from '@/components/content/empty-state';
 import { FeatureGrid, HubHero, HubSection } from '@/components/content/hub-primitives';
 import { TextOverviewTemplate } from '@/components/templates/text-overview-template';
 import { getGuides, getText, getTopics } from '@/lib/sanity/content';
+import { ArticleLayout } from '@/components/content/article-layout';
+import { EmptyState } from '@/components/content/empty-state';
+import { PortableContent } from '@/components/content/portable-content';
+import { getText } from '@/lib/sanity/content';
 import { buildMetadata } from '@/lib/sanity/metadata';
 
 type TextDetailPageProps = {
@@ -23,6 +27,7 @@ export async function generateMetadata({ params }: TextDetailPageProps): Promise
 export default async function TextDetailPage({ params }: TextDetailPageProps) {
   const { slug } = params;
   const [text, topics, guides] = await Promise.all([getText(slug), getTopics(), getGuides()]);
+  const text = await getText(slug);
 
   if (!text) {
     return (
@@ -180,4 +185,9 @@ export default async function TextDetailPage({ params }: TextDetailPageProps) {
   }));
 
   return <TextOverviewTemplate text={text} relatedReading={relatedReading} />;
+  return (
+    <ArticleLayout title={text.title} dek={text.overview} meta={text.traditionLabel}>
+      <PortableContent blocks={text.content} />
+    </ArticleLayout>
+  );
 }

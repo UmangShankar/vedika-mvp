@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { EmptyState } from '@/components/content/empty-state';
 import { GlossaryTemplate } from '@/components/templates/glossary-template';
+import { ArticleLayout } from '@/components/content/article-layout';
+import { EmptyState } from '@/components/content/empty-state';
 import { getGlossaryEntry } from '@/lib/sanity/content';
 import { buildMetadata } from '@/lib/sanity/metadata';
 
@@ -32,4 +34,9 @@ export default async function GlossaryDetailPage({ params }: GlossaryDetailPageP
   }
 
   return <GlossaryTemplate entry={entry} />;
+  return (
+    <ArticleLayout title={entry.term} dek={entry.definition} meta={entry.transliteration}>
+      <p>{entry.definition}</p>
+    </ArticleLayout>
+  );
 }

@@ -16,6 +16,10 @@ export const sanityClient = sanityEnabled
   : null;
 
 export async function sanityFetch<T>(query: string, params: Record<string, string> = {}): Promise<T | null> {
+export async function sanityFetch<T>(
+  query: string,
+  params: Record<string, string> = {}
+): Promise<T | null> {
   if (!sanityClient) {
     return null;
   }
