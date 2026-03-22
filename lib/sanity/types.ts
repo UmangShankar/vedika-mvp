@@ -3,6 +3,13 @@ export type SeoFields = {
   metaDescription?: string;
 };
 
+export type SourceReference = {
+  _id: string;
+  label: string;
+  citationText?: string;
+  url?: string;
+};
+
 export type Topic = {
   _id: string;
   title: string;
@@ -47,6 +54,18 @@ export type Essay = {
   slug: string;
   dek: string;
   body?: PortableBlock[];
+  seo?: SeoFields;
+};
+
+export type Comparison = {
+  _id: string;
+  title: string;
+  slug: string;
+  summary: string;
+  analysis?: PortableBlock[];
+  leftTopicLabel?: string;
+  rightTopicLabel?: string;
+  sourceRefs?: SourceReference[];
   seo?: SeoFields;
 };
 

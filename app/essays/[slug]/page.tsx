@@ -1,4 +1,6 @@
 import type { Metadata } from 'next';
+import { EmptyState } from '@/components/content/empty-state';
+import { EssayTemplate } from '@/components/templates/essay-template';
 import { ArticleLayout } from '@/components/content/article-layout';
 import { EmptyState } from '@/components/content/empty-state';
 import { PortableContent } from '@/components/content/portable-content';
@@ -32,6 +34,7 @@ export default async function EssayDetailPage({ params }: EssayDetailPageProps) 
     );
   }
 
+  return <EssayTemplate essay={essay} />;
   return (
     <ArticleLayout title={essay.title} dek={essay.dek}>
       <PortableContent blocks={essay.body} />

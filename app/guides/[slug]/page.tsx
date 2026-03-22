@@ -1,4 +1,7 @@
 import type { Metadata } from 'next';
+import { EmptyState } from '@/components/content/empty-state';
+import { GuideTemplate } from '@/components/templates/guide-template';
+import { getGuide, getGuides } from '@/lib/sanity/content';
 import { ArticleLayout } from '@/components/content/article-layout';
 import { EmptyState } from '@/components/content/empty-state';
 import { PortableContent } from '@/components/content/portable-content';
@@ -22,6 +25,7 @@ export async function generateMetadata({ params }: GuideDetailPageProps): Promis
 
 export default async function GuideDetailPage({ params }: GuideDetailPageProps) {
   const { slug } = params;
+  const [guide, guides] = await Promise.all([getGuide(slug), getGuides()]);
   const guide = await getGuide(slug);
 
   if (!guide) {
@@ -32,6 +36,12 @@ export default async function GuideDetailPage({ params }: GuideDetailPageProps) 
     );
   }
 
+  const relatedReading = guides
+    .filter((item) => item.slug !== guide.slug)
+    .slice(0, 4)
+    .map((item) => ({ title: item.title, href: `/guides/${item.slug}`, summary: item.excerpt }));
+
+  return <GuideTemplate guide={guide} relatedReading={relatedReading} />;
   return (
     <ArticleLayout title={guide.title} dek={guide.excerpt}>
       <PortableContent blocks={guide.body} />
