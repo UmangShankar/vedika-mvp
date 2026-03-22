@@ -4,7 +4,6 @@ import { TopicTemplate } from '@/components/templates/topic-template';
 import { getGlossaryEntries, getGuides, getTopic } from '@/lib/sanity/content';
 import { buildMetadata } from '@/lib/sanity/metadata';
 
-
 type TopicDetailPageProps = {
   params: { slug: string };
 };

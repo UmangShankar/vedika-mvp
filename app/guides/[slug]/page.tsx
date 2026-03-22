@@ -4,7 +4,6 @@ import { GuideTemplate } from '@/components/templates/guide-template';
 import { getGuide, getGuides } from '@/lib/sanity/content';
 import { buildMetadata } from '@/lib/sanity/metadata';
 
-
 type GuideDetailPageProps = {
   params: { slug: string };
 };

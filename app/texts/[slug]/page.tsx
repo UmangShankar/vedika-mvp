@@ -5,7 +5,6 @@ import { TextOverviewTemplate } from '@/components/templates/text-overview-templ
 import { getGuides, getText, getTopics } from '@/lib/sanity/content';
 import { buildMetadata } from '@/lib/sanity/metadata';
 
-
 type TextDetailPageProps = {
   params: { slug: string };
 };
