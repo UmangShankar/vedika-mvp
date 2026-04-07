@@ -1,105 +1,157 @@
 {
   "meta": {
-    "name": "Vedika launch page matrix seed",
-    "version": 1,
+    "name": "Vedika launch content seed",
+    "version": 2,
     "copyPolicy": {
-      "publish_ready": "Can be used directly with light editorial review.",
-      "placeholder": "Directional draft; replace before publishing."
+      "publish_ready": "Can be used with light editorial review.",
+      "placeholder": "Directional draft; complete references before publishing."
     }
   },
   "topics": [
     {
-      "slug": "foundations-of-sanatan-dharma",
-      "title": "Foundations of Sanatan Dharma",
-      "summary": "A beginner-safe orientation to key principles, source layers, and study methods.",
+      "slug": "what-is-sanatan-dharma",
+      "title": "What Is Sanatan Dharma?",
+      "summary": "A clear orientation to Sanatan Dharma as a living, source-rooted civilizational tradition.",
       "difficulty": "beginner",
       "copyStatus": "publish_ready",
-      "keyTakeaways": [
-        "Begin with concepts before interpretation debates.",
-        "Anchor claims in primary and commentarial sources.",
-        "Progress from orientation to depth in clear steps."
-      ],
-      "relatedTopicSlugs": [
-        "dharma-ethical-frameworks",
-        "karma-and-action",
-        "atman-and-brahman"
-      ],
-      "relatedTextSlugs": [
-        "bhagavad-gita",
-        "upanishads-overview"
-      ]
+      "relatedTopicSlugs": ["what-is-dharma", "what-are-shruti-and-smriti"],
+      "relatedTextSlugs": ["bhagavad-gita", "upanishads"]
     },
     {
-      "slug": "dharma-ethical-frameworks",
-      "title": "Dharma and Ethical Frameworks",
-      "summary": "How dharma is understood across duty, context, role, and universal ethics.",
+      "slug": "what-is-dharma",
+      "title": "What Is Dharma?",
+      "summary": "Dharma as duty, order, ethics, and context-sensitive right action.",
       "difficulty": "beginner",
       "copyStatus": "publish_ready",
-      "relatedTopicSlugs": [
-        "foundations-of-sanatan-dharma",
-        "karma-and-action"
-      ],
-      "relatedTextSlugs": [
-        "bhagavad-gita"
-      ]
+      "relatedTopicSlugs": ["what-is-karma", "what-is-sanatan-dharma"],
+      "relatedTextSlugs": ["bhagavad-gita"]
     },
     {
-      "slug": "karma-and-action",
-      "title": "Karma and Action",
-      "summary": "A practical overview of action, intention, and consequences in classical sources.",
+      "slug": "what-is-karma",
+      "title": "What Is Karma?",
+      "summary": "A grounded introduction to karma through intention, action, and consequence.",
       "difficulty": "beginner",
       "copyStatus": "publish_ready",
-      "relatedTopicSlugs": [
-        "dharma-ethical-frameworks",
-        "yoga-pathways"
-      ],
-      "relatedTextSlugs": [
-        "bhagavad-gita"
-      ]
+      "relatedTopicSlugs": ["what-is-dharma", "what-is-moksha"],
+      "relatedTextSlugs": ["bhagavad-gita"]
     },
     {
-      "slug": "atman-and-brahman",
-      "title": "Atman and Brahman",
-      "summary": "A clear introduction to identity, ultimate reality, and major interpretive differences.",
+      "slug": "what-is-moksha",
+      "title": "What Is Moksha?",
+      "summary": "How liberation is discussed across major traditions without flattening differences.",
       "difficulty": "intermediate",
       "copyStatus": "publish_ready",
-      "relatedTopicSlugs": [
-        "upanishadic-inquiry-pathways",
-        "foundations-of-sanatan-dharma"
-      ],
-      "relatedTextSlugs": [
-        "upanishads-overview"
-      ]
+      "relatedTopicSlugs": ["what-is-atman", "what-is-brahman"],
+      "relatedTextSlugs": ["upanishads"]
     },
     {
-      "slug": "upanishadic-inquiry-pathways",
-      "title": "Upanishadic Inquiry Pathways",
-      "summary": "How to approach philosophical depth in the Upanishads without losing orientation.",
+      "slug": "what-is-atman",
+      "title": "What Is Atman?",
+      "summary": "A concise map of selfhood in Upanishadic and Vedantic discourse.",
       "difficulty": "intermediate",
       "copyStatus": "publish_ready",
-      "relatedTopicSlugs": [
-        "atman-and-brahman",
-        "yoga-pathways"
-      ],
-      "relatedTextSlugs": [
-        "upanishads-overview"
-      ]
+      "relatedTopicSlugs": ["what-is-brahman", "what-is-moksha"],
+      "relatedTextSlugs": ["upanishads"]
     },
     {
-      "slug": "yoga-pathways",
-      "title": "Yoga Pathways",
-      "summary": "A comparative map of karma, jnana, and bhakti-oriented pathways across texts.",
+      "slug": "what-is-brahman",
+      "title": "What Is Brahman?",
+      "summary": "How ultimate reality is described across core philosophical sources.",
+      "difficulty": "intermediate",
+      "copyStatus": "publish_ready",
+      "relatedTopicSlugs": ["what-is-atman", "what-is-moksha"],
+      "relatedTextSlugs": ["upanishads"]
+    },
+    {
+      "slug": "what-is-yoga",
+      "title": "What Is Yoga?",
+      "summary": "Yoga as disciplined pathways of transformation, not only posture practice.",
+      "difficulty": "beginner",
+      "copyStatus": "publish_ready",
+      "relatedTopicSlugs": ["what-is-karma", "what-is-dharma"],
+      "relatedTextSlugs": ["bhagavad-gita"]
+    },
+    {
+      "slug": "what-are-shruti-and-smriti",
+      "title": "What Are Shruti and Smriti?",
+      "summary": "A practical distinction between revealed and remembered textual categories.",
+      "difficulty": "beginner",
+      "copyStatus": "publish_ready",
+      "relatedTopicSlugs": ["what-is-sanatan-dharma"],
+      "relatedTextSlugs": ["upanishads", "bhagavad-gita"]
+    },
+    {
+      "slug": "what-is-the-bhagavad-gita",
+      "title": "What Is the Bhagavad Gita?",
+      "summary": "Context, structure, and why the Gita functions as a canonical entry point.",
+      "difficulty": "beginner",
+      "copyStatus": "publish_ready",
+      "relatedTopicSlugs": ["key-teachings-of-the-gita", "karma-yoga-in-the-gita"],
+      "relatedTextSlugs": ["bhagavad-gita"]
+    },
+    {
+      "slug": "bhagavad-gita-chapter-guide",
+      "title": "Bhagavad Gita Chapter Guide",
+      "summary": "A chapter-by-chapter map for quick orientation and deeper study planning.",
+      "difficulty": "beginner",
+      "copyStatus": "publish_ready",
+      "relatedTopicSlugs": ["key-teachings-of-the-gita", "what-is-dharma"],
+      "relatedTextSlugs": ["bhagavad-gita"]
+    },
+    {
+      "slug": "key-teachings-of-the-gita",
+      "title": "Key Teachings of the Gita",
+      "summary": "Core teachings on action, devotion, discernment, and inner steadiness.",
+      "difficulty": "beginner",
+      "copyStatus": "publish_ready",
+      "relatedTopicSlugs": ["what-is-dharma", "karma-yoga-in-the-gita"],
+      "relatedTextSlugs": ["bhagavad-gita"]
+    },
+    {
+      "slug": "karma-yoga-in-the-gita",
+      "title": "Karma Yoga in the Gita",
+      "summary": "How disciplined action without attachment is framed and practiced.",
+      "difficulty": "intermediate",
+      "copyStatus": "publish_ready",
+      "relatedTopicSlugs": ["what-is-karma", "what-is-yoga"],
+      "relatedTextSlugs": ["bhagavad-gita"]
+    },
+    {
+      "slug": "what-are-the-upanishads",
+      "title": "What Are the Upanishads?",
+      "summary": "A calm introduction to Upanishadic inquiry, scope, and reading expectations.",
+      "difficulty": "beginner",
+      "copyStatus": "publish_ready",
+      "relatedTopicSlugs": ["major-upanishads-overview", "what-are-shruti-and-smriti"],
+      "relatedTextSlugs": ["upanishads"]
+    },
+    {
+      "slug": "major-upanishads-overview",
+      "title": "Major Upanishads Overview",
+      "summary": "A map of principal Upanishads and their commonly studied themes.",
+      "difficulty": "beginner",
+      "copyStatus": "publish_ready",
+      "relatedTopicSlugs": ["atman-and-brahman-in-the-upanishads", "what-are-the-upanishads"],
+      "relatedTextSlugs": ["upanishads"]
+    },
+    {
+      "slug": "atman-and-brahman-in-the-upanishads",
+      "title": "Atman and Brahman in the Upanishads",
+      "summary": "A source-first comparison of key identity-reality formulations.",
+      "difficulty": "intermediate",
+      "copyStatus": "publish_ready",
+      "relatedTopicSlugs": ["what-is-atman", "what-is-brahman"],
+      "relatedTextSlugs": ["upanishads"]
+    },
+    {
+      "slug": "knowledge-and-liberation-in-the-upanishads",
+      "title": "Knowledge and Liberation in the Upanishads",
+      "summary": "How knowledge is linked to liberation in major Upanishadic passages.",
       "difficulty": "intermediate",
       "copyStatus": "placeholder",
-      "placeholderNotes": "Expand with lineage-aware references before publish.",
-      "relatedTopicSlugs": [
-        "karma-and-action",
-        "upanishadic-inquiry-pathways"
-      ],
-      "relatedTextSlugs": [
-        "bhagavad-gita",
-        "upanishads-overview"
-      ]
+      "placeholderNotes": "Add passage-level references and school comparisons.",
+      "relatedTopicSlugs": ["what-is-moksha", "atman-and-brahman-in-the-upanishads"],
+      "relatedTextSlugs": ["upanishads"]
     }
   ],
   "texts": [
@@ -107,138 +159,110 @@
       "slug": "bhagavad-gita",
       "title": "Bhagavad Gita",
       "traditionLabel": "Smriti",
-      "overview": "The canonical entry point for studying duty, action, devotion, and knowledge in a single dialogue framework.",
+      "overview": "Canonical dialogue text for foundational study of dharma, karma, yoga, and insight.",
       "copyStatus": "publish_ready",
       "featuredConceptSlugs": [
-        "dharma-ethical-frameworks",
-        "karma-and-action",
-        "yoga-pathways"
+        "what-is-the-bhagavad-gita",
+        "key-teachings-of-the-gita",
+        "karma-yoga-in-the-gita"
       ],
       "relatedGuideSlugs": [
-        "reading-the-gita-responsibly",
-        "gita-study-sequence"
+        "where-to-start-with-the-bhagavad-gita",
+        "how-to-begin-studying-sanatan-dharma"
       ]
     },
     {
-      "slug": "upanishads-overview",
-      "title": "Upanishads Overview",
-      "traditionLabel": "Sruti",
-      "overview": "A guided way into the philosophical core of Vedika through layered reading paths and concept anchors.",
+      "slug": "upanishads",
+      "title": "Upanishads",
+      "traditionLabel": "Shruti",
+      "overview": "Philosophical source collection focused on self, reality, knowledge, and liberation.",
       "copyStatus": "publish_ready",
       "featuredConceptSlugs": [
-        "atman-and-brahman",
-        "upanishadic-inquiry-pathways"
+        "what-are-the-upanishads",
+        "major-upanishads-overview",
+        "atman-and-brahman-in-the-upanishads"
       ],
       "relatedGuideSlugs": [
-        "beginning-the-upanishads",
-        "comparing-upanishadic-voices"
-      ]
-    },
-    {
-      "slug": "katha-upanishad",
-      "title": "Katha Upanishad",
-      "traditionLabel": "Sruti",
-      "overview": "A focused philosophical text on self-knowledge, death, and the path of discernment.",
-      "copyStatus": "placeholder",
-      "placeholderNotes": "Add section-level references and trusted commentary mapping.",
-      "featuredConceptSlugs": [
-        "atman-and-brahman"
-      ],
-      "relatedGuideSlugs": [
-        "beginning-the-upanishads"
+        "how-to-approach-the-upanishads",
+        "how-to-begin-studying-sanatan-dharma"
       ]
     }
   ],
   "guides": [
     {
-      "slug": "reading-the-gita-responsibly",
-      "title": "Reading the Gita Responsibly",
-      "excerpt": "A practical sequence for first-time readers to keep context and source grounding intact.",
+      "slug": "how-to-begin-studying-sanatan-dharma",
+      "title": "How to Begin Studying Sanatan Dharma",
+      "excerpt": "A practical, source-first sequence for new readers.",
       "copyStatus": "publish_ready",
       "topicSlugs": [
-        "dharma-ethical-frameworks",
-        "karma-and-action"
+        "what-is-sanatan-dharma",
+        "what-are-shruti-and-smriti",
+        "what-is-dharma"
       ],
-      "textSlugs": [
-        "bhagavad-gita"
-      ]
+      "textSlugs": ["bhagavad-gita", "upanishads"]
     },
     {
-      "slug": "gita-study-sequence",
-      "title": "Gita Study Sequence: Beginner to Depth",
-      "excerpt": "A chapter-cluster path that balances accessibility, rigor, and thematic continuity.",
+      "slug": "where-to-start-with-the-bhagavad-gita",
+      "title": "Where to Start with the Bhagavad Gita",
+      "excerpt": "A chapter-level starting map with reading priorities.",
       "copyStatus": "publish_ready",
       "topicSlugs": [
-        "yoga-pathways",
-        "karma-and-action"
+        "what-is-the-bhagavad-gita",
+        "karma-yoga-in-the-gita"
       ],
-      "textSlugs": [
-        "bhagavad-gita"
-      ]
+      "textSlugs": ["bhagavad-gita"]
     },
     {
-      "slug": "beginning-the-upanishads",
-      "title": "Beginning the Upanishads",
-      "excerpt": "A calm entry guide for readers who want philosophical depth without losing orientation.",
+      "slug": "how-to-approach-the-upanishads",
+      "title": "How to Approach the Upanishads",
+      "excerpt": "A calm pathway from orientation to philosophical depth.",
       "copyStatus": "publish_ready",
       "topicSlugs": [
-        "upanishadic-inquiry-pathways",
-        "atman-and-brahman"
+        "what-are-the-upanishads",
+        "major-upanishads-overview",
+        "atman-and-brahman-in-the-upanishads"
       ],
-      "textSlugs": [
-        "upanishads-overview",
-        "katha-upanishad"
-      ]
-    },
-    {
-      "slug": "comparing-upanishadic-voices",
-      "title": "Comparing Upanishadic Voices",
-      "excerpt": "A framework for comparing style and emphasis across major Upanishadic passages.",
-      "copyStatus": "placeholder",
-      "placeholderNotes": "Add passage-level citations before publish.",
-      "topicSlugs": [
-        "upanishadic-inquiry-pathways"
-      ],
-      "textSlugs": [
-        "upanishads-overview"
-      ]
+      "textSlugs": ["upanishads"]
     }
   ],
   "comparisons": [
     {
-      "slug": "svadharma-and-sadharana-dharma",
-      "title": "Svadharma and Sadharana Dharma",
-      "summary": "A source-grounded comparison of role-specific duty and universal ethical obligations.",
-      "copyStatus": "publish_ready",
-      "topicsComparedSlugs": [
-        "dharma-ethical-frameworks",
-        "karma-and-action"
-      ],
-      "textsComparedSlugs": [
-        "bhagavad-gita"
-      ],
-      "sourceRefSlugs": [
-        "gita-3-35",
-        "gita-18-47"
-      ]
+      "slug": "atman-vs-soul",
+      "title": "Atman vs Soul",
+      "summary": "Conceptual overlap and divergence explained with careful terminology.",
+      "copyStatus": "placeholder",
+      "placeholderNotes": "Add inter-tradition references and scope notes.",
+      "topicsComparedSlugs": ["what-is-atman", "what-is-brahman"],
+      "textsComparedSlugs": ["upanishads"],
+      "sourceRefSlugs": ["chandogya-6-8-7"]
     },
     {
-      "slug": "atman-brahman-across-upanishads",
-      "title": "Atman-Brahman Across Upanishads",
-      "summary": "A comparative reading map of core identity and reality language across selected Upanishadic passages.",
+      "slug": "shruti-vs-smriti",
+      "title": "Shruti vs Smriti",
+      "summary": "A practical comparison of textual categories and authority usage.",
       "copyStatus": "publish_ready",
-      "topicsComparedSlugs": [
-        "atman-and-brahman",
-        "upanishadic-inquiry-pathways"
-      ],
-      "textsComparedSlugs": [
-        "upanishads-overview",
-        "katha-upanishad"
-      ],
-      "sourceRefSlugs": [
-        "chandogya-6-8-7",
-        "katha-2-1-10"
-      ]
+      "topicsComparedSlugs": ["what-are-shruti-and-smriti", "what-is-sanatan-dharma"],
+      "textsComparedSlugs": ["upanishads", "bhagavad-gita"],
+      "sourceRefSlugs": ["gita-18-47"]
+    },
+    {
+      "slug": "vedanta-vs-sankhya",
+      "title": "Vedanta vs Sankhya",
+      "summary": "A neutral starting comparison of metaphysical assumptions and goals.",
+      "copyStatus": "placeholder",
+      "placeholderNotes": "Expand with school-primary references before publish.",
+      "topicsComparedSlugs": ["what-is-brahman", "what-is-atman"],
+      "textsComparedSlugs": ["bhagavad-gita", "upanishads"],
+      "sourceRefSlugs": ["gita-3-35"]
+    },
+    {
+      "slug": "dharma-vs-religion",
+      "title": "Dharma vs Religion",
+      "summary": "A modern-language clarification that preserves source nuance.",
+      "copyStatus": "publish_ready",
+      "topicsComparedSlugs": ["what-is-dharma", "what-is-sanatan-dharma"],
+      "textsComparedSlugs": ["bhagavad-gita"],
+      "sourceRefSlugs": ["gita-3-35", "gita-18-47"]
     }
   ],
   "sourceRefs": [
@@ -246,21 +270,21 @@
       "slug": "gita-3-35",
       "label": "Bhagavad Gita 3.35",
       "sourceType": "primary_text",
-      "citationText": "On the ethics of one’s own duty, even when imperfectly performed.",
+      "citationText": "On fidelity to one’s own duty even when imperfectly performed.",
       "copyStatus": "publish_ready"
     },
     {
       "slug": "gita-18-47",
       "label": "Bhagavad Gita 18.47",
       "sourceType": "primary_text",
-      "citationText": "On fidelity to svadharma within a larger ethical order.",
+      "citationText": "On performing one’s own dharma within an ethical order.",
       "copyStatus": "publish_ready"
     },
     {
       "slug": "chandogya-6-8-7",
       "label": "Chandogya Upanishad 6.8.7",
       "sourceType": "primary_text",
-      "citationText": "A central mahavakya passage used in identity-reality discussions.",
+      "citationText": "A central identity-reality passage commonly cited in Atman-Brahman discussions.",
       "copyStatus": "publish_ready"
     },
     {

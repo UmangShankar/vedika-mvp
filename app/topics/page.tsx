@@ -69,3 +69,6 @@ export default async function TopicsPage() {
       </HubSection>
     </div>
   );
+
+}
+
