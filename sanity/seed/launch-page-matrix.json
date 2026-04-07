@@ -23,7 +23,7 @@
       "summary": "Dharma as duty, order, ethics, and context-sensitive right action.",
       "difficulty": "beginner",
       "copyStatus": "publish_ready",
-      "relatedTopicSlugs": ["what-is-karma", "dharma-vs-religion"],
+      "relatedTopicSlugs": ["what-is-karma", "what-is-sanatan-dharma"],
       "relatedTextSlugs": ["bhagavad-gita"]
     },
     {
@@ -50,7 +50,7 @@
       "summary": "A concise map of selfhood in Upanishadic and Vedantic discourse.",
       "difficulty": "intermediate",
       "copyStatus": "publish_ready",
-      "relatedTopicSlugs": ["what-is-brahman", "atman-vs-soul"],
+      "relatedTopicSlugs": ["what-is-brahman", "what-is-moksha"],
       "relatedTextSlugs": ["upanishads"]
     },
     {
@@ -59,7 +59,7 @@
       "summary": "How ultimate reality is described across core philosophical sources.",
       "difficulty": "intermediate",
       "copyStatus": "publish_ready",
-      "relatedTopicSlugs": ["what-is-atman", "knowledge-and-liberation-in-the-upanishads"],
+      "relatedTopicSlugs": ["what-is-atman", "what-is-moksha"],
       "relatedTextSlugs": ["upanishads"]
     },
     {
@@ -68,7 +68,7 @@
       "summary": "Yoga as disciplined pathways of transformation, not only posture practice.",
       "difficulty": "beginner",
       "copyStatus": "publish_ready",
-      "relatedTopicSlugs": ["what-is-karma", "karma-yoga-in-the-gita"],
+      "relatedTopicSlugs": ["what-is-karma", "what-is-dharma"],
       "relatedTextSlugs": ["bhagavad-gita"]
     },
     {
@@ -77,7 +77,7 @@
       "summary": "A practical distinction between revealed and remembered textual categories.",
       "difficulty": "beginner",
       "copyStatus": "publish_ready",
-      "relatedTopicSlugs": ["shruti-vs-smriti", "what-is-sanatan-dharma"],
+      "relatedTopicSlugs": ["what-is-sanatan-dharma"],
       "relatedTextSlugs": ["upanishads", "bhagavad-gita"]
     },
     {
@@ -152,44 +152,6 @@
       "placeholderNotes": "Add passage-level references and school comparisons.",
       "relatedTopicSlugs": ["what-is-moksha", "atman-and-brahman-in-the-upanishads"],
       "relatedTextSlugs": ["upanishads"]
-    },
-    {
-      "slug": "atman-vs-soul",
-      "title": "Atman vs Soul",
-      "summary": "A careful conceptual comparison for inter-tradition readers.",
-      "difficulty": "intermediate",
-      "copyStatus": "placeholder",
-      "placeholderNotes": "Expand with comparative theology references.",
-      "relatedTopicSlugs": ["what-is-atman"],
-      "relatedTextSlugs": ["upanishads"]
-    },
-    {
-      "slug": "shruti-vs-smriti",
-      "title": "Shruti vs Smriti",
-      "summary": "A practical guide to textual authority categories and usage.",
-      "difficulty": "beginner",
-      "copyStatus": "publish_ready",
-      "relatedTopicSlugs": ["what-are-shruti-and-smriti"],
-      "relatedTextSlugs": ["upanishads", "bhagavad-gita"]
-    },
-    {
-      "slug": "vedanta-vs-sankhya",
-      "title": "Vedanta vs Sankhya",
-      "summary": "A comparative orientation to two major philosophical frameworks.",
-      "difficulty": "intermediate",
-      "copyStatus": "placeholder",
-      "placeholderNotes": "Add neutral school-specific references.",
-      "relatedTopicSlugs": ["what-is-brahman", "what-is-atman"],
-      "relatedTextSlugs": ["bhagavad-gita", "upanishads"]
-    },
-    {
-      "slug": "dharma-vs-religion",
-      "title": "Dharma vs Religion",
-      "summary": "A careful distinction for modern readers using contemporary terminology.",
-      "difficulty": "beginner",
-      "copyStatus": "publish_ready",
-      "relatedTopicSlugs": ["what-is-dharma", "what-is-sanatan-dharma"],
-      "relatedTextSlugs": ["bhagavad-gita"]
     }
   ],
   "texts": [
@@ -270,7 +232,7 @@
       "summary": "Conceptual overlap and divergence explained with careful terminology.",
       "copyStatus": "placeholder",
       "placeholderNotes": "Add inter-tradition references and scope notes.",
-      "topicsComparedSlugs": ["what-is-atman", "atman-vs-soul"],
+      "topicsComparedSlugs": ["what-is-atman", "what-is-brahman"],
       "textsComparedSlugs": ["upanishads"],
       "sourceRefSlugs": ["chandogya-6-8-7"]
     },
@@ -279,7 +241,7 @@
       "title": "Shruti vs Smriti",
       "summary": "A practical comparison of textual categories and authority usage.",
       "copyStatus": "publish_ready",
-      "topicsComparedSlugs": ["what-are-shruti-and-smriti", "shruti-vs-smriti"],
+      "topicsComparedSlugs": ["what-are-shruti-and-smriti", "what-is-sanatan-dharma"],
       "textsComparedSlugs": ["upanishads", "bhagavad-gita"],
       "sourceRefSlugs": ["gita-18-47"]
     },
@@ -289,7 +251,7 @@
       "summary": "A neutral starting comparison of metaphysical assumptions and goals.",
       "copyStatus": "placeholder",
       "placeholderNotes": "Expand with school-primary references before publish.",
-      "topicsComparedSlugs": ["vedanta-vs-sankhya", "what-is-brahman"],
+      "topicsComparedSlugs": ["what-is-brahman", "what-is-atman"],
       "textsComparedSlugs": ["bhagavad-gita", "upanishads"],
       "sourceRefSlugs": ["gita-3-35"]
     },
@@ -298,7 +260,7 @@
       "title": "Dharma vs Religion",
       "summary": "A modern-language clarification that preserves source nuance.",
       "copyStatus": "publish_ready",
-      "topicsComparedSlugs": ["what-is-dharma", "dharma-vs-religion"],
+      "topicsComparedSlugs": ["what-is-dharma", "what-is-sanatan-dharma"],
       "textsComparedSlugs": ["bhagavad-gita"],
       "sourceRefSlugs": ["gita-3-35", "gita-18-47"]
     }
@@ -323,6 +285,13 @@
       "label": "Chandogya Upanishad 6.8.7",
       "sourceType": "primary_text",
       "citationText": "A central identity-reality passage commonly cited in Atman-Brahman discussions.",
+      "copyStatus": "publish_ready"
+    },
+    {
+      "slug": "katha-2-1-10",
+      "label": "Katha Upanishad 2.1.10",
+      "sourceType": "primary_text",
+      "citationText": "A key passage in Upanishadic inquiry into self and the ultimate.",
       "copyStatus": "publish_ready"
     }
   ]
