@@ -17,7 +17,7 @@ export const topicBySlugQuery = `*[_type == "topic" && slug.current == $slug][0]
   seo
 }`;
 
-export const textListQuery = `*[_type == "text"] | order(title asc) {
+export const textListQuery = `*[_type == "vedikText"] | order(title asc) {
   _id,
   title,
   "slug": slug.current,
@@ -26,7 +26,7 @@ export const textListQuery = `*[_type == "text"] | order(title asc) {
   seo
 }`;
 
-export const textBySlugQuery = `*[_type == "text" && slug.current == $slug][0] {
+export const textBySlugQuery = `*[_type == "vedikText" && slug.current == $slug][0] {
   _id,
   title,
   "slug": slug.current,
