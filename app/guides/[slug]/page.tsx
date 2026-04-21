@@ -36,4 +36,5 @@ export default async function GuideDetailPage({ params }: GuideDetailPageProps) 
     .slice(0, 4)
     .map((item) => ({ title: item.title, href: `/guides/${item.slug}`, summary: item.excerpt }));
 
-
+  return <GuideTemplate guide={guide} relatedReading={relatedReading} />;
+}

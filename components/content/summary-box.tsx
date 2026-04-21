@@ -1,15 +1,21 @@
 type SummaryBoxProps = {
-  title?: string;
-  content?: string;
+  items: string[];
 };
 
-export function SummaryBox({ title = 'Summary', content }: SummaryBoxProps) {
-  if (!content) return null;
+export function SummaryBox({ items }: SummaryBoxProps) {
+  if (!items?.length) return null;
 
   return (
-    <section className="rounded-xl border border-amber-100 bg-white p-5">
-      <h2 className="text-lg font-semibold">{title}</h2>
-      <p className="mt-2 text-slate-700">{content}</p>
-    </section>
+    <div className="rounded-lg border border-dharma-border bg-dharma-light p-5">
+      <p className="text-overline uppercase tracking-[0.12em] text-dharma">In Brief</p>
+      <ul className="mt-3 space-y-2">
+        {items.map((item, i) => (
+          <li key={i} className="flex items-start gap-2 text-body-sm text-ink-light">
+            <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-dharma" aria-hidden="true" />
+            {item}
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }

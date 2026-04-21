@@ -1,18 +1,12 @@
 type KeyTakeawayBoxProps = {
-  points?: string[];
+  children: React.ReactNode;
 };
 
-export function KeyTakeawayBox({ points = [] }: KeyTakeawayBoxProps) {
-  if (!points.length) return null;
-
+export function KeyTakeawayBox({ children }: KeyTakeawayBoxProps) {
   return (
-    <section className="rounded-xl border border-saffron/30 bg-amber-50 p-5">
-      <h2 className="text-lg font-semibold">Key takeaways</h2>
-      <ul className="mt-2 list-disc space-y-1 pl-5 text-slate-700">
-        {points.map((point) => (
-          <li key={point}>{point}</li>
-        ))}
-      </ul>
-    </section>
+    <div className="rounded-r-lg border-l-[3px] border-saffron-300 bg-saffron-50 p-5">
+      <p className="text-overline uppercase tracking-[0.12em] text-saffron-600">Key Takeaway</p>
+      <div className="mt-2 font-serif text-body text-ink-light">{children}</div>
+    </div>
   );
 }

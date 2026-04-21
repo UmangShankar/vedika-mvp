@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,15 +8,62 @@
   color-scheme: light;
 }
 
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
 body {
-  @apply bg-sandal text-ink antialiased;
+  @apply bg-sandal-100 text-ink font-sans;
+  min-height: 100vh;
 }
 
-a {
-  @apply underline-offset-4;
+/* Editorial content areas use serif */
+.prose-vedika {
+  @apply font-serif text-body text-ink-light;
+  max-width: 72ch;
 }
 
+.prose-vedika h1 { @apply text-display-sm text-ink mb-6 mt-10; }
+.prose-vedika h2 { @apply text-heading text-ink mb-4 mt-8; }
+.prose-vedika h3 { @apply text-subheading text-ink mb-3 mt-6; }
+.prose-vedika p  { @apply mb-5 leading-relaxed; }
+.prose-vedika ul { @apply list-disc pl-6 mb-5 space-y-2; }
+.prose-vedika ol { @apply list-decimal pl-6 mb-5 space-y-2; }
+.prose-vedika blockquote {
+  @apply border-l-2 border-saffron-300 pl-5 italic text-ink-muted my-6;
+}
+.prose-vedika a {
+  @apply text-saffron-500 underline underline-offset-4 hover:text-saffron-600;
+}
+
+/* Focus styles */
 a:focus-visible,
 button:focus-visible {
-  @apply outline outline-2 outline-saffron outline-offset-2;
+  @apply outline outline-2 outline-saffron-400 outline-offset-2 rounded-sm;
 }
+
+/* Sanskrit/Devanagari text */
+.devanagari {
+  font-family: 'Noto Serif Devanagari', serif;
+}
+
+/* Source citation badge */
+.source-badge {
+  @apply inline-flex items-center gap-1.5 text-caption text-ink-muted
+         border border-[rgba(192,120,40,0.20)] bg-sandal-50
+         px-2 py-0.5 rounded-sm;
+}
+
+/* Beta badge */
+.beta-badge {
+  @apply inline-flex items-center text-overline text-saffron-500
+         bg-saffron-50 border border-saffron-100
+         px-2 py-0.5 rounded-sm tracking-widest;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { @apply bg-sandal-300 rounded-full; }

@@ -1,5 +1,4 @@
 import { ArticleHeader } from '@/components/content/article-header';
-import { CanonBadge } from '@/components/content/canon-badge';
 import { KeyTakeawayBox } from '@/components/content/key-takeaway-box';
 import { PortableContent } from '@/components/content/portable-content';
 import { PullQuote } from '@/components/content/pull-quote';
@@ -14,16 +13,23 @@ type TextOverviewTemplateProps = {
 
 export function TextOverviewTemplate({ text, relatedReading = [] }: TextOverviewTemplateProps) {
   return (
-    <article className="mx-auto w-full max-w-3xl space-y-6 px-4 py-12 sm:px-6 lg:px-8">
-      <ArticleHeader title={text.title} dek={text.overview} meta={text.traditionLabel} badges={['Text overview']} />
-      <div>
-        <CanonBadge label={text.traditionLabel} />
-      </div>
-      <SummaryBox content={text.overview} />
-      <KeyTakeawayBox points={['Read the text in sequence before drawing comparative conclusions.', 'Track recurring concepts and verify with cited source pathways.']} />
-      <PullQuote quote={text.overview} />
+    <article className="mx-auto max-w-content space-y-8 px-4 py-12 sm:px-6 lg:px-8">
+      <ArticleHeader title={text.title} subtitle={text.overview} />
+
+      <SummaryBox items={[text.overview, `Tradition: ${text.traditionLabel}`]} />
+
       <PortableContent blocks={text.content} />
-      <RelatedReadingGrid items={relatedReading} />
+
+      <KeyTakeawayBox>
+        Read the text in sequence before drawing comparative conclusions. Track recurring
+        concepts and verify with cited source pathways.
+      </KeyTakeawayBox>
+
+      <PullQuote quote={text.overview} attribution={text.traditionLabel} />
+
+      <RelatedReadingGrid
+        items={relatedReading.map((r) => ({ ...r, type: 'guide' as const }))}
+      />
     </article>
   );
 }

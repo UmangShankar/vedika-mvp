@@ -14,20 +14,42 @@ type TopicTemplateProps = {
 
 export function TopicTemplate({ topic, relatedReading = [], glossarySpotlight }: TopicTemplateProps) {
   return (
-    <article className="mx-auto w-full max-w-3xl space-y-6 px-4 py-12 sm:px-6 lg:px-8">
+    <article className="mx-auto max-w-content px-4 py-12 sm:px-6 lg:px-8">
       <ArticleHeader
         title={topic.title}
-        dek={topic.summary}
-        meta={topic.difficulty ? `Level: ${topic.difficulty}` : undefined}
-        badges={['Topic']}
+        subtitle={topic.summary}
+        sourceCount={0}
+        readingTime="5 min"
       />
-      <SummaryBox content={topic.summary} />
-      <KeyTakeawayBox points={[`Begin with ${topic.title} through primary sources.`, 'Cross-check claims with citations before relying on conclusions.']} />
-      {glossarySpotlight ? (
-        <GlossaryInlineCard term={glossarySpotlight.term} definition={glossarySpotlight.definition} href={`/glossary/${glossarySpotlight.slug}`} />
-      ) : null}
-      <PortableContent blocks={topic.body} />
-      <RelatedReadingGrid items={relatedReading} />
+
+      <div className="mt-8 space-y-8">
+        <SummaryBox
+          items={[
+            topic.summary,
+            `Difficulty: ${topic.difficulty ?? 'All levels'}`,
+          ]}
+        />
+
+        <PortableContent blocks={topic.body} />
+
+        <KeyTakeawayBox>
+          Begin with {topic.title} through primary sources. Cross-check claims
+          with citations before relying on conclusions.
+        </KeyTakeawayBox>
+
+        {glossarySpotlight ? (
+          <GlossaryInlineCard
+            term={glossarySpotlight.term}
+            transliteration={glossarySpotlight.transliteration}
+            definition={glossarySpotlight.definition}
+            href={`/glossary/${glossarySpotlight.slug}`}
+          />
+        ) : null}
+
+        <RelatedReadingGrid
+          items={relatedReading.map((r) => ({ ...r, type: 'guide' as const }))}
+        />
+      </div>
     </article>
   );
 }
