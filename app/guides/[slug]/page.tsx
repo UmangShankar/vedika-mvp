@@ -11,11 +11,9 @@ type GuideDetailPageProps = {
 export async function generateMetadata({ params }: GuideDetailPageProps): Promise<Metadata> {
   const { slug } = params;
   const guide = await getGuide(slug);
-
   if (!guide) {
     return buildMetadata({ title: 'Guide not found', description: 'This guide is unavailable.' });
   }
-
   return buildMetadata({ title: guide.title, description: guide.excerpt, seo: guide.seo });
 }
 
@@ -36,4 +34,5 @@ export default async function GuideDetailPage({ params }: GuideDetailPageProps) 
     .slice(0, 4)
     .map((item) => ({ title: item.title, href: `/guides/${item.slug}`, summary: item.excerpt }));
 
-
+  return <GuideTemplate guide={guide} relatedReading={relatedReading} />;
+}
