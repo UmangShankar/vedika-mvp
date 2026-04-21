@@ -18,7 +18,7 @@ export function Section({ id, title, subtitle, children, bg = 'default' }: Secti
       <div className="mx-auto max-w-full-w px-4 sm:px-6 lg:px-8">
         {title ? (
           <header className="mb-6 space-y-2">
-            <h2 id={`${id}-title`} className="text-display-sm text-ink">
+            <h2 id={`${id}-title`} className="font-serif text-display-sm text-ink">
               {title}
             </h2>
             {subtitle ? <p className="max-w-content text-body text-ink-muted">{subtitle}</p> : null}

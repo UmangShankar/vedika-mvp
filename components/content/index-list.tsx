@@ -16,8 +16,8 @@ export function IndexList({ items }: IndexListProps) {
   return (
     <ul className="space-y-4">
       {items.map((item) => (
-        <li key={item.id} className="rounded-lg border bg-sandal-50 p-5">
-          <h2 className="text-subheading font-semibold text-ink">
+        <li key={item.id} className="rounded-lg border bg-sandal-50 p-5 transition-all duration-200 hover:scale-[1.01] hover:border-warm hover:shadow-card">
+          <h2 className="font-serif text-subheading font-semibold text-ink">
             <Link href={item.href} className="no-underline hover:text-saffron-500">
               {item.title}
             </Link>

@@ -4,12 +4,12 @@ export function Hero() {
   return (
     <section
       aria-labelledby="hero-title"
-      className="relative w-full overflow-hidden bg-sandal-100 py-20 md:py-28"
+      className="relative w-full overflow-hidden bg-sandal-100 py-12 md:py-20"
     >
       {/* Decorative OM — top-right, 4% opacity */}
       <span
         aria-hidden="true"
-        className="devanagari pointer-events-none absolute right-6 top-4 select-none text-[180px] leading-none text-saffron-500 opacity-[0.04]"
+        className="devanagari pointer-events-none absolute right-6 top-4 select-none text-[220px] leading-none text-saffron-200 opacity-[0.08]"
       >
         ॐ
       </span>

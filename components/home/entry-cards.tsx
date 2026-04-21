@@ -33,13 +33,13 @@ export function EntryCards() {
       {entries.map((entry) => (
         <li
           key={entry.title}
-          className="rounded-lg border bg-sandal-50 p-5 shadow-card transition-shadow hover:shadow-card-md"
+          className="rounded-lg border bg-sandal-50 p-5 shadow-card transition-all duration-200 hover:scale-[1.01] hover:border-warm hover:shadow-card-md"
         >
           {/* Devanagari glyph */}
           <span className="devanagari block text-[28px] leading-none text-saffron-500">
             {entry.glyph}
           </span>
-          <h3 className="mt-3 text-subheading text-ink">{entry.title}</h3>
+          <h3 className="mt-3 font-serif text-subheading text-ink">{entry.title}</h3>
           <p className="mt-1 text-body-sm text-ink-muted">{entry.description}</p>
           <Link
             href={entry.href}

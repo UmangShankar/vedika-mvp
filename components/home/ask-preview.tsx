@@ -7,13 +7,13 @@ const sources = ['Gita Bhashya — Śaṅkara', 'Gita Tatparya — Madhva', 'Git
 
 export function AskPreview() {
   return (
-    <div className="mx-auto max-w-wide rounded-xl border bg-white p-6 shadow-card-md md:p-8">
+    <div className="mx-auto max-w-wide rounded-xl border bg-sandal-50 p-6 shadow-card-md md:p-8">
       {/* Header */}
       <div className="flex flex-wrap items-center gap-3">
         <div className="flex h-9 w-9 items-center justify-center rounded-full border border-saffron-200 bg-saffron-50">
           <span className="devanagari text-sm text-saffron-500">ॐ</span>
         </div>
-        <h3 className="text-heading text-ink">Ask Vedika</h3>
+        <h3 className="font-serif text-heading text-ink">Ask Vedika</h3>
         <span className="beta-badge">Beta</span>
       </div>
 

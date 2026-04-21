@@ -8,7 +8,7 @@ export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-[rgba(192,120,40,0.18)] bg-white">
+    <header className="sticky top-0 z-50 w-full border-b border-[rgba(192,120,40,0.18)] bg-sandal-50">
       <div className="mx-auto flex h-14 max-w-full-w items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Wordmark */}
         <Link href="/" className="flex items-center gap-1.5 no-underline">
@@ -51,7 +51,7 @@ export function SiteHeader() {
 
       {/* Mobile dropdown */}
       {menuOpen && (
-        <div className="border-t border-[rgba(192,120,40,0.18)] bg-white md:hidden">
+        <div className="border-t border-[rgba(192,120,40,0.18)] bg-sandal-50 md:hidden">
           <nav className="flex flex-col px-4 py-3">
             {siteConfig.nav.map((item) => (
               <Link

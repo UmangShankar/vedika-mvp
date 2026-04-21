@@ -35,7 +35,7 @@ export function HubSection({ title, subtitle, children }: HubSectionProps) {
   return (
     <section className="space-y-4">
       <header className="space-y-1">
-        <h2 className="text-heading text-ink">{title}</h2>
+        <h2 className="font-serif text-heading text-ink">{title}</h2>
         {subtitle ? <p className="text-ink-muted">{subtitle}</p> : null}
       </header>
       {children}
@@ -58,8 +58,8 @@ export function FeatureGrid({ cards }: FeatureGridProps) {
   return (
     <ul className="grid gap-4 md:grid-cols-2">
       {cards.map((card) => (
-        <li key={`${card.href}-${card.title}`} className="rounded-xl border bg-sandal-50 p-5">
-          <h3 className="text-subheading text-ink">
+        <li key={`${card.href}-${card.title}`} className="rounded-xl border bg-sandal-50 p-5 transition-all duration-200 hover:scale-[1.01] hover:border-warm hover:shadow-card">
+          <h3 className="font-serif text-subheading text-ink">
             <Link href={card.href} className="no-underline hover:text-saffron-500">
               {card.title}
             </Link>

@@ -39,9 +39,9 @@ export function FeaturedGuides() {
       {guides.map((guide) => (
         <article
           key={guide.title}
-          className="rounded-r-lg border-l-[3px] border-saffron-300 bg-sandal-50 p-5"
+          className="rounded-r-lg border-l-[3px] border-saffron-300 bg-sandal-50 p-5 transition-all duration-200 hover:scale-[1.01] hover:border-l-saffron-500"
         >
-          <h3 className="text-subheading text-ink">{guide.title}</h3>
+          <h3 className="font-serif text-subheading text-ink">{guide.title}</h3>
           <p className="mt-1.5 text-body-sm text-ink-muted">{guide.description}</p>
           <div className="mt-3 flex items-center justify-between">
             <span

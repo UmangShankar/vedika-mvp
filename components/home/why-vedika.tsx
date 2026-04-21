@@ -19,7 +19,7 @@ export function WhyVedika() {
       {pillars.map((pillar) => (
         <li key={pillar.title} className="flex flex-col gap-2">
           <span className="h-1.5 w-6 rounded-full bg-saffron-400" aria-hidden="true" />
-          <h3 className="text-subheading font-semibold text-ink">{pillar.title}</h3>
+          <h3 className="font-serif text-subheading font-semibold text-ink">{pillar.title}</h3>
           <p className="text-body-sm text-ink-muted">{pillar.description}</p>
         </li>
       ))}
