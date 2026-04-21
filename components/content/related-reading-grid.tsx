@@ -26,7 +26,7 @@ export function RelatedReadingGrid({ title = 'Continue reading', items = [] }: R
       <h2 className="text-subheading text-ink">{title}</h2>
       <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {items.map((item) => (
-          <li key={`${item.href}-${item.title}`} className="rounded-lg border bg-white p-4 shadow-card">
+          <li key={`${item.href}-${item.title}`} className="rounded-lg border bg-sandal-50 p-4 shadow-card">
             {item.type && (
               <span className={`mb-2 inline-flex rounded-sm px-2 py-0.5 text-label ${typeBadgeClass[item.type] ?? ''}`}>
                 {item.type}

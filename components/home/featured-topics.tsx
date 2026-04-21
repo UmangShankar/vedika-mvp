@@ -31,7 +31,7 @@ export function FeaturedTopics() {
       {topics.map((topic) => (
         <article
           key={topic.title}
-          className="rounded-lg border bg-white p-4 shadow-card transition-shadow hover:shadow-card-md"
+          className="rounded-lg border bg-sandal-50 p-4 shadow-card transition-shadow hover:shadow-card-md"
         >
           <div className="mb-3">
             <CanonBadge canon={topic.badge} />

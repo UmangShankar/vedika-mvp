@@ -33,7 +33,7 @@ export function EntryCards() {
       {entries.map((entry) => (
         <li
           key={entry.title}
-          className="rounded-lg border bg-white p-5 shadow-card transition-shadow hover:shadow-card-md"
+          className="rounded-lg border bg-sandal-50 p-5 shadow-card transition-shadow hover:shadow-card-md"
         >
           {/* Devanagari glyph */}
           <span className="devanagari block text-[28px] leading-none text-saffron-500">
