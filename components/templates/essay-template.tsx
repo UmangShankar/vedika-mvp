@@ -9,8 +9,8 @@ type EssayTemplateProps = {
 
 export function EssayTemplate({ essay }: EssayTemplateProps) {
   return (
-    <article className="mx-auto w-full max-w-3xl space-y-6 px-4 py-12 sm:px-6 lg:px-8">
-      <ArticleHeader title={essay.title} dek={essay.dek} badges={['Essay']} />
+    <article className="mx-auto max-w-content space-y-8 px-4 py-12 sm:px-6 lg:px-8">
+      <ArticleHeader title={essay.title} subtitle={essay.dek} readingTime="10 min" />
       <PullQuote quote={essay.dek} />
       <PortableContent blocks={essay.body} />
     </article>

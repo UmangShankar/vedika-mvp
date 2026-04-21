@@ -1,21 +1,78 @@
 import Link from 'next/link';
 
+const navLinks = [
+  { label: 'Research', href: '/research' },
+  { label: 'Topics',   href: '/topics' },
+  { label: 'Texts',    href: '/texts' },
+  { label: 'Guides',   href: '/guides' },
+  { label: 'Sources',  href: '/sources' },
+];
+
+const legalLinks = [
+  { label: 'About',   href: '/about' },
+  { label: 'Privacy', href: '/privacy' },
+  { label: 'Terms',   href: '/terms' },
+];
+
 export function SiteFooter() {
   return (
-    <footer className="border-t border-amber-100 pt-8 text-sm text-slate-700">
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <p>Vedika — a content-first Sanatan Dharma research platform.</p>
-        <nav aria-label="Footer" className="flex flex-wrap gap-4">
-          <Link href="/research" className="no-underline hover:text-saffron">
-            Research
-          </Link>
-          <Link href="/sources" className="no-underline hover:text-saffron">
-            Sources
-          </Link>
-          <Link href="/ask-vedika" className="no-underline hover:text-saffron">
-            Ask Vedika (Beta)
-          </Link>
-        </nav>
+    <footer className="border-t border-warm bg-sandal-200">
+      <div className="mx-auto max-w-full-w px-4 py-10 sm:px-6 lg:px-8">
+        <div className="grid gap-8 sm:grid-cols-3">
+          {/* Brand */}
+          <div>
+            <Link href="/" className="flex items-center gap-1.5 no-underline">
+              <span className="devanagari text-sm text-saffron-500">ॐ</span>
+              <span className="font-serif text-[18px] font-semibold text-ink">Vedika</span>
+            </Link>
+            <p className="mt-2 text-body-sm text-ink-muted">
+              A content-first Sanatan Dharma research platform. Source-grounded, trust-first.
+            </p>
+          </div>
+
+          {/* Nav */}
+          <nav aria-label="Footer navigation">
+            <p className="text-label uppercase tracking-[0.06em] text-ink-muted">Explore</p>
+            <ul className="mt-3 space-y-2">
+              {navLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-body-sm text-ink-light no-underline hover:text-saffron-500"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          {/* Legal */}
+          <div>
+            <p className="text-label uppercase tracking-[0.06em] text-ink-muted">About</p>
+            <ul className="mt-3 space-y-2">
+              {legalLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-body-sm text-ink-light no-underline hover:text-saffron-500"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-4 text-caption text-ink-faint">Content-first. Source-grounded.</p>
+          </div>
+        </div>
+
+        {/* Bottom bar */}
+        <div className="mt-8 flex flex-col items-center justify-between gap-2 border-t border-warm pt-6 sm:flex-row">
+          <p className="text-caption text-ink-faint">
+            © {new Date().getFullYear()} Vedika. All rights reserved.
+          </p>
+          <p className="text-caption text-ink-faint">Built with care for Dharma</p>
+        </div>
       </div>
     </footer>
   );

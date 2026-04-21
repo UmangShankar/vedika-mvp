@@ -1,24 +1,34 @@
 export function NewsletterSignup() {
   return (
-    <div className="rounded-xl border border-amber-200 bg-white p-6">
-      <h3 className="text-xl font-semibold tracking-tight">Get new research guides</h3>
-      <p className="mt-2 text-slate-700">Receive periodic updates on new topics, source maps, and study guides.</p>
-      <form className="mt-4 flex flex-col gap-3 sm:flex-row" action="#" method="post">
-        <label htmlFor="email" className="sr-only">
+    <section className="mx-auto max-w-wide rounded-xl bg-saffron-50 p-8 text-center md:p-10">
+      <h2 className="font-serif text-heading text-ink">Stay close to the sources</h2>
+      <p className="mt-2 text-caption text-ink-muted">
+        Occasional deep dives on primary texts, interpretation threads, and new research paths.
+      </p>
+      <form
+        className="mx-auto mt-6 flex max-w-md flex-col gap-3 sm:flex-row"
+        action="#"
+        method="post"
+      >
+        <label htmlFor="newsletter-email" className="sr-only">
           Email address
         </label>
         <input
-          id="email"
+          id="newsletter-email"
           name="email"
           type="email"
           required
           placeholder="you@example.com"
-          className="w-full rounded-md border border-amber-200 bg-white px-3 py-2 text-sm"
+          className="w-full rounded-sm border border-[rgba(192,120,40,0.30)] bg-white px-3 py-2 text-body-sm text-ink placeholder:text-ink-faint focus:outline-none focus:ring-2 focus:ring-saffron-400"
         />
-        <button type="submit" className="rounded-md bg-saffron px-4 py-2 text-sm font-medium text-white">
+        <button
+          type="submit"
+          className="rounded-sm bg-saffron-500 px-4 py-2 text-body-sm font-medium text-white transition-colors hover:bg-saffron-600"
+        >
           Subscribe
         </button>
       </form>
-    </div>
+      <p className="mt-3 text-caption text-ink-faint">No noise. Occasional deep dives.</p>
+    </section>
   );
 }

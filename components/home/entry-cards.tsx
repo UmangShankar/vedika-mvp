@@ -2,36 +2,50 @@ import Link from 'next/link';
 
 const entries = [
   {
-    title: 'Foundations of Sanatan Dharma',
-    description: 'Start with core concepts, terminology, and textual map for reliable orientation.',
-    href: '/research'
+    glyph: 'ऋ',
+    title: 'Rigveda',
+    description: 'The oldest layer of Vedic literature',
+    href: '/texts/rigveda',
   },
   {
-    title: 'Bhagavad Gita',
-    description: 'Navigate chapter themes, key terms, and commentarial traditions with clear links.',
-    href: '/sources'
-  },
-  {
+    glyph: 'उ',
     title: 'Upanishads',
-    description: 'Follow primary ideas across principal Upanishads and classical interpretive lenses.',
-    href: '/sources'
+    description: 'Dialogues on consciousness and ultimate reality',
+    href: '/texts/upanishads',
   },
   {
-    title: 'Ask Vedika (Beta)',
-    description: 'Use AI as a study assistant, then verify every claim through indexed source pathways.',
-    href: '/ask-vedika'
-  }
+    glyph: 'भ',
+    title: 'Bhagavatam',
+    description: 'Divine narrative across ten cantos',
+    href: '/texts/bhagavatam',
+  },
+  {
+    glyph: 'गी',
+    title: 'Bhagavad Gita',
+    description: "Krishna's teaching on dharma and liberation",
+    href: '/texts/bhagavad-gita',
+  },
 ];
 
 export function EntryCards() {
   return (
-    <ul className="grid gap-4 sm:grid-cols-2">
+    <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
       {entries.map((entry) => (
-        <li key={entry.title} className="rounded-xl border border-amber-100 bg-white p-5">
-          <h3 className="text-lg font-semibold">{entry.title}</h3>
-          <p className="mt-2 text-sm text-slate-700">{entry.description}</p>
-          <Link href={entry.href} className="mt-4 inline-flex text-sm font-medium text-saffron">
-            Open section
+        <li
+          key={entry.title}
+          className="rounded-lg border bg-sandal-50 p-5 shadow-card transition-shadow hover:shadow-card-md"
+        >
+          {/* Devanagari glyph */}
+          <span className="devanagari block text-[28px] leading-none text-saffron-500">
+            {entry.glyph}
+          </span>
+          <h3 className="mt-3 text-subheading text-ink">{entry.title}</h3>
+          <p className="mt-1 text-body-sm text-ink-muted">{entry.description}</p>
+          <Link
+            href={entry.href}
+            className="mt-4 inline-flex text-body-sm font-medium text-saffron-500 no-underline hover:text-saffron-600"
+          >
+            Explore →
           </Link>
         </li>
       ))}

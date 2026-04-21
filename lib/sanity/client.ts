@@ -18,6 +18,10 @@ export const sanityClient = createClient({
 export async function sanityFetch<T>(
   query: string,
   params: Record<string, unknown> = {}
-): Promise<T> {
-  return sanityClient.fetch<T>(query, params);
+): Promise<T | null> {
+  try {
+    return await sanityClient.fetch<T>(query, params);
+  } catch {
+    return null;
+  }
 }
