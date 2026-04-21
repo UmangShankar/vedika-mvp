@@ -17,6 +17,7 @@ export type Topic = {
   summary: string;
   difficulty?: string;
   body?: PortableBlock[];
+  sourceRefs?: SourceReference[];
   seo?: SeoFields;
 };
 
@@ -27,6 +28,7 @@ export type TextEntry = {
   traditionLabel: string;
   overview: string;
   content?: PortableBlock[];
+  sourceRefs?: SourceReference[];
   seo?: SeoFields;
 };
 

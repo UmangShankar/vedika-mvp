@@ -17,8 +17,8 @@ const legalLinks = [
 export function SiteFooter() {
   return (
     <footer className="border-t border-warm bg-sandal-200">
-      <div className="mx-auto max-w-full-w px-4 py-10 sm:px-6 lg:px-8">
-        <div className="grid gap-8 sm:grid-cols-3">
+      <div className="mx-auto max-w-full-w px-8 py-14">
+        <div className="grid gap-10 sm:grid-cols-3">
           {/* Brand */}
           <div>
             <Link href="/" className="flex items-center gap-1.5 no-underline">
@@ -32,7 +32,7 @@ export function SiteFooter() {
 
           {/* Nav */}
           <nav aria-label="Footer navigation">
-            <p className="text-label uppercase tracking-[0.06em] text-ink-muted">Explore</p>
+            <p className="text-overline text-saffron-500">Explore</p>
             <ul className="mt-3 space-y-2">
               {navLinks.map((link) => (
                 <li key={link.href}>
@@ -49,7 +49,7 @@ export function SiteFooter() {
 
           {/* Legal */}
           <div>
-            <p className="text-label uppercase tracking-[0.06em] text-ink-muted">About</p>
+            <p className="text-overline text-saffron-500">About</p>
             <ul className="mt-3 space-y-2">
               {legalLinks.map((link) => (
                 <li key={link.href}>

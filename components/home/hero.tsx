@@ -4,17 +4,17 @@ export function Hero() {
   return (
     <section
       aria-labelledby="hero-title"
-      className="relative w-full overflow-hidden bg-sandal-100 py-12 md:py-20"
+      className="relative w-full overflow-hidden bg-sandal-100 py-10 md:py-14"
     >
       {/* Decorative OM — top-right, 4% opacity */}
       <span
         aria-hidden="true"
-        className="devanagari pointer-events-none absolute right-6 top-4 select-none text-[220px] leading-none text-saffron-200 opacity-[0.08]"
+        className="devanagari pointer-events-none absolute right-6 top-4 z-0 select-none text-[200px] leading-none text-saffron-400 opacity-[0.07]"
       >
         ॐ
       </span>
 
-      <div className="relative mx-auto max-w-full-w px-4 text-center sm:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto max-w-full-w px-4 text-center sm:px-6 lg:px-8">
         {/* Overline */}
         <p className="text-overline uppercase tracking-[0.12em] text-saffron-500">
           Sanatan Dharma Research

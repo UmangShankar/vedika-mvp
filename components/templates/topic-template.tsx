@@ -46,6 +46,30 @@ export function TopicTemplate({ topic, relatedReading = [], glossarySpotlight }:
           />
         ) : null}
 
+        {topic.sourceRefs && topic.sourceRefs.length > 0 && (
+          <section className="mt-10">
+            <h2 className="mb-4 font-serif text-subheading text-ink">Sources used in this article</h2>
+            <div className="flex flex-wrap gap-2">
+              {topic.sourceRefs.map((source) => (
+                <span key={source._id} className="source-badge">
+                  {source.url ? (
+                    <a href={source.url} target="_blank" rel="noreferrer" className="no-underline hover:text-saffron-500">
+                      {source.label}
+                    </a>
+                  ) : (
+                    source.label
+                  )}
+                  {source.citationText && (
+                    <span className="ml-1 text-ink-faint">
+                      — {source.citationText.length > 80 ? `${source.citationText.slice(0, 80)}…` : source.citationText}
+                    </span>
+                  )}
+                </span>
+              ))}
+            </div>
+          </section>
+        )}
+
         <RelatedReadingGrid
           items={relatedReading.map((r) => ({ ...r, type: 'guide' as const }))}
         />

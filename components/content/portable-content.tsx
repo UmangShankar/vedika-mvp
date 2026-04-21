@@ -102,8 +102,8 @@ function groupListItems(blocks: Block[]): React.ReactNode[] {
       const Tag = block.listItem === 'bullet' ? 'ul' : 'ol';
       const cls =
         block.listItem === 'bullet'
-          ? 'list-disc pl-6 mb-5 space-y-2'
-          : 'list-decimal pl-6 mb-5 space-y-2';
+          ? 'list-disc pl-6 mb-5 space-y-2 text-ink-light'
+          : 'list-decimal pl-6 mb-5 space-y-2 text-ink-light';
       const items: React.ReactNode[] = [];
 
       while (

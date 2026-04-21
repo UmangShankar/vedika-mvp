@@ -12,7 +12,7 @@ export function Section({ id, title, subtitle, children, bg = 'default' }: Secti
   return (
     <section
       id={id}
-      className={`space-y-6 py-12 ${bg === 'sandal' ? 'bg-sandal-50' : ''}`}
+      className={`space-y-6 py-10 ${bg === 'sandal' ? 'bg-sandal-50' : ''}`}
       aria-labelledby={title ? `${id}-title` : undefined}
     >
       <div className="mx-auto max-w-full-w px-4 sm:px-6 lg:px-8">

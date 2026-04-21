@@ -14,6 +14,7 @@ export const topicBySlugQuery = `*[_type == "topic" && slug.current == $slug][0]
   summary,
   difficulty,
   body,
+  "sourceRefs": sourceRefs[]->{_id, label, citationText, url},
   seo
 }`;
 
@@ -33,6 +34,7 @@ export const textBySlugQuery = `*[_type == "vedikText" && slug.current == $slug]
   traditionLabel,
   overview,
   content,
+  "sourceRefs": sourceRefs[]->{_id, label, citationText, url},
   seo
 }`;
 
