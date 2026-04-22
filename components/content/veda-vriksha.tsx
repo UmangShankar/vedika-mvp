@@ -51,6 +51,7 @@ interface VedaData {
   verse: Verse;
   cx: number;
   cy: number;
+  date: string;
 }
 
 /* ─── SVG symbol component ───────────────────────────────── */
@@ -108,13 +109,7 @@ function DevaIcon({ symbol, color }: { symbol: DevaSymbol; color: string }) {
     ),
   };
   return (
-    <svg
-      viewBox="0 0 20 20"
-      width="20"
-      height="20"
-      style={{ color }}
-      aria-hidden="true"
-    >
+    <svg viewBox="0 0 20 20" width="20" height="20" style={{ color }} aria-hidden="true">
       {paths[symbol]}
     </svg>
   );
@@ -130,7 +125,8 @@ const VEDAS: VedaData[] = [
     color: '#C07828',
     colorLight: '#FEF3E2',
     cx: 110,
-    cy: 50,
+    cy: 55,
+    date: '~6000 BCE',
     era: '~6000 BCE (Tilak · Orion precession) · Pre-1900 BCE minimum (Sarasvati satellite evidence)',
     description:
       'The oldest and most extensive of the four Vedas — 1,028 hymns in ten mandalas addressed to the devas. The foundational revelation of cosmic order (Ṛta) and the source from which all Vedic knowledge flows.',
@@ -175,7 +171,8 @@ const VEDAS: VedaData[] = [
     color: '#2D7A6F',
     colorLight: '#E8F5F3',
     cx: 570,
-    cy: 50,
+    cy: 55,
+    date: '~4000 BCE',
     era: '~4000 BCE · Ancestor of all Indian classical music',
     description:
       'The Veda of melodies — 1,875 verses drawn largely from the Rigveda, set to elaborate musical notation. The mother of Indian classical music and the origin of the sāman singing tradition.',
@@ -218,7 +215,8 @@ const VEDAS: VedaData[] = [
     color: '#6B3FA0',
     colorLight: '#F3EEF9',
     cx: 110,
-    cy: 250,
+    cy: 230,
+    date: '~3500 BCE',
     era: '~3500 BCE · Baudhayana Shulba Sutra predates Pythagoras by 1,000 years',
     description:
       'The Veda of ritual formulas — prose and verse instructions for the Soma sacrifice and other yajnas. Home to the Sri Rudram, the Isha Upanishad, and mathematical genius that predates ancient Greece.',
@@ -261,7 +259,8 @@ const VEDAS: VedaData[] = [
     color: '#C0392B',
     colorLight: '#FBEAEA',
     cx: 570,
-    cy: 250,
+    cy: 230,
+    date: '~3100 BCE',
     era: '~3100 BCE (Aldebaran astronomical reference)',
     description:
       'The Veda of daily life — 730 hymns of healing, protection, cosmology, and ecology. Often called the "democratic Veda" for its concern with ordinary people, Ayurveda, and the Prithvi Sukta — the world\'s first ecological text.',
@@ -299,13 +298,12 @@ const VEDAS: VedaData[] = [
   },
 ];
 
-/* ─── branch path helper ─────────────────────────────────── */
+/* ─── branch helpers ─────────────────────────────────────── */
 const OM_CX = 340;
 const OM_CY = 150;
 
 function branchPath(cx: number, cy: number): string {
   const mx = (OM_CX + cx) / 2;
-  const my = (OM_CY + cy) / 2;
   return `M${OM_CX},${OM_CY} Q${mx},${OM_CY} ${cx},${cy}`;
 }
 
@@ -315,17 +313,10 @@ function branchLength(cx: number, cy: number): number {
   return Math.sqrt(dx * dx + dy * dy) * 1.3;
 }
 
-/* ─── spoke offsets ──────────────────────────────────────── */
-const SPOKE_LABELS = ['Devas', 'Rishis', 'Themes', 'Facts'] as const;
-const SPOKE_OFFSETS = [
-  { dx: -55, dy: -45 },
-  { dx: 55, dy: -45 },
-  { dx: -55, dy: 45 },
-  { dx: 55, dy: 45 },
-];
-
 /* ─── tab type ───────────────────────────────────────────── */
 type TabId = 'devas' | 'rishis' | 'themes' | 'facts';
+
+const MAT = 'cubic-bezier(0.4, 0, 0.2, 1)';
 
 /* ─── main component ─────────────────────────────────────── */
 export function VedaVrikshaExplorer() {
@@ -344,7 +335,7 @@ export function VedaVrikshaExplorer() {
   }
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-6">
       <style>{`
         @keyframes grow {
           from { stroke-dashoffset: var(--L); }
@@ -354,50 +345,44 @@ export function VedaVrikshaExplorer() {
           from { transform: scale(0.55); opacity: 0; }
           to   { transform: scale(1);    opacity: 1; }
         }
-        @keyframes fdUp {
-          from { transform: translateY(16px); opacity: 0; }
-          to   { transform: translateY(0);    opacity: 1; }
-        }
         @keyframes fdIn {
           from { opacity: 0; }
           to   { opacity: 1; }
         }
         @keyframes pu {
           0%, 100% { opacity: 0.35; }
-          50%       { opacity: 0.85; }
-        }
-        @keyframes spk {
-          from { stroke-dashoffset: var(--SL); }
-          to   { stroke-dashoffset: 0; }
+          50%      { opacity: 0.85; }
         }
         .branch-path {
-          animation: grow 0.85s ease-out forwards;
-          animation-fill-mode: both;
+          animation: grow 0.85s ease-out both;
         }
-        .veda-node {
-          animation: scIn 0.5s cubic-bezier(0.34,1.56,0.64,1) forwards;
-          animation-fill-mode: both;
+        .veda-node-g {
+          animation: scIn 0.5s cubic-bezier(0.34,1.56,0.64,1) both;
         }
-        .spoke-path {
-          animation: spk 0.4s ease-out forwards;
-          animation-fill-mode: both;
+        .rel-line {
+          animation: fdIn 0.5s ease both;
         }
-        .spoke-label {
-          animation: fdIn 0.3s ease forwards;
-          animation-fill-mode: both;
+        .hint-text {
+          animation: fdIn 0.6s ease both;
         }
-        .rel-line { animation: fdIn 0.5s ease forwards; animation-fill-mode: both; }
-        .hint-text { animation: fdIn 0.6s ease forwards; animation-fill-mode: both; }
-        .detail-panel { animation: fdUp 0.45s ease forwards; }
-        .tab-content  { animation: fdIn 0.25s ease forwards; }
+        *:focus { outline: none !important; }
+        *:focus-visible { outline: none !important; }
       `}</style>
 
       {/* SVG tree */}
       <div className="overflow-x-auto">
         <svg
-          viewBox="0 0 680 300"
+          viewBox="0 0 680 320"
           width="100%"
-          style={{ maxWidth: 680, display: 'block', margin: '0 auto' }}
+          tabIndex={-1}
+          style={{
+            maxWidth: 680,
+            display: 'block',
+            margin: '0 auto',
+            outline: 'none',
+            userSelect: 'none',
+            WebkitTapHighlightColor: 'transparent',
+          }}
           aria-label="Veda Vriksha — interactive knowledge tree"
         >
           {/* Branch paths */}
@@ -409,7 +394,6 @@ export function VedaVrikshaExplorer() {
                 d={branchPath(v.cx, v.cy)}
                 fill="none"
                 stroke={v.color}
-                strokeWidth={activeId === v.id ? 2.5 : 0.8}
                 strokeLinecap="round"
                 strokeDasharray={L}
                 className="branch-path"
@@ -417,7 +401,8 @@ export function VedaVrikshaExplorer() {
                   {
                     '--L': L,
                     animationDelay: `${i * 0.18}s`,
-                    transition: 'stroke-width 0.3s',
+                    strokeWidth: activeId === v.id ? 2.5 : 0.8,
+                    transition: `stroke-width 0.25s ${MAT}`,
                   } as React.CSSProperties
                 }
               />
@@ -425,23 +410,20 @@ export function VedaVrikshaExplorer() {
           })}
 
           {/* Rigveda–Samaveda relationship line */}
-          <g
-            className="rel-line"
-            style={{ animationDelay: '2.1s', opacity: 0 }}
-          >
+          <g className="rel-line" style={{ animationDelay: '2.1s', opacity: 0 }}>
             <line
-              x1="140" y1="50" x2="540" y2="50"
+              x1="140" y1="55" x2="540" y2="55"
               stroke="#C07828"
               strokeWidth="0.8"
               strokeDasharray="4 3"
-              opacity="0.5"
+              opacity="0.45"
             />
             <text
-              x="340" y="38"
+              x="340" y="43"
               textAnchor="middle"
               fontSize="8"
               fill="#C07828"
-              opacity="0.75"
+              opacity="0.7"
               fontStyle="italic"
             >
               Sāmaveda&apos;s melodies drawn from the Ṛgveda
@@ -449,94 +431,83 @@ export function VedaVrikshaExplorer() {
           </g>
 
           {/* Veda nodes */}
-          {VEDAS.map((v, i) => (
-            <g
-              key={v.id}
-              className="veda-node"
-              style={
-                {
+          {VEDAS.map((v, i) => {
+            const isActive = activeId === v.id;
+            const isInactive = activeId !== null && !isActive;
+            const scale = isActive ? 1.1 : isInactive ? 0.92 : 1;
+            const opacity = isInactive ? 0.55 : 1;
+            const sw = isActive ? 3 : 0.8;
+            const isTop = v.cy < 150;
+
+            return (
+              <g
+                key={v.id}
+                className="veda-node-g"
+                tabIndex={-1}
+                role="button"
+                aria-label={`Select ${v.name}`}
+                aria-pressed={isActive}
+                onClick={() => handleNodeClick(v.id)}
+                onKeyDown={(e) => e.key === 'Enter' && handleNodeClick(v.id)}
+                style={{
                   animationDelay: `${0.85 + i * 0.12}s`,
                   opacity: 0,
-                  transformOrigin: `${v.cx}px ${v.cy}px`,
                   cursor: 'pointer',
-                } as React.CSSProperties
-              }
-              onClick={() => handleNodeClick(v.id)}
-              role="button"
-              tabIndex={0}
-              aria-label={`Open ${v.name}`}
-              onKeyDown={(e) => e.key === 'Enter' && handleNodeClick(v.id)}
-            >
-              {/* bg circle */}
-              <circle cx={v.cx} cy={v.cy} r={30} fill={v.colorLight} stroke={v.color} strokeWidth={activeId === v.id ? 2.5 : 1.2} />
-              {/* glyph */}
-              <text
-                x={v.cx} y={v.cy + 9}
-                textAnchor="middle"
-                fontSize="22"
-                fill={v.color}
-                fontFamily="'Noto Serif Devanagari', serif"
+                  outline: 'none',
+                }}
               >
-                {v.glyph}
-              </text>
-              {/* name */}
-              <text
-                x={v.cx}
-                y={v.cy + (v.cy < 150 ? 50 : -38)}
-                textAnchor="middle"
-                fontSize="10"
-                fill="#1C1208"
-                fontWeight="600"
-              >
-                {v.name}
-              </text>
-              {/* date */}
-              <text
-                x={v.cx}
-                y={v.cy + (v.cy < 150 ? 62 : -26)}
-                textAnchor="middle"
-                fontSize="8"
-                fill="#6B5B3E"
-              >
-                {v.id === 'rigveda' ? '~6000 BCE' : v.id === 'samaveda' ? '~4000 BCE' : v.id === 'yajurveda' ? '~3500 BCE' : '~3100 BCE'}
-              </text>
+                {/* Inner group handles scale/opacity so the initial scIn animation still works */}
+                <g
+                  style={{
+                    transformOrigin: `${v.cx}px ${v.cy}px`,
+                    transform: `scale(${scale})`,
+                    opacity,
+                    transition: `transform 0.25s ${MAT}, opacity 0.25s ${MAT}`,
+                  }}
+                >
+                  <circle
+                    cx={v.cx} cy={v.cy} r={30}
+                    fill={v.colorLight}
+                    stroke={v.color}
+                    strokeWidth={sw}
+                    style={{ transition: `stroke-width 0.25s ${MAT}` }}
+                  />
+                  <text
+                    x={v.cx} y={v.cy + 9}
+                    textAnchor="middle"
+                    fontSize="22"
+                    fill={v.color}
+                    fontFamily="'Noto Serif Devanagari', serif"
+                  >
+                    {v.glyph}
+                  </text>
+                  {/* name */}
+                  <text
+                    x={v.cx}
+                    y={isTop ? v.cy + 50 : v.cy - 38}
+                    textAnchor="middle"
+                    fontSize="10"
+                    fill="#1C1208"
+                    fontWeight="600"
+                  >
+                    {v.name}
+                  </text>
+                  {/* date */}
+                  <text
+                    x={v.cx}
+                    y={isTop ? v.cy + 62 : v.cy - 26}
+                    textAnchor="middle"
+                    fontSize="8"
+                    fill="#6B5B3E"
+                  >
+                    {v.date}
+                  </text>
+                </g>
+              </g>
+            );
+          })}
 
-              {/* Spokes when active */}
-              {activeId === v.id &&
-                SPOKE_OFFSETS.map((off, si) => {
-                  const ex = v.cx + off.dx * 1.4;
-                  const ey = v.cy + off.dy * 1.4;
-                  const SL = Math.sqrt(off.dx * off.dx + off.dy * off.dy) * 1.4;
-                  return (
-                    <g key={si}>
-                      <line
-                        x1={v.cx} y1={v.cy} x2={ex} y2={ey}
-                        stroke={v.color}
-                        strokeWidth="1"
-                        strokeDasharray={SL}
-                        className="spoke-path"
-                        style={{ '--SL': SL, animationDelay: `${si * 0.06}s` } as React.CSSProperties}
-                      />
-                      <text
-                        x={ex + (off.dx > 0 ? 3 : -3)}
-                        y={ey + 4}
-                        textAnchor={off.dx > 0 ? 'start' : 'end'}
-                        fontSize="7.5"
-                        fill={v.color}
-                        fontWeight="600"
-                        className="spoke-label"
-                        style={{ animationDelay: `${0.3 + si * 0.06}s`, opacity: 0 } as React.CSSProperties}
-                      >
-                        {SPOKE_LABELS[si]}
-                      </text>
-                    </g>
-                  );
-                })}
-            </g>
-          ))}
-
-          {/* Central OM node */}
-          {/* Pulse ring */}
+          {/* Central OM node — rendered last so it sits above branches */}
           <circle
             cx={OM_CX} cy={OM_CY} r={36}
             fill="none"
@@ -557,198 +528,206 @@ export function VedaVrikshaExplorer() {
         </svg>
       </div>
 
-      {/* Hint text */}
+      {/* Hint text — changes when a Veda is selected */}
       <p
         className="hint-text text-center text-caption text-ink-muted"
         style={{ animationDelay: '2.3s', opacity: 0 }}
       >
-        Click any Veda node to open its knowledge branch
+        {activeVeda ? (
+          <span style={{ color: activeVeda.color }}>Exploring {activeVeda.name} ↓</span>
+        ) : (
+          'Select a Veda to explore its knowledge'
+        )}
       </p>
 
-      {/* Detail panel */}
-      {activeVeda && (
-        <div key={activeVeda.id} className="detail-panel space-y-6 rounded-xl border bg-white p-6 shadow-card-md">
-          {/* Header */}
-          <div className="space-y-1">
-            <p className="text-overline tracking-widest" style={{ color: activeVeda.color }}>
-              {activeVeda.era}
-            </p>
-            <div className="flex items-baseline gap-3">
-              <h2 className="font-serif text-display-sm text-ink">{activeVeda.name}</h2>
-              <span
-                className="devanagari text-[22px] leading-none"
-                style={{ color: activeVeda.color }}
-              >
-                {activeVeda.devanagari}
-              </span>
-            </div>
-            <p className="max-w-content text-body text-ink-muted">{activeVeda.description}</p>
-          </div>
-
-          {/* Tabs */}
-          <div
-            className="flex gap-1 overflow-x-auto border-b pb-0"
-            style={{ borderColor: `${activeVeda.color}33` }}
-          >
-            {(
-              [
-                { id: 'devas', label: 'Devas & Devis' },
-                { id: 'rishis', label: 'Rishis' },
-                { id: 'themes', label: 'Themes' },
-                { id: 'facts', label: 'Fascinating Facts' },
-              ] as { id: TabId; label: string }[]
-            ).map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                className="shrink-0 border-b-2 px-4 py-2 text-caption font-medium transition-colors"
-                style={{
-                  borderColor: activeTab === tab.id ? activeVeda.color : 'transparent',
-                  color: activeTab === tab.id ? activeVeda.color : '#6B5B3E',
-                }}
-              >
-                {tab.label}
-              </button>
-            ))}
-          </div>
-
-          {/* Tab content */}
-          <div key={activeTab} className="tab-content">
-            {activeTab === 'devas' && (
-              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                {activeVeda.devas.map((deva) => (
-                  <div
-                    key={deva.name}
-                    className="flex items-start gap-3 rounded-lg border p-4"
-                    style={{ borderColor: `${activeVeda.color}33`, background: activeVeda.colorLight }}
-                  >
-                    <div className="mt-0.5 shrink-0">
-                      <DevaIcon symbol={deva.symbol} color={activeVeda.color} />
-                    </div>
-                    <div className="min-w-0">
-                      <div className="flex items-baseline gap-2">
-                        <span className="font-serif text-body-sm font-semibold text-ink">{deva.name}</span>
-                        <span className="devanagari text-caption" style={{ color: activeVeda.color }}>
-                          {deva.devanagari}
-                        </span>
-                      </div>
-                      <p className="mt-0.5 text-caption text-ink-muted">{deva.role}</p>
-                      <span
-                        className="mt-1.5 inline-block rounded-sm px-1.5 py-0.5 text-[10px] font-medium"
-                        style={{ background: `${activeVeda.color}18`, color: activeVeda.color }}
-                      >
-                        {deva.hymns}
-                      </span>
-                    </div>
-                  </div>
-                ))}
+      {/* Detail panel — always in DOM, opacity/transform driven by state */}
+      <div
+        style={{
+          opacity: activeVeda ? 1 : 0,
+          transform: activeVeda ? 'translateY(0)' : 'translateY(20px)',
+          pointerEvents: activeVeda ? 'auto' : 'none',
+          transition: `opacity 0.3s ease, transform 0.3s ease`,
+        }}
+      >
+        {activeVeda && (
+          <div className="space-y-6 rounded-xl border bg-white p-6 shadow-card-md">
+            {/* Header */}
+            <div className="space-y-1">
+              <p className="text-overline tracking-widest" style={{ color: activeVeda.color }}>
+                {activeVeda.era}
+              </p>
+              <div className="flex flex-wrap items-baseline gap-3">
+                <h2 className="font-serif text-display-sm text-ink">{activeVeda.name}</h2>
+                <span className="devanagari text-[22px] leading-none" style={{ color: activeVeda.color }}>
+                  {activeVeda.devanagari}
+                </span>
               </div>
-            )}
+              <p className="max-w-content text-body text-ink-muted">{activeVeda.description}</p>
+            </div>
 
-            {activeTab === 'rishis' && (
-              <div className="space-y-3">
-                {activeVeda.rishis.map((rishi) => (
-                  <div key={rishi.name} className="flex items-start gap-4 rounded-lg border p-4">
-                    {/* Avatar */}
+            {/* Tabs */}
+            <div
+              className="flex gap-1 overflow-x-auto border-b"
+              style={{ borderColor: `${activeVeda.color}33` }}
+            >
+              {(
+                [
+                  { id: 'devas', label: 'Devas & Devis' },
+                  { id: 'rishis', label: 'Rishis' },
+                  { id: 'themes', label: 'Themes' },
+                  { id: 'facts', label: 'Fascinating Facts' },
+                ] as { id: TabId; label: string }[]
+              ).map((tab) => (
+                <button
+                  key={tab.id}
+                  tabIndex={-1}
+                  onClick={() => setActiveTab(tab.id)}
+                  className="shrink-0 border-b-2 px-4 py-2 text-caption font-medium"
+                  style={{
+                    outline: 'none',
+                    borderColor: activeTab === tab.id ? activeVeda.color : 'transparent',
+                    color: activeTab === tab.id ? activeVeda.color : '#6B5B3E',
+                    transition: `border-color 0.2s ${MAT}, color 0.2s ${MAT}`,
+                  }}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </div>
+
+            {/* Tab content */}
+            <div>
+              {activeTab === 'devas' && (
+                <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                  {activeVeda.devas.map((deva) => (
                     <div
-                      className="devanagari flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-[16px] font-semibold text-white"
-                      style={{ background: activeVeda.color }}
+                      key={deva.name}
+                      className="flex items-start gap-3 rounded-lg border p-4"
+                      style={{ borderColor: `${activeVeda.color}33`, background: activeVeda.colorLight }}
                     >
-                      {rishi.devanagari[0]}
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="flex flex-wrap items-baseline gap-2">
-                        <span className="font-serif text-body-sm font-semibold text-ink">{rishi.name}</span>
-                        <span className="devanagari text-caption text-ink-muted">{rishi.devanagari}</span>
+                      <div className="mt-0.5 shrink-0">
+                        <DevaIcon symbol={deva.symbol} color={activeVeda.color} />
+                      </div>
+                      <div className="min-w-0">
+                        <div className="flex flex-wrap items-baseline gap-2">
+                          <span className="font-serif text-body-sm font-semibold text-ink">{deva.name}</span>
+                          <span className="devanagari text-caption" style={{ color: activeVeda.color }}>
+                            {deva.devanagari}
+                          </span>
+                        </div>
+                        <p className="mt-0.5 text-caption text-ink-muted">{deva.role}</p>
                         <span
-                          className="rounded-sm px-1.5 py-0.5 text-[10px] font-medium"
+                          className="mt-1.5 inline-block rounded-sm px-1.5 py-0.5 text-[10px] font-medium"
                           style={{ background: `${activeVeda.color}18`, color: activeVeda.color }}
                         >
-                          {rishi.badge}
+                          {deva.hymns}
                         </span>
                       </div>
-                      <p className="mt-1 text-caption text-ink-muted">{rishi.role}</p>
-                      <Link
-                        href={`/glossary/${rishi.glossarySlug}`}
-                        className="mt-1.5 inline-flex text-caption no-underline hover:underline"
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {activeTab === 'rishis' && (
+                <div className="space-y-3">
+                  {activeVeda.rishis.map((rishi) => (
+                    <div key={rishi.name} className="flex items-start gap-4 rounded-lg border p-4">
+                      <div
+                        className="devanagari flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-[16px] font-semibold text-white"
+                        style={{ background: activeVeda.color }}
+                      >
+                        {rishi.devanagari[0]}
+                      </div>
+                      <div className="min-w-0 flex-1">
+                        <div className="flex flex-wrap items-baseline gap-2">
+                          <span className="font-serif text-body-sm font-semibold text-ink">{rishi.name}</span>
+                          <span className="devanagari text-caption text-ink-muted">{rishi.devanagari}</span>
+                          <span
+                            className="rounded-sm px-1.5 py-0.5 text-[10px] font-medium"
+                            style={{ background: `${activeVeda.color}18`, color: activeVeda.color }}
+                          >
+                            {rishi.badge}
+                          </span>
+                        </div>
+                        <p className="mt-1 text-caption text-ink-muted">{rishi.role}</p>
+                        <Link
+                          href={`/glossary/${rishi.glossarySlug}`}
+                          className="mt-1.5 inline-flex text-caption no-underline hover:underline"
+                          style={{ color: activeVeda.color, outline: 'none' }}
+                        >
+                          Explore full profile →
+                        </Link>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {activeTab === 'themes' && (
+                <div className="space-y-3">
+                  {activeVeda.themes.map((theme) => (
+                    <div
+                      key={theme.name}
+                      className="rounded-r-lg border-l-4 bg-sandal-50 px-4 py-3"
+                      style={{ borderColor: activeVeda.color }}
+                    >
+                      <p className="font-serif text-body-sm font-semibold text-ink">{theme.name}</p>
+                      <p className="mt-1 text-caption text-ink-muted">{theme.description}</p>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {activeTab === 'facts' && (
+                <div className="grid gap-3 sm:grid-cols-2">
+                  {activeVeda.facts.map((fact) => (
+                    <Link
+                      key={fact.title}
+                      href={`/ask-vedika?q=${encodeURIComponent(fact.question)}`}
+                      className="group block rounded-lg border p-4 no-underline transition-all hover:scale-[1.01] hover:shadow-card-md"
+                      style={{ borderColor: `${activeVeda.color}33`, outline: 'none' }}
+                    >
+                      <p
+                        className="font-serif text-body-sm font-semibold group-hover:underline"
                         style={{ color: activeVeda.color }}
                       >
-                        Explore full profile →
-                      </Link>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            )}
+                        {fact.title}
+                      </p>
+                      <p className="mt-1.5 text-caption text-ink-muted">{fact.body}</p>
+                      <p className="mt-2 text-[10px] font-medium" style={{ color: activeVeda.color }}>
+                        Ask Vedika →
+                      </p>
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
 
-            {activeTab === 'themes' && (
-              <div className="space-y-3">
-                {activeVeda.themes.map((theme) => (
-                  <div
-                    key={theme.name}
-                    className="rounded-r-lg border-l-4 bg-sandal-50 px-4 py-3"
-                    style={{ borderColor: activeVeda.color }}
-                  >
-                    <p className="font-serif text-body-sm font-semibold text-ink">{theme.name}</p>
-                    <p className="mt-1 text-caption text-ink-muted">{theme.description}</p>
-                  </div>
-                ))}
-              </div>
-            )}
-
-            {activeTab === 'facts' && (
-              <div className="grid gap-3 sm:grid-cols-2">
-                {activeVeda.facts.map((fact) => (
-                  <Link
-                    key={fact.title}
-                    href={`/ask-vedika?q=${encodeURIComponent(fact.question)}`}
-                    className="group block rounded-lg border p-4 no-underline transition-all hover:scale-[1.01] hover:shadow-card-md"
-                    style={{ borderColor: `${activeVeda.color}33` }}
-                  >
-                    <p
-                      className="font-serif text-body-sm font-semibold group-hover:underline"
-                      style={{ color: activeVeda.color }}
-                    >
-                      {fact.title}
-                    </p>
-                    <p className="mt-1.5 text-caption text-ink-muted">{fact.body}</p>
-                    <p className="mt-2 text-[10px] font-medium" style={{ color: activeVeda.color }}>
-                      Ask Vedika →
-                    </p>
-                  </Link>
-                ))}
-              </div>
-            )}
-          </div>
-
-          {/* Key verse */}
-          <div
-            className="rounded-xl border p-5"
-            style={{ borderColor: `${activeVeda.color}44`, background: activeVeda.colorLight }}
-          >
-            <p className="mb-3 text-overline tracking-widest" style={{ color: activeVeda.color }}>
-              Key Verse
-            </p>
-            {/* Layer 1 — Devanagari */}
-            <p
-              className="devanagari text-[16px] leading-relaxed text-ink"
-              style={{ whiteSpace: 'pre-line' }}
+            {/* Key verse */}
+            <div
+              className="rounded-xl border p-5"
+              style={{ borderColor: `${activeVeda.color}44`, background: activeVeda.colorLight }}
             >
-              {activeVeda.verse.devanagari}
-            </p>
-            {/* Layer 2 — IAST */}
-            <p className="mt-3 text-body-sm italic text-ink-muted" style={{ whiteSpace: 'pre-line' }}>
-              {activeVeda.verse.iast}
-            </p>
-            {/* Layer 3 — meaning */}
-            <p className="mt-3 font-serif text-body text-ink">{activeVeda.verse.meaning}</p>
-            {/* Source */}
-            <p className="mt-3 text-caption" style={{ color: activeVeda.color }}>
-              {activeVeda.verse.source}
-            </p>
+              <p className="mb-3 text-overline tracking-widest" style={{ color: activeVeda.color }}>
+                Key Verse
+              </p>
+              <p
+                className="devanagari leading-relaxed text-ink sm:text-[16px] text-[14px]"
+                style={{ whiteSpace: 'pre-line' }}
+              >
+                {activeVeda.verse.devanagari}
+              </p>
+              <p className="mt-3 text-body-sm italic text-ink-muted" style={{ whiteSpace: 'pre-line' }}>
+                {activeVeda.verse.iast}
+              </p>
+              <p className="mt-3 font-serif text-body text-ink">{activeVeda.verse.meaning}</p>
+              <p className="mt-3 text-caption" style={{ color: activeVeda.color }}>
+                {activeVeda.verse.source}
+              </p>
+            </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 }
