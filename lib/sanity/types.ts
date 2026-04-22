@@ -71,6 +71,33 @@ export type Comparison = {
   seo?: SeoFields;
 };
 
+export type Rishi = {
+  _id: string;
+  name: string;
+  slug: string;
+  devanagari?: string;
+  transliteration?: string;
+  vedaAssociation?: string;
+  period?: string;
+  epithet?: string;
+  summary: string;
+  biography?: PortableBlock[];
+  keyCompositions?: Array<{
+    title: string;
+    reference?: string;
+    description?: string;
+  }>;
+  famousVerse?: string;
+  famousVerseTranslation?: string;
+  famousVerseSource?: string;
+  lineage?: string;
+  disciples?: string;
+  relatedRishis?: Rishi[];
+  relatedTopics?: Array<{ _id: string; title: string; slug: string; summary: string }>;
+  sourceRefs?: Array<{ _id: string; label: string; citationText?: string; url?: string }>;
+  seo?: SeoFields;
+};
+
 export type PortableBlock = {
   _key?: string;
   _type?: string;

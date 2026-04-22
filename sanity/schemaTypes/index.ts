@@ -2,6 +2,7 @@ import { comparison } from './documents/comparison';
 import { essay } from './documents/essay';
 import { glossaryEntry } from './documents/glossaryEntry';
 import { guide } from './documents/guide';
+import { rishi } from './documents/rishi';
 import { siteSettings } from './documents/siteSettings';
 import { sourceRef } from './documents/sourceRef';
 import { text } from './documents/text';
@@ -13,6 +14,7 @@ export const schemaTypes = [
   portableContent,
   seo,
   topic,
+  rishi,
   text,
   glossaryEntry,
   comparison,

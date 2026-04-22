@@ -10,6 +10,7 @@ export const siteConfig = {
     { label: 'Glossary',  href: '/glossary'  },
     { label: 'Essays',    href: '/essays'    },
     { label: 'Vedas',     href: '/vedas'     },
+    { label: 'Rishis',    href: '/rishis'    },
     { label: 'Sources',   href: '/sources'   },
   ],
 };

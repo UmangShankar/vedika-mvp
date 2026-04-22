@@ -98,6 +98,48 @@ export const comparisonListQuery = `*[_type == "comparison"] | order(title asc) 
   seo
 }`;
 
+export const rishiListQuery = `*[_type == "rishi"] | order(name asc) {
+  _id,
+  name,
+  "slug": slug.current,
+  devanagari,
+  transliteration,
+  vedaAssociation,
+  period,
+  epithet,
+  summary,
+  seo
+}`;
+
+export const rishiBySlugQuery = `*[_type == "rishi" && slug.current == $slug][0] {
+  _id,
+  name,
+  "slug": slug.current,
+  devanagari,
+  transliteration,
+  vedaAssociation,
+  period,
+  epithet,
+  summary,
+  biography,
+  keyCompositions,
+  famousVerse,
+  famousVerseTranslation,
+  famousVerseSource,
+  lineage,
+  disciples,
+  "relatedRishis": relatedRishis[]->{
+    _id, name, "slug": slug.current, devanagari, epithet, summary
+  },
+  "relatedTopics": relatedTopics[]->{
+    _id, title, "slug": slug.current, summary
+  },
+  "sourceRefs": sourceRefs[]->{
+    _id, label, citationText, url
+  },
+  seo
+}`;
+
 export const comparisonBySlugQuery = `*[_type == "comparison" && slug.current == $slug][0] {
   _id,
   title,

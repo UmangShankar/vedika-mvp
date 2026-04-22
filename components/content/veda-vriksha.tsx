@@ -18,7 +18,7 @@ interface Rishi {
   devanagari: string;
   role: string;
   badge: string;
-  glossarySlug: string;
+  slug: string;
 }
 interface Theme {
   name: string;
@@ -139,10 +139,10 @@ const VEDAS: VedaData[] = [
       { name: 'Vishnu', devanagari: 'विष्णु', role: 'Pervader of the cosmos, three strides', hymns: '6 hymns', symbol: 'lotus' },
     ],
     rishis: [
-      { name: 'Vishvamitra', devanagari: 'विश्वामित्र', role: 'Composed the Gayatri Mantra (RV 3.62.10)', badge: 'Mandala 3', glossarySlug: 'vishvamitra' },
-      { name: 'Vasistha', devanagari: 'वसिष्ठ', role: 'Author of the entire seventh Mandala', badge: 'Mandala 7', glossarySlug: 'vasistha' },
-      { name: 'Dirghatamas', devanagari: 'दीर्घतमस्', role: 'Blind seer, composer of the riddling Asya Vamasya hymn', badge: 'Mandala 1', glossarySlug: 'dirghatamas' },
-      { name: 'Lopamudra', devanagari: 'लोपामुद्रा', role: 'Female rishi, dialogue with Agastya (RV 1.179)', badge: 'Mandala 1', glossarySlug: 'lopamudra' },
+      { name: 'Vishvamitra', devanagari: 'विश्वामित्र', role: 'Composed the Gayatri Mantra (RV 3.62.10)', badge: 'Mandala 3', slug: 'vishvamitra' },
+      { name: 'Vasistha', devanagari: 'वसिष्ठ', role: 'Author of the entire seventh Mandala', badge: 'Mandala 7', slug: 'vasistha' },
+      { name: 'Dirghatamas', devanagari: 'दीर्घतमस्', role: 'Blind seer, composer of the riddling Asya Vamasya hymn', badge: 'Mandala 1', slug: 'dirghatamas' },
+      { name: 'Lopamudra', devanagari: 'लोपामुद्रा', role: 'Female rishi, dialogue with Agastya (RV 1.179)', badge: 'Mandala 1', slug: 'lopamudra' },
     ],
     themes: [
       { name: 'Cosmic Order (Ṛta)', description: 'The principle of truth, cosmic law and righteous conduct underpinning all existence — a proto-dharma concept.' },
@@ -183,10 +183,10 @@ const VEDAS: VedaData[] = [
       { name: 'Vishnu', devanagari: 'विष्णु', role: 'Cosmic pervader, invoked in Uttararchika', hymns: 'Uttararchika', symbol: 'lotus' },
     ],
     rishis: [
-      { name: 'Jaimini', devanagari: 'जैमिनि', role: 'Founder of the Mimamsa philosophical school', badge: 'Mimamsa Sutras', glossarySlug: 'jaimini' },
-      { name: 'Veda Vyasa', devanagari: 'वेदव्यास', role: 'Organiser and systematiser of the Vedas', badge: 'All Four Vedas', glossarySlug: 'veda-vyasa' },
-      { name: 'Kauthuma', devanagari: 'कौथुम', role: 'Head of the living recitation tradition (Kauthuma shakha)', badge: 'Living tradition', glossarySlug: 'kauthuma' },
-      { name: 'Narada', devanagari: 'नारद', role: 'Divine musician, carrier of celestial melodies', badge: 'Gandharva Veda', glossarySlug: 'narada' },
+      { name: 'Jaimini', devanagari: 'जैमिनि', role: 'Founder of the Mimamsa philosophical school', badge: 'Mimamsa Sutras', slug: 'jaimini' },
+      { name: 'Veda Vyasa', devanagari: 'वेदव्यास', role: 'Organiser and systematiser of the Vedas', badge: 'All Four Vedas', slug: 'veda-vyasa' },
+      { name: 'Kauthuma', devanagari: 'कौथुम', role: 'Head of the living recitation tradition (Kauthuma shakha)', badge: 'Living tradition', slug: 'kauthuma' },
+      { name: 'Narada', devanagari: 'नारद', role: 'Divine musician, carrier of celestial melodies', badge: 'Gandharva Veda', slug: 'narada' },
     ],
     themes: [
       { name: 'Music as Moksha', description: 'The sāman melodies are themselves a path — sound (nāda) as the bridge between human and divine consciousness.' },
@@ -227,10 +227,10 @@ const VEDAS: VedaData[] = [
       { name: 'Varuna', devanagari: 'वरुण', role: 'Cosmic law, invoked in purification rites', hymns: 'Multiple', symbol: 'wave' },
     ],
     rishis: [
-      { name: 'Yajnavalkya', devanagari: 'याज्ञवल्क्य', role: 'Greatest philosopher — Brihadaranyaka Upanishad, won 1,000 cows debate', badge: 'Shukla YV', glossarySlug: 'yajnavalkya' },
-      { name: 'Baudhayana', devanagari: 'बौधायन', role: 'Mathematician — stated the diagonal theorem 1,000 years before Pythagoras', badge: 'Shulba Sutra', glossarySlug: 'baudhayana' },
-      { name: 'Vaishampayana', devanagari: 'वैशम्पायन', role: 'Transmitted the Krishna (Black) Yajurveda', badge: 'Krishna YV', glossarySlug: 'vaishampayana' },
-      { name: 'Tittiri', devanagari: 'तित्तिरि', role: 'Founder of the Taittiriya shakha — most widely recited today', badge: 'Taittiriya', glossarySlug: 'tittiri' },
+      { name: 'Yajnavalkya', devanagari: 'याज्ञवल्क्य', role: 'Greatest philosopher — Brihadaranyaka Upanishad, won 1,000 cows debate', badge: 'Shukla YV', slug: 'yajnavalkya' },
+      { name: 'Baudhayana', devanagari: 'बौधायन', role: 'Mathematician — stated the diagonal theorem 1,000 years before Pythagoras', badge: 'Shulba Sutra', slug: 'baudhayana' },
+      { name: 'Vaishampayana', devanagari: 'वैशम्पायन', role: 'Transmitted the Krishna (Black) Yajurveda', badge: 'Krishna YV', slug: 'vaishampayana' },
+      { name: 'Tittiri', devanagari: 'तित्तिरि', role: 'Founder of the Taittiriya shakha — most widely recited today', badge: 'Taittiriya', slug: 'tittiri' },
     ],
     themes: [
       { name: 'Yajna as Cosmos', description: 'The sacrifice is not merely ritual — the Shatapatha Brahmana presents it as a re-enactment of cosmic creation itself.' },
@@ -272,10 +272,10 @@ const VEDAS: VedaData[] = [
       { name: 'Rohita', devanagari: 'रोहित', role: 'Solar deity unique to the Atharvaveda', hymns: 'AV 13.1-2', symbol: 'sun' },
     ],
     rishis: [
-      { name: 'Atharvan', devanagari: 'अथर्वन्', role: 'Primordial fire priest, first to extract Soma', badge: 'Fire priest', glossarySlug: 'atharvan' },
-      { name: 'Angiras', devanagari: 'अङ्गिरस्', role: 'Co-founder of the tradition (AV = Atharvaṅgirasa)', badge: 'Co-founder', glossarySlug: 'angiras' },
-      { name: 'Shaunaka', devanagari: 'शौनक', role: 'Main compiler of the Shaunaka recension — the standard text', badge: 'Main compiler', glossarySlug: 'shaunaka' },
-      { name: 'Paippalada', devanagari: 'पैप्पलाद', role: 'Kashmir school — the Paippalada Samhita', badge: 'Kashmir school', glossarySlug: 'paippalada' },
+      { name: 'Atharvan', devanagari: 'अथर्वन्', role: 'Primordial fire priest, first to extract Soma', badge: 'Fire priest', slug: 'atharvan' },
+      { name: 'Angiras', devanagari: 'अङ्गिरस्', role: 'Co-founder of the tradition (AV = Atharvaṅgirasa)', badge: 'Co-founder', slug: 'angiras' },
+      { name: 'Shaunaka', devanagari: 'शौनक', role: 'Main compiler of the Shaunaka recension — the standard text', badge: 'Main compiler', slug: 'shaunaka' },
+      { name: 'Paippalada', devanagari: 'पैप्पलाद', role: 'Kashmir school — the Paippalada Samhita', badge: 'Kashmir school', slug: 'paippalada' },
     ],
     themes: [
       { name: 'Ecology & Earth', description: 'The Prithvi Sukta (AV 12.1) — 63 verses on Earth as mother — is the world\'s oldest ecological text and first articulation of environmental ethics.' },
@@ -626,7 +626,7 @@ export function VedaVrikshaExplorer() {
                         </div>
                         <p className="mt-1 text-caption text-ink-muted">{rishi.role}</p>
                         <Link
-                          href={`/glossary/${rishi.glossarySlug}`}
+                          href={`/rishis/${rishi.slug}`}
                           className="mt-1.5 inline-flex text-caption no-underline hover:underline"
                           style={{ color: activeVeda.color, outline: 'none' }}
                         >
