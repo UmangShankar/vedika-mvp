@@ -175,7 +175,7 @@ const VEDAS: VedaData[] = [
     date: '~4000 BCE',
     era: '~4000 BCE · Ancestor of all Indian classical music',
     description:
-      'The Veda of melodies — 1,875 verses drawn largely from the Rigveda, set to elaborate musical notation. The mother of Indian classical music and the origin of the sāman singing tradition.',
+      'The Veda of melodies — 1,875 verses drawn largely from the Rigveda, set to elaborate musical notation. The mother of Indian classical music and the origin of the sāman singing tradition. 95% of its verses are drawn directly from the Rigveda — set to sacred melody.',
     devas: [
       { name: 'Soma', devanagari: 'सोम', role: 'Occupies the entire first book (Purvarchika)', hymns: 'Book 1', symbol: 'moon' },
       { name: 'Agni', devanagari: 'अग्नि', role: 'Divine fire, receiver of offerings', hymns: 'Book 2', symbol: 'flame' },
@@ -359,9 +359,6 @@ export function VedaVrikshaExplorer() {
         .veda-node-g {
           animation: scIn 0.5s cubic-bezier(0.34,1.56,0.64,1) both;
         }
-        .rel-line {
-          animation: fdIn 0.5s ease both;
-        }
         .hint-text {
           animation: fdIn 0.6s ease both;
         }
@@ -408,27 +405,6 @@ export function VedaVrikshaExplorer() {
               />
             );
           })}
-
-          {/* Rigveda–Samaveda relationship line */}
-          <g className="rel-line" style={{ animationDelay: '2.1s', opacity: 0 }}>
-            <line
-              x1="140" y1="70" x2="540" y2="70"
-              stroke="#C07828"
-              strokeWidth="0.8"
-              strokeDasharray="4 3"
-              opacity="0.45"
-            />
-            <text
-              x="340" y="58"
-              textAnchor="middle"
-              fontSize="8"
-              fill="#C07828"
-              opacity="0.7"
-              fontStyle="italic"
-            >
-              Sāmaveda&apos;s melodies drawn from the Ṛgveda
-            </text>
-          </g>
 
           {/* Veda nodes */}
           {VEDAS.map((v, i) => {
