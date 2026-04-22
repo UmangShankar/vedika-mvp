@@ -4,6 +4,7 @@ import { EntryCards } from '@/components/home/entry-cards';
 import { SiteFooter } from '@/components/home/footer';
 import { FeaturedGuides } from '@/components/home/featured-guides';
 import { FeaturedTopics } from '@/components/home/featured-topics';
+import { VedaVriksha } from '@/components/home/veda-vriksha-preview';
 import { Hero } from '@/components/home/hero';
 import { NewsletterSignup } from '@/components/home/newsletter';
 import { Section } from '@/components/home/section';
@@ -40,6 +41,10 @@ export default function HomePage() {
 
       <Section id="featured-topics" title="Featured topics">
         <FeaturedTopics />
+      </Section>
+
+      <Section id="veda-vriksha" title="" bg="sandal-200">
+        <VedaVriksha />
       </Section>
 
       <Section id="featured-guides" title="Featured guides" bg="sandal">

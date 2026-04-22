@@ -9,6 +9,7 @@ export const siteConfig = {
     { label: 'Guides',    href: '/guides'    },
     { label: 'Glossary',  href: '/glossary'  },
     { label: 'Essays',    href: '/essays'    },
+    { label: 'Vedas',     href: '/vedas'     },
     { label: 'Sources',   href: '/sources'   },
   ],
 };

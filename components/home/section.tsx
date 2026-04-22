@@ -5,14 +5,15 @@ type SectionProps = {
   title?: string;
   subtitle?: string;
   children: ReactNode;
-  bg?: 'default' | 'sandal';
+  bg?: 'default' | 'sandal' | 'sandal-200';
 };
 
 export function Section({ id, title, subtitle, children, bg = 'default' }: SectionProps) {
+  const bgClass = bg === 'sandal' ? 'bg-sandal-50' : bg === 'sandal-200' ? 'bg-sandal-200' : '';
   return (
     <section
       id={id}
-      className={`space-y-6 py-10 ${bg === 'sandal' ? 'bg-sandal-50' : ''}`}
+      className={`space-y-6 py-10 ${bgClass}`}
       aria-labelledby={title ? `${id}-title` : undefined}
     >
       <div className="mx-auto max-w-full-w px-4 sm:px-6 lg:px-8">
