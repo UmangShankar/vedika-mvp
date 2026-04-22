@@ -1,7 +1,7 @@
 import { createClient } from '@sanity/client';
 
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
-const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET ?? 'production';
+const dataset    = process.env.NEXT_PUBLIC_SANITY_DATASET ?? 'production';
 const apiVersion = process.env.NEXT_PUBLIC_SANITY_API_VERSION ?? '2024-01-01';
 
 if (!projectId) {
@@ -12,7 +12,8 @@ export const sanityClient = createClient({
   projectId,
   dataset,
   apiVersion,
-  useCdn: process.env.NODE_ENV === 'production',
+  useCdn: false,
+  perspective: 'published',
 });
 
 export async function sanityFetch<T>(
@@ -21,7 +22,8 @@ export async function sanityFetch<T>(
 ): Promise<T | null> {
   try {
     return await sanityClient.fetch<T>(query, params);
-  } catch {
+  } catch (err) {
+    console.error('[sanityFetch] error:', err);
     return null;
   }
 }

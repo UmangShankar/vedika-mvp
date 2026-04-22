@@ -1,12 +1,14 @@
 export const siteConfig = {
-  name:        'Vedika',
+  name: 'Vedika',
   description: 'A content-first Sanatan Dharma research platform. Source-grounded, trust-first.',
-  baseUrl:     process.env.NEXT_PUBLIC_BASE_URL ?? 'https://askvdika.com',
+  baseUrl: process.env.NEXT_PUBLIC_BASE_URL ?? 'https://askvdika.com',
   nav: [
-    { label: 'Research', href: '/research' },
-    { label: 'Topics',   href: '/topics'   },
-    { label: 'Texts',    href: '/texts'    },
-    { label: 'Guides',   href: '/guides'   },
-    { label: 'Sources',  href: '/sources'  },
+    { label: 'Research',  href: '/research'  },
+    { label: 'Topics',    href: '/topics'    },
+    { label: 'Texts',     href: '/texts'     },
+    { label: 'Guides',    href: '/guides'    },
+    { label: 'Glossary',  href: '/glossary'  },
+    { label: 'Essays',    href: '/essays'    },
+    { label: 'Sources',   href: '/sources'   },
   ],
 };
