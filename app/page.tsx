@@ -26,6 +26,10 @@ export default function HomePage() {
     <div className="flex flex-col gap-6">
       <Hero />
 
+      <Section id="veda-vriksha" bg="sandal-200">
+        <VedaVriksha />
+      </Section>
+
       <Section id="entry-points" title="Start where you are">
         <EntryCards />
       </Section>
@@ -41,10 +45,6 @@ export default function HomePage() {
 
       <Section id="featured-topics" title="Featured topics">
         <FeaturedTopics />
-      </Section>
-
-      <Section id="veda-vriksha" title="" bg="sandal-200">
-        <VedaVriksha />
       </Section>
 
       <Section id="featured-guides" title="Featured guides" bg="sandal">

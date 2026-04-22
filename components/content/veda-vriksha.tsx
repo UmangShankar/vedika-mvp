@@ -125,7 +125,7 @@ const VEDAS: VedaData[] = [
     color: '#C07828',
     colorLight: '#FEF3E2',
     cx: 110,
-    cy: 55,
+    cy: 70,
     date: '~6000 BCE',
     era: '~6000 BCE (Tilak · Orion precession) · Pre-1900 BCE minimum (Sarasvati satellite evidence)',
     description:
@@ -171,7 +171,7 @@ const VEDAS: VedaData[] = [
     color: '#2D7A6F',
     colorLight: '#E8F5F3',
     cx: 570,
-    cy: 55,
+    cy: 70,
     date: '~4000 BCE',
     era: '~4000 BCE · Ancestor of all Indian classical music',
     description:
@@ -215,7 +215,7 @@ const VEDAS: VedaData[] = [
     color: '#6B3FA0',
     colorLight: '#F3EEF9',
     cx: 110,
-    cy: 230,
+    cy: 240,
     date: '~3500 BCE',
     era: '~3500 BCE · Baudhayana Shulba Sutra predates Pythagoras by 1,000 years',
     description:
@@ -259,7 +259,7 @@ const VEDAS: VedaData[] = [
     color: '#C0392B',
     colorLight: '#FBEAEA',
     cx: 570,
-    cy: 230,
+    cy: 240,
     date: '~3100 BCE',
     era: '~3100 BCE (Aldebaran astronomical reference)',
     description:
@@ -372,7 +372,7 @@ export function VedaVrikshaExplorer() {
       {/* SVG tree */}
       <div className="overflow-x-auto">
         <svg
-          viewBox="0 0 680 320"
+          viewBox="0 0 680 340"
           width="100%"
           tabIndex={-1}
           style={{
@@ -412,14 +412,14 @@ export function VedaVrikshaExplorer() {
           {/* Rigveda–Samaveda relationship line */}
           <g className="rel-line" style={{ animationDelay: '2.1s', opacity: 0 }}>
             <line
-              x1="140" y1="55" x2="540" y2="55"
+              x1="140" y1="70" x2="540" y2="70"
               stroke="#C07828"
               strokeWidth="0.8"
               strokeDasharray="4 3"
               opacity="0.45"
             />
             <text
-              x="340" y="43"
+              x="340" y="58"
               textAnchor="middle"
               fontSize="8"
               fill="#C07828"
@@ -437,7 +437,6 @@ export function VedaVrikshaExplorer() {
             const scale = isActive ? 1.1 : isInactive ? 0.92 : 1;
             const opacity = isInactive ? 0.55 : 1;
             const sw = isActive ? 3 : 0.8;
-            const isTop = v.cy < 150;
 
             return (
               <g
@@ -484,9 +483,9 @@ export function VedaVrikshaExplorer() {
                   {/* name */}
                   <text
                     x={v.cx}
-                    y={isTop ? v.cy + 50 : v.cy - 38}
+                    y={v.cy + 50}
                     textAnchor="middle"
-                    fontSize="10"
+                    fontSize="11"
                     fill="#1C1208"
                     fontWeight="600"
                   >
@@ -495,9 +494,9 @@ export function VedaVrikshaExplorer() {
                   {/* date */}
                   <text
                     x={v.cx}
-                    y={isTop ? v.cy + 62 : v.cy - 26}
+                    y={v.cy + 65}
                     textAnchor="middle"
-                    fontSize="8"
+                    fontSize="9"
                     fill="#6B5B3E"
                   >
                     {v.date}
