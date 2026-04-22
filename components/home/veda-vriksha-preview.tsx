@@ -7,7 +7,7 @@ const vedas = [
     tradition: 'Sruti · Samhita',
     date: '~6000 BCE',
     description: 'Hymns to the devas — the foundational revelation of cosmic order.',
-    href: '/vedas/rigveda',
+    href: '/vedas',
     color: '#C07828',
   },
   {
@@ -16,7 +16,7 @@ const vedas = [
     tradition: 'Sruti · Gana',
     date: '~4000 BCE',
     description: 'Melodies of devotion — 75 unique verses set to sacred chant.',
-    href: '/vedas/samaveda',
+    href: '/vedas',
     color: '#2D7A6F',
   },
   {
@@ -25,7 +25,7 @@ const vedas = [
     tradition: 'Sruti · Yajna',
     date: '~3500 BCE',
     description: 'Ritual formulas and prose — the liturgy of the sacrificial fire.',
-    href: '/vedas/yajurveda',
+    href: '/vedas',
     color: '#6B3FA0',
   },
   {
@@ -34,7 +34,7 @@ const vedas = [
     tradition: 'Sruti · Atharvan',
     date: '~3100 BCE',
     description: 'Spells, healing hymns, and cosmological wisdom for daily life.',
-    href: '/vedas/atharvaveda',
+    href: '/vedas',
     color: '#C0392B',
   },
 ];

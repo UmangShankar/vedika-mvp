@@ -1,24 +1,19 @@
-import type { Metadata } from 'next';
-import Link from 'next/link';
+'use client';
 
-export const metadata: Metadata = {
-  title: 'Veda Vriksha',
-  description: 'The complete interactive knowledge tree of the four Vedas.',
-};
+import Link from 'next/link';
+import { VedaVrikshaExplorer } from '@/components/content/veda-vriksha';
 
 export default function VedasPage() {
   return (
-    <main className="mx-auto max-w-content px-4 py-16 sm:px-6 lg:px-8">
-      <h1 className="font-serif text-display text-ink">Veda Vriksha</h1>
-      <p className="mt-3 text-body text-ink-muted">
-        The complete interactive knowledge tree of the four Vedas
-      </p>
-      <p className="mt-8 rounded-lg border border-saffron-300 bg-saffron-50 px-6 py-4 text-body-sm text-ink-muted">
-        Full interactive explorer coming soon — building now.
-      </p>
-      <Link href="/" className="mt-8 inline-flex text-caption text-saffron-500 no-underline hover:text-saffron-600">
-        ← Back to homepage
-      </Link>
+    <main className="mx-auto max-w-wide px-4 py-12 sm:px-6 lg:px-8">
+      {/* Breadcrumb */}
+      <nav className="mb-8 flex items-center gap-2 text-caption text-ink-muted" aria-label="Breadcrumb">
+        <Link href="/" className="no-underline hover:text-saffron-500">Home</Link>
+        <span aria-hidden="true">→</span>
+        <span className="text-ink">Vedas</span>
+      </nav>
+
+      <VedaVrikshaExplorer />
     </main>
   );
 }
