@@ -1,14 +1,10 @@
 import type { Metadata } from 'next';
 import { AskPreview } from '@/components/home/ask-preview';
-import { EntryCards } from '@/components/home/entry-cards';
 import { SiteFooter } from '@/components/home/footer';
-import { FeaturedGuides } from '@/components/home/featured-guides';
 import { FeaturedTopics } from '@/components/home/featured-topics';
-import { GitaPreview } from '@/components/home/gita-preview';
-import { VedaVriksha } from '@/components/home/veda-vriksha-preview';
 import { Hero } from '@/components/home/hero';
 import { NewsletterSignup } from '@/components/home/newsletter';
-import { Section } from '@/components/home/section';
+import { SacredTexts } from '@/components/home/sacred-texts';
 import { WhyVedika } from '@/components/home/why-vedika';
 
 export const metadata: Metadata = {
@@ -24,47 +20,16 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col gap-6">
+    <main className="flex flex-col">
       <Hero />
-
-      <Section id="veda-vriksha" bg="sandal-200">
-        <VedaVriksha />
-      </Section>
-
-      <Section id="gita-preview" bg="sandal-200">
-        <GitaPreview />
-      </Section>
-
-      <Section id="entry-points" title="Start where you are">
-        <EntryCards />
-      </Section>
-
-      <Section
-        id="why-vedika"
-        title="Why Vedika"
-        subtitle="Built for learners and researchers who value source clarity over quick takes."
-        bg="sandal"
-      >
-        <WhyVedika />
-      </Section>
-
-      <Section id="featured-topics" title="Featured topics">
-        <FeaturedTopics />
-      </Section>
-
-      <Section id="featured-guides" title="Featured guides" bg="sandal">
-        <FeaturedGuides />
-      </Section>
-
-      <Section id="ask-preview" title="Ask Vedika">
-        <AskPreview />
-      </Section>
-
-      <Section id="newsletter" title="Newsletter">
-        <NewsletterSignup />
-      </Section>
-
-      <SiteFooter />
-    </div>
+      <SacredTexts />
+      <WhyVedika />
+      <FeaturedTopics />
+      <AskPreview />
+      <NewsletterSignup />
+      <div className="mx-auto w-full max-w-wide px-4 py-10 sm:px-6 lg:px-8">
+        <SiteFooter />
+      </div>
+    </main>
   );
 }

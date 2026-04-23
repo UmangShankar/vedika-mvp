@@ -7,11 +7,8 @@ export const siteConfig = {
     { label: 'Topics',    href: '/topics'    },
     { label: 'Texts',     href: '/texts'     },
     { label: 'Guides',    href: '/guides'    },
-    { label: 'Glossary',  href: '/glossary'  },
-    { label: 'Essays',    href: '/essays'    },
-    { label: 'Vedas',     href: '/vedas'     },
     { label: 'Rishis',    href: '/rishis'    },
-    { label: 'Gita',      href: '/bhagavad-gita' },
+    { label: 'Glossary',  href: '/glossary'  },
     { label: 'Sources',   href: '/sources'   },
   ],
 };
