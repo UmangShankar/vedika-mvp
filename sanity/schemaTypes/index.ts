@@ -1,5 +1,6 @@
 import { comparison } from './documents/comparison';
 import { essay } from './documents/essay';
+import { gitaChapter } from './documents/gitaChapter';
 import { glossaryEntry } from './documents/glossaryEntry';
 import { guide } from './documents/guide';
 import { rishi } from './documents/rishi';
@@ -21,5 +22,6 @@ export const schemaTypes = [
   guide,
   essay,
   sourceRef,
-  siteSettings
+  siteSettings,
+  gitaChapter
 ];

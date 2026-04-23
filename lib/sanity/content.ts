@@ -1,10 +1,13 @@
 import { sanityFetch } from '@/lib/sanity/client';
-import type { Comparison, Essay, GlossaryEntry, Guide, Rishi, TextEntry, Topic } from '@/lib/sanity/types';
+import type { Comparison, Essay, GitaChapter, GlossaryEntry, Guide, Rishi, TextEntry, Topic } from '@/lib/sanity/types';
 import {
   comparisonBySlugQuery,
   comparisonListQuery,
   essayBySlugQuery,
   essayListQuery,
+  gitaChapterByNumberQuery,
+  gitaChaptersFullQuery,
+  gitaChapterListQuery,
   glossaryBySlugQuery,
   glossaryListQuery,
   guideBySlugQuery,
@@ -71,4 +74,16 @@ export async function getComparisons(): Promise<Comparison[]> {
 
 export async function getComparison(slug: string): Promise<Comparison | null> {
   return await sanityFetch<Comparison>(comparisonBySlugQuery, { slug });
+}
+
+export async function getGitaChapters(): Promise<GitaChapter[]> {
+  return (await sanityFetch<GitaChapter[]>(gitaChapterListQuery)) ?? [];
+}
+
+export async function getGitaChaptersWithContent(): Promise<GitaChapter[]> {
+  return (await sanityFetch<GitaChapter[]>(gitaChaptersFullQuery)) ?? [];
+}
+
+export async function getGitaChapter(chapterNumber: number): Promise<GitaChapter | null> {
+  return await sanityFetch<GitaChapter>(gitaChapterByNumberQuery, { chapterNumber });
 }

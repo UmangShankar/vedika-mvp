@@ -3,6 +3,31 @@ export type SeoFields = {
   metaDescription?: string;
 };
 
+export type GitaShloka = {
+  devanagari: string;
+  transliteration?: string;
+  englishTranslation?: string;
+  source?: string;
+  significance?: string;
+};
+
+export type GitaChapter = {
+  _id: string;
+  chapterNumber: number;
+  name: string;
+  devanagari?: string;
+  englishName?: string;
+  yogaPath?: string;
+  shlokasCount?: number;
+  scene?: string;
+  speakers?: string;
+  centralTeaching?: string;
+  commentary?: string;
+  fascinatingFacts?: string[];
+  shlokas?: GitaShloka[];
+  seo?: SeoFields;
+};
+
 export type SourceReference = {
   _id: string;
   label: string;

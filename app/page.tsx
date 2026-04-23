@@ -4,6 +4,7 @@ import { EntryCards } from '@/components/home/entry-cards';
 import { SiteFooter } from '@/components/home/footer';
 import { FeaturedGuides } from '@/components/home/featured-guides';
 import { FeaturedTopics } from '@/components/home/featured-topics';
+import { GitaPreview } from '@/components/home/gita-preview';
 import { VedaVriksha } from '@/components/home/veda-vriksha-preview';
 import { Hero } from '@/components/home/hero';
 import { NewsletterSignup } from '@/components/home/newsletter';
@@ -28,6 +29,10 @@ export default function HomePage() {
 
       <Section id="veda-vriksha" bg="sandal-200">
         <VedaVriksha />
+      </Section>
+
+      <Section id="gita-preview" bg="sandal-200">
+        <GitaPreview />
       </Section>
 
       <Section id="entry-points" title="Start where you are">

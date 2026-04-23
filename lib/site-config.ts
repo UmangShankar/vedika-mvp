@@ -11,6 +11,7 @@ export const siteConfig = {
     { label: 'Essays',    href: '/essays'    },
     { label: 'Vedas',     href: '/vedas'     },
     { label: 'Rishis',    href: '/rishis'    },
+    { label: 'Gita',      href: '/bhagavad-gita' },
     { label: 'Sources',   href: '/sources'   },
   ],
 };

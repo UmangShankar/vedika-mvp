@@ -156,3 +156,17 @@ export const comparisonBySlugQuery = `*[_type == "comparison" && slug.current ==
   },
   seo
 }`;
+
+export const gitaChapterListQuery = `*[_type == "gitaChapter"] | order(chapterNumber asc) {
+  _id, chapterNumber, name, devanagari, englishName, yogaPath, shlokasCount, seo
+}`;
+
+export const gitaChaptersFullQuery = `*[_type == "gitaChapter"] | order(chapterNumber asc) {
+  _id, chapterNumber, name, devanagari, englishName, yogaPath, shlokasCount,
+  scene, speakers, centralTeaching, commentary, fascinatingFacts, shlokas, seo
+}`;
+
+export const gitaChapterByNumberQuery = `*[_type == "gitaChapter" && chapterNumber == $chapterNumber][0] {
+  _id, chapterNumber, name, devanagari, englishName, yogaPath, shlokasCount,
+  scene, speakers, centralTeaching, commentary, fascinatingFacts, shlokas, seo
+}`;
