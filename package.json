@@ -8,7 +8,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test:smoke": "playwright test"
+    "test:smoke": "playwright test",
+    "seed:rishis": "npx ts-node --project tsconfig.scripts.json scripts/seed-rishis.ts"
   },
   "dependencies": {
     "@sanity/client": "^6.28.3",
@@ -28,6 +29,7 @@
     "eslint-config-next": "14.2.16",
     "postcss": "8.5.1",
     "tailwindcss": "3.4.17",
+    "ts-node": "^10.9.2",
     "typescript": "5.7.3"
   }
 }
