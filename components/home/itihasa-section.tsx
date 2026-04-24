@@ -42,10 +42,9 @@ export function ItihasaSection() {
       <div className="mx-auto max-w-wide px-4 sm:px-6 lg:px-8">
         <header className="mb-10 space-y-2">
           <p className="text-overline uppercase tracking-widest text-saffron-500">Itihāsa &amp; Purāṇa</p>
-          <h2 className="font-serif text-display-sm text-ink">The great narratives</h2>
+          <h2 className="font-serif text-display-sm text-ink">The Living Memory</h2>
           <p className="max-w-content text-body text-ink-muted">
-            The Itihāsas and Purāṇas are the living transmission of Vedic thought — philosophy
-            through story, cosmology through myth. Deep dives coming soon.
+            The Smriti layer — narratives that carry dharmic teaching through story, lineage, and cosmology.
           </p>
         </header>
 
