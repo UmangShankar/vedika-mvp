@@ -128,3 +128,44 @@ export type PortableBlock = {
   _type?: string;
   children?: Array<{ _key?: string; _type?: string; text?: string }>;
 };
+
+export type UpanishadPassage = {
+  devanagari: string;
+  transliteration?: string;
+  englishTranslation?: string;
+  source?: string;
+  significance?: string;
+};
+
+export type UpanishadMahavakya = {
+  text?: string;
+  devanagari?: string;
+  translation?: string;
+  reference?: string;
+};
+
+export type Upanishad = {
+  _id: string;
+  name: string;
+  slug: string;
+  devanagari?: string;
+  transliteration?: string;
+  vedaFamily?: string;
+  philosophicalThread?: string;
+  period?: string;
+  importance?: number;
+  constellationX?: number;
+  constellationY?: number;
+  teacher?: string;
+  student?: string;
+  summary: string;
+  scene?: string;
+  centralTeaching?: string;
+  commentary?: string;
+  shankara?: string;
+  ramanuja?: string;
+  fascinatingFacts?: string[];
+  mahavakya?: UpanishadMahavakya;
+  keyPassages?: UpanishadPassage[];
+  seo?: SeoFields;
+};

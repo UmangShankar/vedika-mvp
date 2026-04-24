@@ -8,6 +8,7 @@ import { siteSettings } from './documents/siteSettings';
 import { sourceRef } from './documents/sourceRef';
 import { text } from './documents/text';
 import { topic } from './documents/topic';
+import { upanishad } from './documents/upanishad';
 import { portableContent } from './objects/portableContent';
 import { seo } from './objects/seo';
 
@@ -23,5 +24,6 @@ export const schemaTypes = [
   essay,
   sourceRef,
   siteSettings,
-  gitaChapter
+  gitaChapter,
+  upanishad
 ];

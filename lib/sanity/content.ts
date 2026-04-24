@@ -1,5 +1,5 @@
 import { sanityFetch } from '@/lib/sanity/client';
-import type { Comparison, Essay, GitaChapter, GlossaryEntry, Guide, Rishi, TextEntry, Topic } from '@/lib/sanity/types';
+import type { Comparison, Essay, GitaChapter, GlossaryEntry, Guide, Rishi, TextEntry, Topic, Upanishad } from '@/lib/sanity/types';
 import {
   comparisonBySlugQuery,
   comparisonListQuery,
@@ -17,7 +17,9 @@ import {
   textBySlugQuery,
   textListQuery,
   topicBySlugQuery,
-  topicListQuery
+  topicListQuery,
+  upanishadBySlugQuery,
+  upanishadListQuery
 } from '@/lib/sanity/queries';
 
 export async function getTopics(): Promise<Topic[]> {
@@ -86,4 +88,12 @@ export async function getGitaChaptersWithContent(): Promise<GitaChapter[]> {
 
 export async function getGitaChapter(chapterNumber: number): Promise<GitaChapter | null> {
   return await sanityFetch<GitaChapter>(gitaChapterByNumberQuery, { chapterNumber });
+}
+
+export async function getUpanishads(): Promise<Upanishad[]> {
+  return (await sanityFetch<Upanishad[]>(upanishadListQuery)) ?? [];
+}
+
+export async function getUpanishad(slug: string): Promise<Upanishad | null> {
+  return await sanityFetch<Upanishad>(upanishadBySlugQuery, { slug });
 }

@@ -170,3 +170,17 @@ export const gitaChapterByNumberQuery = `*[_type == "gitaChapter" && chapterNumb
   _id, chapterNumber, name, devanagari, englishName, yogaPath, shlokasCount,
   scene, speakers, centralTeaching, commentary, fascinatingFacts, shlokas, seo
 }`;
+
+export const upanishadListQuery = `*[_type == "upanishad"] | order(importance desc) {
+  _id, name, "slug": slug.current, devanagari, transliteration,
+  vedaFamily, philosophicalThread, period, importance,
+  constellationX, constellationY, teacher, student, summary, seo
+}`;
+
+export const upanishadBySlugQuery = `*[_type == "upanishad" && slug.current == $slug][0] {
+  _id, name, "slug": slug.current, devanagari, transliteration,
+  vedaFamily, philosophicalThread, period, importance,
+  constellationX, constellationY, teacher, student, summary,
+  scene, centralTeaching, commentary, shankara, ramanuja,
+  fascinatingFacts, mahavakya, keyPassages, seo
+}`;

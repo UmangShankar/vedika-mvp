@@ -40,8 +40,8 @@ const pillars = [
       { value: '108', label: 'Total texts' },
       { value: '∞', label: 'Commentaries' },
     ],
-    href: '/texts',
-    badge: 'Śruti',
+    href: '/upanishads',
+    badge: 'Interactive constellation',
   },
 ];
 
