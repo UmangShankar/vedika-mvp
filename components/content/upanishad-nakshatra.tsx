@@ -352,7 +352,7 @@ export function UpanishadNakshatra({ upanishads }: { upanishads: Upanishad[] }) 
                 <g
                   key={u.slug}
                   style={{
-                    opacity: isDimmed ? 0.28 : 1,
+                    opacity: isDimmed ? 0.6 : 1,
                     cursor: 'pointer',
                     transition: 'opacity 0.2s',
                   }}
