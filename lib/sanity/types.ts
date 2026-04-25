@@ -144,6 +144,15 @@ export type MahabharataCharacterRef = {
   alignment?: 'pandava' | 'kaurava' | 'neutral';
 };
 
+export type ParvaShloka = {
+  ref: string;
+  devanagari: string;
+  iast: string;
+  meaning: string;
+};
+
+export type ParvaPhase = 'before' | 'war' | 'after';
+
 export type MahabharataParva = {
   _id: string;
   parvaNumber: number;
@@ -162,6 +171,8 @@ export type MahabharataParva = {
   relatedTopics?: Array<{ title: string; slug: string }>;
   sourceRefs?: SourceReference[];
   seo?: SeoFields;
+  shloka?: ParvaShloka;
+  narrative?: string;
 };
 
 export type MahabharataCharacter = {
