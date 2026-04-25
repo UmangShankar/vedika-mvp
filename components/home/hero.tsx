@@ -1,6 +1,48 @@
 import Link from 'next/link';
+import { getTopics } from '@/lib/sanity/content';
 
-export function Hero() {
+type TopicDiscoveryItem = {
+  id: string;
+  label: string;
+  href?: string;
+};
+
+const FALLBACK_TOPICS = ['Dharma', 'Karma', 'Yoga', 'Vedanta'] as const;
+
+async function getTopicDiscoveryItems(): Promise<{
+  items: TopicDiscoveryItem[];
+  isFallback: boolean;
+}> {
+  try {
+    const topics = (await getTopics()).slice(0, 6);
+
+    if (topics.length) {
+      return {
+        items: topics.map((topic) => ({
+          id: topic._id,
+          label: topic.title,
+          href: topic.slug ? `/topics/${topic.slug}` : undefined,
+        })),
+        isFallback: false,
+      };
+    }
+  } catch {
+    // Fall through to static discovery chips when CMS content is unavailable.
+  }
+
+  return {
+    items: FALLBACK_TOPICS.map((topic) => ({
+      id: topic.toLowerCase(),
+      label: topic,
+    })),
+    isFallback: true,
+  };
+}
+
+export async function Hero() {
+  const { items: topicDiscoveryItems, isFallback } =
+    await getTopicDiscoveryItems();
+
   return (
     <section
       aria-labelledby="hero-title"
@@ -48,6 +90,42 @@ export function Hero() {
           >
             Ask Vedika →
           </Link>
+        </div>
+
+        <div className="mx-auto mt-6 max-w-content">
+          <p className="text-caption uppercase tracking-[0.14em] text-ink-muted">
+            Start with a topic
+          </p>
+          <div className="mt-3 flex flex-wrap items-center justify-center gap-2.5">
+            {topicDiscoveryItems.map((item) =>
+              item.href ? (
+                <Link
+                  key={item.id}
+                  href={item.href}
+                  className="rounded-full border border-saffron-200 bg-sandal-50 px-3.5 py-1.5 text-body-sm text-ink no-underline transition-colors hover:border-saffron-400 hover:bg-saffron-50 hover:text-saffron-600"
+                >
+                  {item.label}
+                </Link>
+              ) : (
+                <span
+                  key={item.id}
+                  className="rounded-full border border-sandal-300 bg-sandal-50 px-3.5 py-1.5 text-body-sm text-ink"
+                >
+                  {item.label}
+                </span>
+              ),
+            )}
+          </div>
+          {isFallback ? (
+            <div className="mt-3">
+              <Link
+                href="/topics"
+                className="text-caption text-saffron-500 no-underline hover:text-saffron-600"
+              >
+                Browse the Topics hub →
+              </Link>
+            </div>
+          ) : null}
         </div>
 
         {/* Trust signals */}
