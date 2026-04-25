@@ -19,3 +19,8 @@ test('/itihasa/mahabharata loads', async ({ page }) => {
   await page.goto('/itihasa/mahabharata');
   await expect(page.getByRole('heading', { level: 1, name: /mahābhārata/i })).toBeVisible();
 });
+
+test('/texts/ramayana loads', async ({ page }) => {
+  await page.goto('/texts/ramayana');
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('Rāmāyaṇa');
+});
