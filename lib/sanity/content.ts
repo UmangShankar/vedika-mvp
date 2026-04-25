@@ -1,5 +1,5 @@
 import { sanityFetch } from '@/lib/sanity/client';
-import type { Comparison, Essay, GitaChapter, GlossaryEntry, Guide, Rishi, TextEntry, Topic, Upanishad } from '@/lib/sanity/types';
+import type { Comparison, Essay, GitaChapter, GlossaryEntry, Guide, MahabharataCharacter, MahabharataParva, Rishi, TextEntry, Topic, Upanishad } from '@/lib/sanity/types';
 import {
   comparisonBySlugQuery,
   comparisonListQuery,
@@ -12,6 +12,9 @@ import {
   glossaryListQuery,
   guideBySlugQuery,
   guideListQuery,
+  mahabharataCharacterListQuery,
+  mahabharataParvaBySlugQuery,
+  mahabharataParvaListQuery,
   rishiBySlugQuery,
   rishiListQuery,
   textBySlugQuery,
@@ -96,4 +99,16 @@ export async function getUpanishads(): Promise<Upanishad[]> {
 
 export async function getUpanishad(slug: string): Promise<Upanishad | null> {
   return await sanityFetch<Upanishad>(upanishadBySlugQuery, { slug });
+}
+
+export async function getParvas(): Promise<MahabharataParva[]> {
+  return (await sanityFetch<MahabharataParva[]>(mahabharataParvaListQuery)) ?? [];
+}
+
+export async function getParva(slug: string): Promise<MahabharataParva | null> {
+  return await sanityFetch<MahabharataParva>(mahabharataParvaBySlugQuery, { slug });
+}
+
+export async function getMahabharataCharacters(): Promise<MahabharataCharacter[]> {
+  return (await sanityFetch<MahabharataCharacter[]>(mahabharataCharacterListQuery)) ?? [];
 }

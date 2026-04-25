@@ -129,6 +129,54 @@ export type PortableBlock = {
   children?: Array<{ _key?: string; _type?: string; text?: string }>;
 };
 
+export type NotableVerse = {
+  verseRef: string;
+  devanagari?: string;
+  iast?: string;
+  english?: string;
+  commentary?: string;
+};
+
+export type MahabharataCharacterRef = {
+  _id: string;
+  name: string;
+  nameDevanagari?: string;
+  alignment?: 'pandava' | 'kaurava' | 'neutral';
+};
+
+export type MahabharataParva = {
+  _id: string;
+  parvaNumber: number;
+  title: string;
+  slug: string;
+  titleDevanagari?: string;
+  titleIAST?: string;
+  verseCount: number;
+  summary: string;
+  keyTeaching?: string;
+  containsGita: boolean;
+  gitaChapterRange?: string;
+  body?: PortableBlock[];
+  notableVerses?: NotableVerse[];
+  keyCharacters?: MahabharataCharacterRef[];
+  relatedTopics?: Array<{ title: string; slug: string }>;
+  sourceRefs?: SourceReference[];
+  seo?: SeoFields;
+};
+
+export type MahabharataCharacter = {
+  _id: string;
+  name: string;
+  slug: string;
+  nameDevanagari?: string;
+  role: string;
+  dharmaticDilemma: string;
+  keyMoment?: string;
+  alignment?: 'pandava' | 'kaurava' | 'neutral';
+  relatedParvas?: Array<{ parvaNumber: number; title: string; slug: string }>;
+  seo?: SeoFields;
+};
+
 export type UpanishadPassage = {
   devanagari: string;
   transliteration?: string;

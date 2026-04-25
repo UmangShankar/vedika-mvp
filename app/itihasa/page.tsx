@@ -1,30 +1,26 @@
-import type { Metadata } from 'next';
 import Link from 'next/link';
+import { buildMetadata } from '@/lib/sanity/metadata';
 
-export const metadata: Metadata = {
-  title: 'Itihāsa & Purāṇa',
-  description: 'Explore the great Indian epics and Puranic literature — Mahābhārata, Rāmāyaṇa, and the 18 Mahāpurāṇas.',
-};
+export const metadata = buildMetadata({
+  title: 'Itihāsa',
+  description: 'Epic literature of Sanatan Dharma — the Mahābhārata and Rāmāyaṇa.',
+});
 
 export default function ItihasaPage() {
   return (
-    <div className="mx-auto max-w-wide px-4 py-12 sm:px-6 lg:px-8">
-      <p className="text-overline uppercase tracking-widest text-saffron-500 mb-2">Itihāsa</p>
-      <h1 className="font-serif text-display-sm text-ink mb-4">Itihāsa &amp; Purāṇa</h1>
-      <p className="text-body text-ink-muted max-w-content mb-8">
-        The great epics and Puranic literature — deep dives coming soon.
+    <div className="mx-auto max-w-content px-4 py-12 sm:px-6 lg:px-8">
+      <h1 className="font-serif text-display-sm text-ink mb-4">Itihāsa</h1>
+      <p className="text-body text-ink-muted mb-8">
+        Epic literature of Sanatan Dharma — the Mahābhārata and Rāmāyaṇa.
       </p>
-      <div className="flex gap-4 flex-wrap">
-        {[
-          { label: 'Mahābhārata', href: '/itihasa/mahabharata' },
-          { label: 'Rāmāyaṇa',   href: '/itihasa/ramayana'    },
-          { label: 'Purāṇas',    href: '/itihasa/puranas'     },
-        ].map(l => (
-          <Link key={l.href} href={l.href}
-            className="rounded-sm border border-warm px-4 py-2 text-body-sm text-ink-muted no-underline hover:text-saffron-500 hover:border-saffron-400 transition-colors">
-            {l.label} →
-          </Link>
-        ))}
+      <div className="flex flex-col gap-3">
+        <Link
+          href="/itihasa/mahabharata"
+          className="inline-flex items-center text-body text-saffron-500 hover:text-saffron-600 font-serif no-underline"
+        >
+          Mahābhārata →
+        </Link>
+        <p className="text-body-sm text-ink-faint font-serif italic">Rāmāyaṇa — coming soon</p>
       </div>
     </div>
   );

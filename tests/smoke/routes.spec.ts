@@ -14,3 +14,8 @@ test('/research loads', async ({ page }) => {
   await page.goto('/research');
   await expect(page.getByRole('heading', { level: 1, name: /research library/i })).toBeVisible();
 });
+
+test('/itihasa/mahabharata loads', async ({ page }) => {
+  await page.goto('/itihasa/mahabharata');
+  await expect(page.getByRole('heading', { level: 1, name: /mahābhārata/i })).toBeVisible();
+});

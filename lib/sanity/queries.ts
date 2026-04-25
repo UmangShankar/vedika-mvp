@@ -184,3 +184,28 @@ export const upanishadBySlugQuery = `*[_type == "upanishad" && slug.current == $
   scene, centralTeaching, commentary, shankara, ramanuja,
   fascinatingFacts, mahavakya, keyPassages, seo
 }`;
+
+export const mahabharataParvaListQuery = `*[_type == "mahabharataParva"] | order(parvaNumber asc) {
+  _id, parvaNumber, title, "slug": slug.current,
+  titleDevanagari, titleIAST, verseCount, summary,
+  keyTeaching, containsGita, gitaChapterRange,
+  "keyCharacters": keyCharacters[]->{_id, name, nameDevanagari, alignment},
+  seo
+}`;
+
+export const mahabharataParvaBySlugQuery = `*[_type == "mahabharataParva" && slug.current == $slug][0] {
+  _id, parvaNumber, title, "slug": slug.current,
+  titleDevanagari, titleIAST, verseCount, summary,
+  keyTeaching, containsGita, gitaChapterRange,
+  body, notableVerses,
+  "keyCharacters": keyCharacters[]->{_id, name, nameDevanagari, alignment},
+  "relatedTopics": relatedTopics[]->{title, "slug": slug.current},
+  "sourceRefs": sourceRefs[]->{_id, label, citationText, url},
+  seo
+}`;
+
+export const mahabharataCharacterListQuery = `*[_type == "mahabharataCharacter"] | order(name asc) {
+  _id, name, "slug": slug.current, nameDevanagari,
+  role, dharmaticDilemma, keyMoment, alignment,
+  "relatedParvas": relatedParvas[]->{parvaNumber, title, "slug": slug.current}
+}`;

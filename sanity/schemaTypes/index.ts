@@ -3,6 +3,7 @@ import { essay } from './documents/essay';
 import { gitaChapter } from './documents/gitaChapter';
 import { glossaryEntry } from './documents/glossaryEntry';
 import { guide } from './documents/guide';
+import { mahabharataCharacter, mahabharataParva } from './documents/mahabharataParva';
 import { rishi } from './documents/rishi';
 import { siteSettings } from './documents/siteSettings';
 import { sourceRef } from './documents/sourceRef';
@@ -25,5 +26,7 @@ export const schemaTypes = [
   sourceRef,
   siteSettings,
   gitaChapter,
-  upanishad
+  upanishad,
+  mahabharataParva,
+  mahabharataCharacter,
 ];
