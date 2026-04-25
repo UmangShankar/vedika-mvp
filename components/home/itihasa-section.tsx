@@ -21,7 +21,7 @@ const texts = [
     description:
       'The first poem — Ādikāvya — composed by the sage Vālmīki. The journey of Rāma from Ayodhyā through exile in the forest, the abduction of Sītā by Rāvaṇa, and the great battle of Laṅkā. The ideal of dharmic kingship and devoted love.',
     highlight: 'Vālmīki — "the first poet" — composed this in anuṣṭubh metre after witnessing a heron shot by a hunter',
-    href: '/itihasa/ramayana',
+    href: '/texts/ramayana',
   },
   {
     metaphor: 'The Wheel',

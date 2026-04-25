@@ -20,7 +20,12 @@ export default function ItihasaPage() {
         >
           Mahābhārata →
         </Link>
-        <p className="text-body-sm text-ink-faint font-serif italic">Rāmāyaṇa — coming soon</p>
+        <Link
+          href="/texts/ramayana"
+          className="inline-flex items-center text-body text-saffron-500 hover:text-saffron-600 font-serif no-underline"
+        >
+          Rāmāyaṇa →
+        </Link>
       </div>
     </div>
   );
