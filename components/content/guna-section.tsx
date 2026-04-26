@@ -20,9 +20,9 @@ const META: Record<string, string> = {
 };
 
 const DECO: Record<string, string> = {
-  sattva: 'text-saffron-500/[0.15]',
-  rajas:  'text-dharma/[0.15]',
-  tamas:  'text-ink-muted/[0.15]',
+  sattva: 'text-saffron-500/[0.12]',
+  rajas:  'text-dharma/[0.12]',
+  tamas:  'text-ink-muted/[0.12]',
 };
 
 export function GunaSection({
@@ -33,27 +33,27 @@ export function GunaSection({
   children: ReactNode;
 }) {
   return (
-    <div className={`py-5 px-6 ${BG[section.guna]}`}>
+    <div className={`py-10 px-8 ${BG[section.guna]}`}>
       {/* Section header */}
-      <div className="flex items-start gap-3 mb-4 pb-4 border-b border-[rgba(192,120,40,0.15)]">
-        <div className={`w-1 self-stretch flex-shrink-0 rounded-full ${BAR[section.guna]}`} />
+      <div className="flex items-start gap-3 mb-6 pb-6 border-b border-[rgba(192,120,40,0.15)]">
+        <div className={`w-1 min-h-[56px] flex-shrink-0 rounded-full ${BAR[section.guna]}`} />
         <div className="flex-1">
-          <p className={`text-[9px] tracking-[0.12em] uppercase mb-1 ${META[section.guna]}`}>
+          <p className={`text-overline uppercase mb-1 ${META[section.guna]}`}>
             {section.meta}
           </p>
-          <h2 className="font-serif text-[17px] font-normal text-ink mb-1">{section.name}</h2>
-          <p className="text-[12px] text-ink-muted leading-relaxed max-w-[460px]">{section.desc}</p>
+          <h2 className="font-serif text-heading font-normal text-ink mb-1">{section.name}</h2>
+          <p className="text-body-sm text-ink-muted leading-relaxed max-w-[460px]">{section.desc}</p>
         </div>
         <span
           aria-hidden="true"
-          className={`self-center ml-auto font-devanagari text-[32px] leading-none flex-shrink-0 ${DECO[section.guna]}`}
+          className={`self-center ml-auto font-devanagari text-[48px] leading-none flex-shrink-0 ${DECO[section.guna]}`}
         >
           {section.decorativeGlyph}
         </span>
       </div>
 
       {/* Cards grid */}
-      <div className="grid grid-cols-3 gap-2 mt-0">{children}</div>
+      <div className="grid grid-cols-3 gap-3 mt-0">{children}</div>
     </div>
   );
 }

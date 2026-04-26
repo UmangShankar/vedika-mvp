@@ -22,33 +22,33 @@ const GUNA_BAR: Record<string, string> = {
 export function PuranaCard({ purana }: { purana: Purana }) {
   return (
     <div
-      className={`bg-white rounded-lg border border-[rgba(192,120,40,0.18)] p-3 flex flex-col gap-2 ${GUNA_LEFT[purana.guna]}`}
+      className={`bg-white rounded-lg border border-[rgba(192,120,40,0.18)] p-4 flex flex-col gap-3 ${GUNA_LEFT[purana.guna]}`}
     >
       {/* Top row */}
       <div className="flex justify-between items-start">
         <TierBadge tier={purana.tier} />
-        <span className={`font-devanagari text-[20px] leading-none ${GUNA_GLYPH[purana.guna]}`}>
+        <span className={`font-devanagari text-[24px] leading-none ${GUNA_GLYPH[purana.guna]}`}>
           {purana.glyph}
         </span>
       </div>
 
       {/* Name block */}
       <div>
-        <p className="text-[13px] font-semibold text-ink leading-tight">{purana.name}</p>
-        <p className="text-[10px] text-ink-faint mt-0.5">{purana.subtitle}</p>
+        <p className="text-subheading font-semibold text-ink leading-tight">{purana.name}</p>
+        <p className="text-caption text-ink-faint mt-0.5">{purana.subtitle}</p>
       </div>
 
       {/* Verse bar */}
       <div className="flex flex-col gap-1">
         <div>
-          <span className="text-[12px] font-bold text-ink-light tabular-nums">
+          <span className="text-[14px] font-bold text-ink-light tabular-nums">
             {purana.shlokas.toLocaleString()}
           </span>
           <span className="text-[9px] text-ink-faint ml-1">ślokas</span>
         </div>
-        <div className="h-[2px] w-full bg-sandal-200 rounded-full">
+        <div className="h-[3px] w-full bg-sandal-200 rounded-full">
           <div
-            className={`h-[2px] rounded-full ${GUNA_BAR[purana.guna]}`}
+            className={`h-[3px] rounded-full ${GUNA_BAR[purana.guna]}`}
             style={{ width: `${purana.barPct}%` }}
           />
         </div>
@@ -57,14 +57,14 @@ export function PuranaCard({ purana }: { purana: Purana }) {
       {/* Theme tags */}
       <div className="flex flex-wrap gap-1">
         {purana.special && (
-          <span className="text-[9.5px] px-1.5 py-0.5 bg-lotus-light border border-lotus-border rounded-full text-lotus">
+          <span className="text-caption px-1.5 py-0.5 bg-lotus-light border border-lotus-border rounded-full text-lotus">
             {purana.special}
           </span>
         )}
         {purana.themes.map((theme) => (
           <span
             key={theme}
-            className="text-[9.5px] px-1.5 py-0.5 bg-sandal-100 border border-[rgba(192,120,40,0.16)] rounded-full text-ink-muted"
+            className="text-caption px-1.5 py-0.5 bg-sandal-100 border border-[rgba(192,120,40,0.16)] rounded-full text-ink-muted"
           >
             {theme}
           </span>
@@ -72,7 +72,7 @@ export function PuranaCard({ purana }: { purana: Purana }) {
       </div>
 
       {/* Description */}
-      <p className="text-[11px] text-ink-muted leading-relaxed flex-1">{purana.desc}</p>
+      <p className="text-body-sm text-ink-muted leading-relaxed flex-1">{purana.desc}</p>
     </div>
   );
 }

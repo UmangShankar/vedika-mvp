@@ -9,8 +9,8 @@ const CONFIG: Record<Tier, { wrapper: string; dot: string; label: string }> = {
 export function TierBadge({ tier }: { tier: Tier }) {
   const { wrapper, dot, label } = CONFIG[tier];
   return (
-    <span className={`inline-flex items-center gap-1.5 text-[9px] tracking-wider px-2 py-0.5 rounded-full ${wrapper}`}>
-      <span className={`w-1 h-1 rounded-full flex-shrink-0 ${dot}`} />
+    <span className={`inline-flex items-center gap-1.5 text-label tracking-wider px-2.5 py-1 rounded-full ${wrapper}`}>
+      <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${dot}`} />
       {label}
     </span>
   );
