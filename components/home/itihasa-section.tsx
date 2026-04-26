@@ -32,7 +32,7 @@ const texts = [
     description:
       'The encyclopaedia of the tradition — cosmology, genealogy, devotion, ritual, philosophy, and the great cycles of creation and dissolution. The Bhāgavata Purāṇa, Viṣṇu Purāṇa, and Śiva Purāṇa each tell the same cosmos from a different center.',
     highlight: '"Purāṇam" — that which renews what is ancient. The Purāṇas make the Vedic world accessible.',
-    href: '/itihasa/puranas',
+    href: '/puranas',
   },
 ];
 

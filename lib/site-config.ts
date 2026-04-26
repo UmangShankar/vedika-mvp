@@ -7,6 +7,7 @@ export const siteConfig = {
     { label: 'Topics',    href: '/topics'     },
     { label: 'Texts',     href: '/texts'      },
     { label: 'Itihasa',   href: '/itihasa'    },
+    { label: 'Purāṇas',  href: '/puranas'    },
     { label: 'Darśanas',  href: '/darshanas'  },
     { label: 'Rishis',    href: '/rishis'     },
     { label: 'Glossary',  href: '/glossary'   },
