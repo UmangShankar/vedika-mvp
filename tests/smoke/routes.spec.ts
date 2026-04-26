@@ -24,3 +24,10 @@ test('/texts/ramayana loads', async ({ page }) => {
   await page.goto('/texts/ramayana');
   await expect(page.getByRole('heading', { level: 1 })).toContainText('Rāmāyaṇa');
 });
+
+test('/puranas loads', async ({ page }) => {
+  await page.goto('/puranas');
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('Mahāpurāṇas');
+  await expect(page.getByText('Bhāgavata Purāṇa')).toBeVisible();
+  await expect(page.getByText('Liṅga Purāṇa')).toBeVisible();
+});
