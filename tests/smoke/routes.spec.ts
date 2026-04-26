@@ -52,3 +52,21 @@ test('/puranas/unknown slug shows coming-soon', async ({ page }) => {
   await page.goto('/puranas/shiva')
   await expect(page.getByText('Deep dive coming soon')).toBeVisible()
 })
+
+test('/darshanas index loads', async ({ page }) => {
+  await page.goto('/darshanas')
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('Ṣaḍ Darśanas')
+  await expect(page.getByText('Nyāya · Vaiśeṣika')).toBeVisible()
+})
+
+test('/darshanas/nyaya deep dive loads', async ({ page }) => {
+  await page.goto('/darshanas/nyaya')
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('Nyāya')
+  await expect(page.getByText('Hetvābhāsa')).toBeVisible()
+})
+
+test('/darshanas/matrix loads', async ({ page }) => {
+  await page.goto('/darshanas/matrix')
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('Comparison Matrix')
+  await expect(page.getByText('Ultimate reality')).toBeVisible()
+})

@@ -8,6 +8,7 @@ export const siteConfig = {
     { label: 'Texts',     href: '/texts'     },
     { label: 'Guides',    href: '/guides'    },
     { label: 'Sources',   href: '/sources'   },
-    { label: 'Purāṇas',  href: '/puranas'   },
+    { label: 'Purāṇas',   href: '/puranas'    },
+    { label: 'Darśanas',  href: '/darshanas'  },
   ],
 };

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 
 const schools = [
   {
@@ -151,8 +152,12 @@ export function DarshanasSection() {
         {/* School cards */}
         <div className="grid grid-cols-1 gap-4 md:grid-cols-3 mb-10">
           {visible.map((s) => (
-            <article
+            <Link
               key={s.id}
+              href={`/darshanas/${s.id}`}
+              className="no-underline"
+            >
+            <article
               className="rounded-lg p-6 cursor-pointer flex flex-col transition-all duration-200 border"
               style={{ background: s.bg, borderColor: s.accent + '26' }}
               onMouseEnter={(e) => { e.currentTarget.style.background = '#ffffff'; }}
@@ -244,6 +249,7 @@ export function DarshanasSection() {
                 </span>
               </div>
             </article>
+            </Link>
           ))}
         </div>
 
@@ -268,11 +274,12 @@ export function DarshanasSection() {
                 Pramāṇa · Tattva · Ātman · Mokṣa — how each school answers differently
               </p>
             </div>
-            <button
-              className="flex-shrink-0 ml-6 bg-saffron-500 text-white text-sm font-medium px-5 py-2 rounded-sm border-0 cursor-pointer hover:bg-saffron-600"
+            <Link
+              href="/darshanas/matrix"
+              className="flex-shrink-0 ml-6 bg-saffron-500 text-white text-sm font-medium px-5 py-2 rounded-sm border-0 cursor-pointer hover:bg-saffron-600 no-underline"
             >
               Open full matrix →
-            </button>
+            </Link>
           </div>
 
           {/* Table */}
