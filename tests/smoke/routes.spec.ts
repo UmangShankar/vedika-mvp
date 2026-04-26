@@ -25,9 +25,30 @@ test('/texts/ramayana loads', async ({ page }) => {
   await expect(page.getByRole('heading', { level: 1 })).toContainText('Rāmāyaṇa');
 });
 
-test('/puranas loads', async ({ page }) => {
-  await page.goto('/puranas');
-  await expect(page.getByRole('heading', { level: 1 })).toContainText('Mahāpurāṇas');
-  await expect(page.getByText('Bhāgavata Purāṇa')).toBeVisible();
-  await expect(page.getByText('Liṅga Purāṇa')).toBeVisible();
-});
+test('/puranas loads with all 18', async ({ page }) => {
+  await page.goto('/puranas')
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('Mahāpurāṇas')
+  await expect(page.getByText('Bhāgavata Purāṇa')).toBeVisible()
+  await expect(page.getByText('Liṅga Purāṇa')).toBeVisible()
+  await expect(page.getByText('Mārkaṇḍeya Purāṇa')).toBeVisible()
+})
+
+test('/puranas filter works', async ({ page }) => {
+  await page.goto('/puranas')
+  await page.getByRole('button', { name: /Tamas/i }).click()
+  await expect(page.getByText('Skanda Purāṇa')).toBeVisible()
+  await expect(page.getByText('Bhāgavata Purāṇa')).not.toBeVisible()
+})
+
+test('/puranas/bhagavata deep dive loads', async ({ page }) => {
+  await page.goto('/puranas/bhagavata')
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('Bhāgavata')
+  await expect(page.getByText('Svayam Bhagavān')).toBeVisible()
+  await expect(page.getByText('Theological culmination')).toBeVisible()
+  await expect(page.getByText('Acintya-bhedābheda')).toBeVisible()
+})
+
+test('/puranas/unknown slug shows coming-soon', async ({ page }) => {
+  await page.goto('/puranas/shiva')
+  await expect(page.getByText('Deep dive coming soon')).toBeVisible()
+})

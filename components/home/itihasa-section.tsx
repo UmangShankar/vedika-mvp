@@ -86,9 +86,7 @@ export function ItihasaSection() {
                 >
                   Explore →
                 </Link>
-                <span className="rounded-full border border-sandal-300 bg-sandal-100 px-2.5 py-0.5 text-caption text-ink-muted">
-                  Coming soon
-                </span>
+                <span className="beta-badge">Coming soon</span>
               </div>
             </article>
           ))}
