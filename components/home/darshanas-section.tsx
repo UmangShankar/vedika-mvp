@@ -161,7 +161,7 @@ export function DarshanasSection() {
             <Link
               key={s.id}
               href={`/darshanas/${s.id}`}
-              className="no-underline"
+              className="no-underline block"
             >
             <article
               className="rounded-lg p-6 cursor-pointer flex flex-col transition-all duration-200 border"
