@@ -156,7 +156,7 @@ export function DarshanasSection() {
         </div>
 
         {/* School cards */}
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-3 mb-10">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3 mb-10 items-start">
           {visible.map((s) => (
             <Link
               key={s.id}
@@ -223,6 +223,10 @@ export function DarshanasSection() {
                     borderLeft: `2px solid ${s.accent}`,
                     background: s.accent + '0f',
                     borderRadius: '0 4px 4px 0',
+                    overflow: 'hidden',
+                    display: '-webkit-box',
+                    WebkitLineClamp: 3,
+                    WebkitBoxOrient: 'vertical',
                   }}
                 >
                   {s.note}
