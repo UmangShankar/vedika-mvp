@@ -130,6 +130,12 @@ export function DarshanasSection() {
           <p className="max-w-xl text-body text-ink-muted">
             The āstika darśanas — six systematic inquiries into reality, knowledge, and liberation. Grouped as three traditional mithuna pairs.
           </p>
+          <Link
+            href="/darshanas"
+            className="inline-block text-body-sm font-medium text-saffron-500 no-underline hover:text-saffron-600"
+          >
+            Explore all darśanas →
+          </Link>
         </header>
 
         {/* Filter tabs */}
