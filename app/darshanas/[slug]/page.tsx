@@ -6,7 +6,7 @@ import { SCHOOLS, SCHOOL_ORDER, PAIR_MAP } from '@/lib/darshanas/data';
 type Props = { params: { slug: string } };
 
 export function generateStaticParams() {
-  return SCHOOL_ORDER.map((s) => ({ school: s }));
+  return SCHOOL_ORDER.map((s) => ({ slug: s }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -38,14 +38,15 @@ export default function SchoolDeepDive({ params }: Props) {
   const s = SCHOOLS[params.slug];
   if (!s) notFound();
 
-  const col = PAIR_COLOR[s.id];
-  const bg = PAIR_BG[s.id];
-  const bd = PAIR_BORDER[s.id];
-  const pairId = PAIR_MAP[s.id] ?? s.id;
+  const col = PAIR_COLOR[s.id] ?? '#C07828';
+  const bg  = PAIR_BG[s.id]  ?? '#FEF7ED';
+  const bd  = PAIR_BORDER[s.id] ?? '#F9D09A';
+  const pairId     = PAIR_MAP[s.id] ?? s.id;
   const pairSchool = SCHOOLS[pairId];
 
   return (
     <div className="min-h-screen bg-sandal-100">
+
       {/* ── BREADCRUMB ── */}
       <div
         className="flex items-center gap-2 px-6 py-3 sm:px-10"
@@ -58,23 +59,23 @@ export default function SchoolDeepDive({ params }: Props) {
         <span className="font-serif text-[13px] text-ink">{s.name} deep dive</span>
       </div>
 
-      {/* ── SCHOOL NAV ── */}
+      {/* ── SCHOOL NAV TABS ── */}
       <div
         className="flex overflow-x-auto px-6 sm:px-10"
         style={{ background: '#FDFAF6', borderBottom: '1px solid rgba(192,120,40,0.18)' }}
       >
         {SCHOOL_ORDER.map((id) => {
-          const sc = SCHOOLS[id];
+          const sc     = SCHOOLS[id];
           const active = id === params.slug;
-          const c = PAIR_COLOR[id];
+          const c      = PAIR_COLOR[id] ?? '#C07828';
           return (
             <Link
               key={id}
               href={`/darshanas/${id}`}
               className="font-serif text-[14px] px-4 py-3 no-underline whitespace-nowrap flex-shrink-0"
               style={{
-                color: active ? c : '#7A6A56',
-                fontWeight: active ? 600 : 400,
+                color:        active ? c : '#7A6A56',
+                fontWeight:   active ? 600 : 400,
                 borderBottom: active ? `2.5px solid ${c}` : '2.5px solid transparent',
                 marginBottom: -1,
               }}
@@ -90,20 +91,13 @@ export default function SchoolDeepDive({ params }: Props) {
         className="relative overflow-hidden px-10 py-9 sm:px-14"
         style={{ background: '#1C1208' }}
       >
-        {/* Watermark glyph */}
         <div
           className="absolute right-8 top-1/2 -translate-y-1/2 select-none pointer-events-none leading-none"
-          style={{
-            fontFamily: "'Noto Serif Devanagari', serif",
-            fontSize: '160px',
-            color: '#fff',
-            opacity: 0.05,
-          }}
+          style={{ fontFamily: "'Noto Serif Devanagari', serif", fontSize: '160px', color: '#fff', opacity: 0.05 }}
           aria-hidden="true"
         >
           {s.glyph}
         </div>
-
         <div className="relative">
           <p
             className="font-sans font-medium uppercase mb-4"
@@ -114,11 +108,7 @@ export default function SchoolDeepDive({ params }: Props) {
           <p
             className="mb-4 whitespace-pre-line leading-[1.85]"
             lang="sa"
-            style={{
-              fontFamily: "'Noto Serif Devanagari', serif",
-              fontSize: '1.02rem',
-              color: '#EEE0C0',
-            }}
+            style={{ fontFamily: "'Noto Serif Devanagari', serif", fontSize: '1.02rem', color: '#EEE0C0' }}
           >
             {s.sutra}
           </p>
@@ -143,15 +133,15 @@ export default function SchoolDeepDive({ params }: Props) {
       >
         {[
           { l: 'Founder / texts', v: s.founder },
-          { l: 'Period', v: s.period },
-          { l: 'Primary text', v: s.text },
-          { l: 'Pramāṇas', v: s.pramanas },
+          { l: 'Period',          v: s.period   },
+          { l: 'Primary text',    v: s.text     },
+          { l: 'Pramāṇas',        v: s.pramanas },
         ].map((c, i) => (
           <div
             key={i}
             className="p-3.5"
             style={{
-              borderRight: i < 3 ? '1px solid rgba(192,120,40,0.12)' : 'none',
+              borderRight:  i < 3 ? '1px solid rgba(192,120,40,0.12)' : 'none',
               borderBottom: '1px solid rgba(192,120,40,0.12)',
             }}
           >
@@ -169,10 +159,11 @@ export default function SchoolDeepDive({ params }: Props) {
       </div>
 
       <div className="px-6 sm:px-10 lg:px-14 bg-sandal-100">
+
         {/* ── TENETS ── */}
         <p
           className="font-sans uppercase font-medium mt-6 mb-3"
-          style={{ fontSize: '9.5px', letterSpacing: '0.16em', color: '#C07828' }}
+          style={{ fontSize: '9.5px', letterSpacing: '0.16em', color: col }}
         >
           Core philosophy
         </p>
@@ -196,10 +187,7 @@ export default function SchoolDeepDive({ params }: Props) {
               {t.note && (
                 <p
                   className="font-serif italic leading-[1.62] mt-2.5 pt-2.5 text-ink-muted"
-                  style={{
-                    fontSize: '0.75rem',
-                    borderTop: '1px solid rgba(192,120,40,0.12)',
-                  }}
+                  style={{ fontSize: '0.75rem', borderTop: '1px solid rgba(192,120,40,0.12)' }}
                 >
                   {t.note}
                 </p>
@@ -211,7 +199,7 @@ export default function SchoolDeepDive({ params }: Props) {
         {/* ── COMMENTATORS ── */}
         <p
           className="font-sans uppercase font-medium mb-3"
-          style={{ fontSize: '9.5px', letterSpacing: '0.16em', color: '#C07828' }}
+          style={{ fontSize: '9.5px', letterSpacing: '0.16em', color: col }}
         >
           Commentary tradition
         </p>
@@ -224,11 +212,8 @@ export default function SchoolDeepDive({ params }: Props) {
                     key={h}
                     className="text-left font-sans font-medium"
                     style={{
-                      fontSize: '9px',
-                      letterSpacing: '0.1em',
-                      textTransform: 'uppercase',
-                      color: '#7A6A56',
-                      padding: '8px 10px',
+                      fontSize: '9px', letterSpacing: '0.1em', textTransform: 'uppercase',
+                      color: '#7A6A56', padding: '8px 10px',
                       borderBottom: '1px solid rgba(192,120,40,0.2)',
                     }}
                   >
@@ -240,30 +225,10 @@ export default function SchoolDeepDive({ params }: Props) {
             <tbody>
               {s.commentators.map((c, i) => (
                 <tr key={i} style={{ borderBottom: '1px solid rgba(192,120,40,0.1)' }}>
-                  <td
-                    className="font-serif font-medium text-ink"
-                    style={{ padding: '9px 10px', fontSize: '0.82rem' }}
-                  >
-                    {c.name}
-                  </td>
-                  <td
-                    className="font-serif italic text-ink-light"
-                    style={{ padding: '9px 10px', fontSize: '0.8rem' }}
-                  >
-                    {c.text}
-                  </td>
-                  <td
-                    className="font-sans text-ink-muted whitespace-nowrap"
-                    style={{ padding: '9px 10px', fontSize: '0.73rem' }}
-                  >
-                    {c.period}
-                  </td>
-                  <td
-                    className="font-sans text-ink-light leading-[1.5]"
-                    style={{ padding: '9px 10px', fontSize: '0.73rem' }}
-                  >
-                    {c.note}
-                  </td>
+                  <td className="font-serif font-medium text-ink"     style={{ padding: '9px 10px', fontSize: '0.82rem' }}>{c.name}</td>
+                  <td className="font-serif italic text-ink-light"    style={{ padding: '9px 10px', fontSize: '0.8rem'  }}>{c.text}</td>
+                  <td className="font-sans text-ink-muted whitespace-nowrap" style={{ padding: '9px 10px', fontSize: '0.73rem' }}>{c.period}</td>
+                  <td className="font-sans text-ink-light leading-[1.5]"     style={{ padding: '9px 10px', fontSize: '0.73rem' }}>{c.note}</td>
                 </tr>
               ))}
             </tbody>
@@ -273,56 +238,44 @@ export default function SchoolDeepDive({ params }: Props) {
         {/* ── PAIR DIALOGUE ── */}
         <p
           className="font-sans uppercase font-medium mb-3"
-          style={{ fontSize: '9.5px', letterSpacing: '0.16em', color: '#C07828' }}
+          style={{ fontSize: '9.5px', letterSpacing: '0.16em', color: col }}
         >
-          Pair dialogue — {s.name} ↔ {pairSchool.name}
+          Pair dialogue — {s.name} ↔ {pairSchool?.name}
         </p>
         <div
-          className="rounded-r-sm font-serif leading-[1.78] text-ink-light mb-8"
-          style={{
-            borderLeft: `3px solid ${col}`,
-            background: bg,
-            padding: '14px 20px',
-            fontSize: '0.84rem',
-          }}
+          className="font-serif leading-[1.78] text-ink-light mb-8"
+          style={{ borderLeft: `3px solid ${col}`, background: bg, padding: '14px 20px', fontSize: '0.84rem' }}
         >
           {s.dialogue}
         </div>
 
         {/* ── CTA ROW ── */}
         <div className="flex flex-wrap gap-3 pb-12">
-          <Link
-            href={`/darshanas/${pairId}`}
-            className="font-serif text-[0.82rem] no-underline px-4 py-2 rounded"
-            style={{
-              background: bg,
-              border: `1px solid ${bd}`,
-              color: col,
-            }}
-          >
-            {pairSchool.name} deep dive →
-          </Link>
+          {pairSchool && (
+            <Link
+              href={`/darshanas/${pairId}`}
+              className="font-serif text-[0.82rem] no-underline px-4 py-2 rounded"
+              style={{ background: bg, border: `1px solid ${bd}`, color: col }}
+            >
+              {pairSchool.name} deep dive →
+            </Link>
+          )}
           <Link
             href="/darshanas/matrix"
             className="font-sans text-[0.78rem] no-underline px-4 py-2 rounded text-ink-muted"
-            style={{
-              background: '#EDE0CC',
-              border: '1px solid rgba(192,120,40,0.2)',
-            }}
+            style={{ background: '#EDE0CC', border: '1px solid rgba(192,120,40,0.2)' }}
           >
             Open full comparison matrix →
           </Link>
           <Link
             href="/darshanas"
             className="font-sans text-[0.78rem] no-underline px-4 py-2 rounded text-ink-muted"
-            style={{
-              background: 'none',
-              border: '1px solid rgba(192,120,40,0.2)',
-            }}
+            style={{ background: 'none', border: '1px solid rgba(192,120,40,0.2)' }}
           >
             ← All schools
           </Link>
         </div>
+
       </div>
     </div>
   );

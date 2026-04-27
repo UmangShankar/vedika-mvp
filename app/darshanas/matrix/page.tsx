@@ -79,7 +79,7 @@ export default function MatrixPage() {
             </colgroup>
             <thead>
               <tr style={{ background: '#EDE0CC' }}>
-                {['School', 'Pramāṇas', 'Ontology', 'Ātman', 'Liberation', ''].map((h) => (
+                {['School', 'Pramāṇas', 'Tattva', 'Ātman', 'Mokṣa', ''].map((h) => (
                   <th
                     key={h}
                     className="text-left font-sans font-medium"
