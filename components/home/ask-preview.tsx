@@ -1,86 +1,102 @@
 import Link from 'next/link';
 
-const sampleQ = 'How do different commentators explain svadharma in Bhagavad Gita chapter 3?';
-const sampleA =
-  'Śaṅkara reads svadharma as the duties determined by one\'s varṇa and āśrama. Madhva emphasises devotional duty as primary. Tilak frames it as action without selfish motive. All three agree that abandoning one\'s own dharma carries inherent risk.';
-const sources = ['Gita Bhashya — Śaṅkara', 'Gita Tatparya — Madhva', 'Gita Rahasya — Tilak'];
+const SAMPLE_EXCHANGE = {
+  question: 'What does the Bhagavad Gita say about action without attachment?',
+  answer: `The Gita's central teaching appears in 2.47 — one is entitled to perform action, but not to claim its fruits. This is the foundation of karma yoga.
+
+Shankaracharya's Advaita reading treats this as preparation for jnana: desireless action purifies the mind until knowledge of the Self arises. Ramanujacharya's Vishishtadvaita view holds that action offered to God is itself a direct path to liberation.`,
+  sources: [
+    { label: 'Bhagavad Gita 2.47', type: 'primary' },
+    { label: 'Bhagavad Gita 3.19', type: 'primary' },
+    { label: 'Shankaracharya Gita Bhashya', type: 'commentary' },
+    { label: 'Ramanujacharya Gita Bhashya', type: 'commentary' },
+  ],
+};
+
+const SOURCE_ICONS: Record<string, string> = {
+  primary: '📜',
+  commentary: '✍️',
+  scholarly: '📚',
+};
 
 export function AskPreview() {
   return (
-    <section className="w-full bg-white py-14 md:py-20">
-      <div className="mx-auto max-w-wide px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-12 md:grid-cols-2 md:items-center">
-          {/* Left — editorial column */}
-          <div className="space-y-6">
-            <header className="space-y-2">
-              <p className="text-overline uppercase tracking-widest text-saffron-500">Ask Vedika</p>
-              <h2 className="font-serif text-display-sm text-ink">
-                Ask anything. Sources first.
-              </h2>
-              <p className="text-body text-ink-muted">
-                Vedika's AI companion surfaces answers grounded in primary texts — Vedas, Upaniṣads,
-                Gita, Purāṇas. Every response links the source so you can read further.
-              </p>
-            </header>
+    <div className="mx-auto max-w-[640px] rounded-2xl border border-[rgba(192,120,40,0.20)] bg-white shadow-[0_8px_24px_rgba(28,18,8,0.10),0_2px_6px_rgba(28,18,8,0.04)] overflow-hidden">
 
-            <ul className="space-y-3">
-              {[
-                'Answers cite chapter and verse',
-                'Multiple commentators presented side-by-side',
-                'Clearly labeled Beta — content always leads',
-              ].map((point) => (
-                <li key={point} className="flex items-start gap-3 text-body-sm text-ink-muted">
-                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-saffron-400" aria-hidden="true" />
-                  {point}
-                </li>
-              ))}
-            </ul>
-
-            <Link
-              href="/ask-vedika"
-              className="inline-flex rounded-sm bg-saffron-500 px-5 py-2.5 text-body-sm font-medium text-white no-underline transition-colors hover:bg-saffron-600"
-            >
-              Try Ask Vedika →
-            </Link>
+      {/* Header bar */}
+      <div className="flex items-center gap-3 px-5 py-4 border-b border-[rgba(192,120,40,0.12)] bg-[#FDFAF6]">
+        <div className="w-8 h-8 rounded-full bg-[#FEF7ED] border border-[#FDECD3] flex items-center justify-center shrink-0">
+          <span className="text-[#C07828] text-sm font-serif">ॐ</span>
+        </div>
+        <div className="flex-1 min-w-0">
+          <div className="flex items-center gap-2">
+            <span className="text-[0.875rem] font-semibold text-[#1C1208]">Ask Vedika</span>
+            <span className="inline-flex items-center text-[0.625rem] tracking-[0.12em] font-semibold text-[#C07828] bg-[#FEF7ED] border border-[#FDECD3] px-1.5 py-0.5 rounded-sm uppercase">
+              Beta
+            </span>
           </div>
+          <p className="text-[0.75rem] text-[#A89880] leading-none mt-0.5">Source-grounded exploration</p>
+        </div>
+      </div>
 
-          {/* Right — sample chat UI */}
-          <div className="rounded-xl border bg-sandal-50 p-5 shadow-card-md md:p-6">
-            <div className="mb-4 flex items-center gap-2.5">
-              <div className="flex h-8 w-8 items-center justify-center rounded-full border border-saffron-200 bg-saffron-50">
-                <span className="devanagari text-sm text-saffron-500">ॐ</span>
-              </div>
-              <span className="font-serif text-body-sm font-semibold text-ink">Ask Vedika</span>
-              <span className="beta-badge">Beta</span>
-            </div>
+      {/* Chat exchange */}
+      <div className="px-5 pt-5 pb-4 space-y-4">
 
-            {/* User message */}
-            <div className="flex justify-end">
-              <div className="max-w-xs rounded-lg bg-sandal-200 px-4 py-3 text-body-sm text-ink-light">
-                {sampleQ}
-              </div>
-            </div>
-
-            {/* Response */}
-            <div className="mt-3 flex justify-start">
-              <div className="rounded-lg border bg-white px-4 py-3">
-                <p className="font-serif text-body-sm text-ink-light">{sampleA}</p>
-                <div className="mt-3 flex flex-wrap gap-2">
-                  {sources.map((s) => (
-                    <span key={s} className="source-badge">
-                      {s}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <p className="mt-4 text-caption text-ink-faint">
-              AI responses are draft guidance. Always verify with linked sources.
+        {/* User bubble */}
+        <div className="flex justify-end">
+          <div className="max-w-[75%] rounded-2xl rounded-tr-sm bg-[#F5EFE5] px-4 py-2.5">
+            <p className="text-[0.875rem] text-[#1C1208] leading-relaxed">
+              {SAMPLE_EXCHANGE.question}
             </p>
           </div>
         </div>
+
+        {/* Vedika response */}
+        <div className="flex justify-start gap-2.5">
+          <div className="w-6 h-6 rounded-full bg-[#FEF7ED] border border-[#FDECD3] flex items-center justify-center shrink-0 mt-1">
+            <span className="text-[#C07828] text-[10px] font-serif">ॐ</span>
+          </div>
+          <div className="flex-1 space-y-2.5">
+            <div className="rounded-2xl rounded-tl-sm border border-[rgba(192,120,40,0.15)] bg-white px-4 py-3 shadow-[0_1px_3px_rgba(28,18,8,0.05)]">
+              <p className="text-[0.875rem] text-[#4A3B28] leading-[1.7] font-serif whitespace-pre-wrap">
+                {SAMPLE_EXCHANGE.answer}
+              </p>
+            </div>
+
+            {/* Sources */}
+            <div className="space-y-1.5">
+              <p className="text-[0.625rem] tracking-[0.12em] font-semibold text-[#A89880] uppercase">
+                Sources
+              </p>
+              <div className="flex flex-wrap gap-1.5">
+                {SAMPLE_EXCHANGE.sources.map((source, i) => (
+                  <span
+                    key={i}
+                    className="inline-flex items-center gap-1 text-[0.75rem] text-[#7A6A56] border border-[rgba(192,120,40,0.20)] bg-[#FDFAF6] px-2 py-1 rounded-sm"
+                  >
+                    <span className="text-[11px]">{SOURCE_ICONS[source.type] ?? '📄'}</span>
+                    <span>{source.label}</span>
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </section>
+
+      {/* CTA footer */}
+      <div className="px-5 py-4 bg-[#FDFAF6] border-t border-[rgba(192,120,40,0.12)] flex items-center justify-between gap-4">
+        <p className="text-[0.75rem] text-[#A89880] leading-snug">
+          AI guidance only. Always verify with the cited sources.
+        </p>
+        <Link
+          href="/ask-vedika"
+          className="shrink-0 bg-[#C07828] hover:bg-[#9A5E1C] text-white text-[0.8125rem] font-medium px-4 py-2 rounded-lg transition-colors no-underline whitespace-nowrap"
+        >
+          Try Ask Vedika →
+        </Link>
+      </div>
+
+    </div>
   );
 }
