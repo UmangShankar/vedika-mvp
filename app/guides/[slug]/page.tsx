@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import type { Metadata } from 'next';
 import { EmptyState } from '@/components/content/empty-state';
 import { GuideTemplate } from '@/components/templates/guide-template';

@@ -1,29 +1,13 @@
 import { createClient } from '@sanity/client';
 
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
-const dataset    = process.env.NEXT_PUBLIC_SANITY_DATASET ?? 'production';
+const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET ?? 'production';
 const apiVersion = process.env.NEXT_PUBLIC_SANITY_API_VERSION ?? '2024-01-01';
 
-if (!projectId) {
-  throw new Error('Missing NEXT_PUBLIC_SANITY_PROJECT_ID');
-}
+if (!projectId) throw new Error('Missing NEXT_PUBLIC_SANITY_PROJECT_ID');
 
-export const sanityClient = createClient({
-  projectId,
-  dataset,
-  apiVersion,
-  useCdn: false,
-  perspective: 'published',
-});
+export const sanityClient = createClient({ projectId, dataset, apiVersion, useCdn: process.env.NODE_ENV === 'production' });
 
-export async function sanityFetch<T>(
-  query: string,
-  params: Record<string, unknown> = {}
-): Promise<T | null> {
-  try {
-    return await sanityClient.fetch<T>(query, params);
-  } catch (err) {
-    console.error('[sanityFetch] error:', err);
-    return null;
-  }
+export async function sanityFetch<T>(query: string, params: Record<string, unknown> = {}): Promise<T> {
+  return sanityClient.fetch<T>(query, params);
 }

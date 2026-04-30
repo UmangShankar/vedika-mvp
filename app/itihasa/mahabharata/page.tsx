@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import Link from 'next/link';
 import { buildMetadata } from '@/lib/sanity/metadata';
 import { siteConfig } from '@/lib/site-config';
