@@ -270,11 +270,12 @@ export function DarshanasSection() {
                 Pramāṇa · Tattva · Ātman · Mokṣa — how each school answers differently
               </p>
             </div>
-            <button
-              className="flex-shrink-0 ml-6 bg-saffron-500 text-white text-sm font-medium px-5 py-2 rounded-sm border-0 cursor-pointer hover:bg-saffron-600"
+            <Link
+              href="/darshanas/matrix"
+              className="flex-shrink-0 ml-6 bg-saffron-500 text-white text-sm font-medium px-5 py-2 rounded-sm hover:bg-saffron-600"
             >
               Open full matrix →
-            </button>
+            </Link>
           </div>
 
           {/* Table */}
