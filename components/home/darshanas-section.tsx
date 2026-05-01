@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 
 const schools = [
   {
@@ -151,9 +152,9 @@ export function DarshanasSection() {
         {/* School cards */}
         <div className="grid grid-cols-1 gap-4 md:grid-cols-3 mb-10">
           {visible.map((s) => (
+            <Link key={s.id} href={`/darshanas/${s.id}`} className="block">
             <article
-              key={s.id}
-              className="rounded-lg p-6 cursor-pointer flex flex-col transition-all duration-200 border"
+              className="rounded-lg p-6 cursor-pointer flex flex-col transition-all duration-200 border h-full"
               style={{ background: s.bg, borderColor: s.accent + '26' }}
               onMouseEnter={(e) => { e.currentTarget.style.background = '#ffffff'; }}
               onMouseLeave={(e) => { e.currentTarget.style.background = s.bg; }}
@@ -244,6 +245,7 @@ export function DarshanasSection() {
                 </span>
               </div>
             </article>
+            </Link>
           ))}
         </div>
 
