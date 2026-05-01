@@ -93,7 +93,21 @@ function parseVedikaResponse(rawContent: string): ParsedResponse {
   return { answer, sources };
 }
 
+const MAX_MESSAGES = 10;
+const MAX_CONTENT_LENGTH = 4_000;
+
 export async function POST(req: NextRequest) {
+  const apiKey = process.env.ANTHROPIC_API_KEY;
+  if (!apiKey) {
+    console.error('ANTHROPIC_API_KEY is not configured');
+    return NextResponse.json({ error: 'Service not configured' }, { status: 503 });
+  }
+
+  const contentLength = req.headers.get('content-length');
+  if (contentLength && parseInt(contentLength) > 64_000) {
+    return NextResponse.json({ error: 'Request too large' }, { status: 413 });
+  }
+
   try {
     const body: AskRequestBody = await req.json();
     const { messages } = body;
@@ -102,13 +116,22 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'messages array is required' }, { status: 400 });
     }
 
-    const trimmedMessages = messages.slice(-10);
+    for (const msg of messages) {
+      if (!['user', 'assistant'].includes(msg.role)) {
+        return NextResponse.json({ error: 'Invalid message role' }, { status: 400 });
+      }
+      if (typeof msg.content !== 'string' || msg.content.length > MAX_CONTENT_LENGTH) {
+        return NextResponse.json({ error: 'Message content too long or invalid' }, { status: 400 });
+      }
+    }
+
+    const trimmedMessages = messages.slice(-MAX_MESSAGES);
 
     const anthropicResponse = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'x-api-key': process.env.ANTHROPIC_API_KEY ?? '',
+        'x-api-key': apiKey,
         'anthropic-version': '2023-06-01',
       },
       body: JSON.stringify({

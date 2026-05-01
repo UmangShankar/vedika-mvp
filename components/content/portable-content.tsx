@@ -23,6 +23,19 @@ type Block = PortableBlock & {
   children?: Span[];
 };
 
+const SAFE_SCHEMES = ['https:', 'http:', 'mailto:'];
+
+function isSafeHref(href: string | undefined): string {
+  if (!href) return '#';
+  if (href.startsWith('/') || href.startsWith('#')) return href;
+  try {
+    const url = new URL(href);
+    return SAFE_SCHEMES.includes(url.protocol) ? href : '#';
+  } catch {
+    return '#';
+  }
+}
+
 function renderSpan(span: Span, markDefs: MarkDef[], idx: number): React.ReactNode {
   let content: React.ReactNode = span.text ?? '';
   const marks = span.marks ?? [];
@@ -33,7 +46,7 @@ function renderSpan(span: Span, markDefs: MarkDef[], idx: number): React.ReactNo
       content = (
         <Link
           key={`link-${idx}`}
-          href={def.href ?? '#'}
+          href={isSafeHref(def.href)}
           className="text-saffron-500 underline underline-offset-4 hover:text-saffron-600"
         >
           {content}

@@ -34,9 +34,15 @@ if (!token) {
 
 // ─── Sanity client ────────────────────────────────────────────────────────────
 
+const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
+if (!projectId) {
+  console.error('❌  NEXT_PUBLIC_SANITY_PROJECT_ID is not set. Add it to .env.local and retry.');
+  process.exit(1);
+}
+
 const client = createClient({
-  projectId: 'ashqn4dx',
-  dataset: 'production',
+  projectId,
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET ?? 'production',
   apiVersion: '2024-01-01',
   token,
   useCdn: false,

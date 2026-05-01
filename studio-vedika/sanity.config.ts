@@ -5,8 +5,8 @@ import {schemaTypes} from '../sanity/schemaTypes'
 export default defineConfig({
   name: 'default',
   title: 'Vedika',
-  projectId: 'ashqn4dx',
-  dataset: 'production',
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET ?? 'production',
   plugins: [structureTool()],
   schema: {
     types: schemaTypes,
