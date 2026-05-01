@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\umang.shankar\\\\AppData\\\\Local\" -Directory | Where-Object { $_.Name -match \"node|nvm|volta|fnm\" } | Select-Object Name)",
+      "PowerShell(Get-Command *)",
+      "Bash(npm --version)",
+      "Read(//usr/local/bin/**)",
+      "Read(//usr/bin/**)",
+      "PowerShell(Get-ItemProperty *)",
+      "PowerShell($node = \"C:\\\\Program Files\\\\nodejs\\\\node.exe\"; $npm = \"C:\\\\Program Files\\\\nodejs\\\\npm.cmd\"; & $node --version; & $npm --version)",
+      "PowerShell($npm = \"C:\\\\Program Files\\\\nodejs\\\\npm.cmd\"; Set-Location \"C:\\\\Users\\\\umang.shankar\\\\Documents\\\\vedika-mvp\"; & $npm install 2>&1 | Select-Object -Last 10)",
+      "PowerShell(npm install *)",
+      "PowerShell(npm run *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "PowerShell(vercel *)",
+      "PowerShell(vercel link *)",
+      "PowerShell(vercel env *)",
+      "PowerShell(git push *)"
+    ]
+  }
+}
