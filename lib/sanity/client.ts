@@ -1,10 +1,13 @@
 import { createClient } from '@sanity/client';
 
-// Strip BOM (U+FEFF) that Windows tools can prepend to env var values
-const rawProjectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
-const projectId = rawProjectId && rawProjectId.charCodeAt(0) === 0xFEFF ? rawProjectId.slice(1) : rawProjectId;
-const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET ?? 'production';
-const apiVersion = process.env.NEXT_PUBLIC_SANITY_API_VERSION ?? '2024-01-01';
+function stripBom(s: string | undefined): string | undefined {
+  if (!s) return s;
+  return s.charCodeAt(0) === 0xFEFF ? s.slice(1) : s;
+}
+
+const projectId = stripBom(process.env.NEXT_PUBLIC_SANITY_PROJECT_ID);
+const dataset = stripBom(process.env.NEXT_PUBLIC_SANITY_DATASET) ?? 'production';
+const apiVersion = stripBom(process.env.NEXT_PUBLIC_SANITY_API_VERSION) ?? '2024-01-01';
 
 if (!projectId) throw new Error('Missing NEXT_PUBLIC_SANITY_PROJECT_ID');
 
