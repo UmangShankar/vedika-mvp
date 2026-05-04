@@ -1,0 +1,1 @@
+- [Vedika MVP — Technology Stack and Security Architecture](project_vedika_stack.md) — Next.js 14.2.16 + Sanity CMS; no auth, no rate limiting, no security headers; Sanity project ID hardcoded in source

@@ -11,6 +11,12 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      { source: '/topics', destination: '/traditions', permanent: true },
+      { source: '/topics/:slug*', destination: '/traditions/:slug*', permanent: true },
+    ];
+  },
   async headers() {
     return [
       {

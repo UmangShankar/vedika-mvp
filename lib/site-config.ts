@@ -8,7 +8,7 @@ export const siteConfig = {
   baseUrl,
   nav: [
     { label: 'Research',  href: '/research'  },
-    { label: 'Topics',    href: '/topics'    },
+    { label: 'Traditions', href: '/traditions' },
     { label: 'Texts',     href: '/texts'     },
     { label: 'Guides',    href: '/guides'    },
     { label: 'Sources',   href: '/sources'   },
