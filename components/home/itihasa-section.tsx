@@ -86,7 +86,6 @@ export function ItihasaSection() {
                 >
                   Explore →
                 </Link>
-                <span className="beta-badge">Coming soon</span>
               </div>
             </article>
           ))}
