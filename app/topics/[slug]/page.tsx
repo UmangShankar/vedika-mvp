@@ -47,5 +47,5 @@ export default async function TopicDetailPage({ params }: TopicDetailPageProps) 
     summary: guide.excerpt
   }));
 
-  return <TopicTemplate topic={topic} relatedReading={relatedReading} glossarySpotlight={glossary[0] ?? null} />;
+  return <TopicTemplate topic={topic} slug={slug} relatedReading={relatedReading} glossaryEntries={glossary} />;
 }

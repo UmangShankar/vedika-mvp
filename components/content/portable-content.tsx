@@ -25,6 +25,10 @@ type Block = PortableBlock & {
 
 const SAFE_SCHEMES = ['https:', 'http:', 'mailto:'];
 
+export function toHeadingId(text: string): string {
+  return text.toLowerCase().replace(/[^a-z0-9\s]/g, '').trim().replace(/\s+/g, '-');
+}
+
 function isSafeHref(href: string | undefined): string {
   if (!href) return '#';
   if (href.startsWith('/') || href.startsWith('#')) return href;
@@ -76,12 +80,14 @@ function renderBlock(block: Block, idx: number): React.ReactNode {
   const key = block._key ?? `block-${idx}`;
 
   switch (block.style) {
-    case 'h2':
+    case 'h2': {
+      const headingText = (block.children ?? []).map((s) => s.text ?? '').join('');
       return (
-        <h2 key={key} className="mt-8 mb-4 font-serif text-heading text-ink">
+        <h2 key={key} id={toHeadingId(headingText)} className="mt-8 mb-4 font-serif text-heading text-ink scroll-mt-20">
           {children}
         </h2>
       );
+    }
     case 'h3':
       return (
         <h3 key={key} className="mt-6 mb-3 font-serif text-subheading text-ink">

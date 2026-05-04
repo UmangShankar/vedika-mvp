@@ -66,8 +66,9 @@ export default async function TraditionSlugPage({ params }: Props) {
     return (
       <TopicTemplate
         topic={topic}
+        slug={slug}
         relatedReading={relatedReading}
-        glossarySpotlight={glossary[0] ?? null}
+        glossaryEntries={glossary}
       />
     );
   }
