@@ -988,8 +988,28 @@ export const TRADITIONS: Tradition[] = [
     relatedSlugs: ['taoism', 'neoplatonism', 'sufism-vs-advaita'],
     essaySections: [
       {
+        heading: 'What Sufism is — and what it is not',
+        body: 'Sufism (taṣawwuf) is not a separate religion, nor is it folk Islam, nor is it a single unified movement. It is the interior dimension of Islamic practice — the discipline of turning the heart away from worldly attachment toward the reality of God. The word taṣawwuf derives most likely from ṣūf (wool) — the rough woollen garment worn by early Muslim ascetics in deliberate contrast to the opulence of the Umayyad caliphate.\n\nIt is not quietist withdrawal. The great Sufis were scholars, poets, philosophers, musicians, and political figures. Ibn Arabī wrote systematic metaphysics. Rūmī was a professor who became a poet. The Chishtī and Qādirī orders built vast networks of lodges (khānqāhs) across the Islamic world that served as schools, hospitals, and cultural centres. Classical Sufism does not stand apart from Islamic law (sharīʿa) — the standard view is that sharīʿa is the exterior dimension of the path and the interior journey (ṭarīqa) is inseparable from it.',
+      },
+      {
+        heading: 'Historical and civilisational context',
+        body: 'The earliest identifiable Sufis appear in 8th-century Basra and Baghdad. Ḥasan al-Baṣrī (642–728 CE) introduced the note of ascetic fear and grief into the emerging Muslim community. Rābiʿa al-ʿAdawiyya (c. 717–801 CE), the woman mystic of Basra, transformed the framework: for her, the path was not fear of hell or desire for heaven but pure love of God for God\'s own sake — maḥabba without condition or motive.\n\nBy the 9th and 10th centuries, systematic frameworks were forming. Al-Junayd of Baghdad (c. 835–910 CE) articulated the doctrine of fanāʾ and baqāʾ that would define classical Sufism. Al-Hallāj (857–922 CE) declared "Anā al-Ḥaqq" — "I am the Real/Truth" — and was executed for it: the first martyr of the interior path. The great synthesis came with Ibn Arabī (1165–1240 CE), whose Fuṣūṣ al-Ḥikam established waḥdat al-wujūd as a formal metaphysical doctrine. By the 12th–13th centuries, the great orders — Qādirī, Chishtī, Suhrawardī, Naqshbandī — were carrying Sufism into Central Asia, Persia, Anatolia, and decisively into India.',
+      },
+      {
+        heading: 'Fanāʾ and baqāʾ: annihilation and subsistence',
+        body: 'The central experiential-metaphysical claim of Sufism: on the path, the mystic\'s ego-self (nafs) must be annihilated (fanāʾ) — extinguished in the divine reality. This is not death or unconsciousness but a transformation of identity: the separate self recognises that it never had independent being. What follows is baqāʾ — subsistence, survival — but survival in God, as God\'s activity continues through the now-transparent person.\n\nAl-Junayd\'s formulation is careful: fanāʾ is not the literal destruction of personhood but its purification. The mystic does not become God; the mystic is freed from the illusion of separation from God. This distinction matters enormously for the debate with Advaita Vedānta: Sufism broadly maintains the distinction between Creator and created even within the experience of unity, whereas Advaita collapses that distinction entirely. This is the precise fault-line that Dara Shikoh tried to paper over — and that Sirhindī refused to let dissolve.',
+      },
+      {
         heading: 'Waḥdat al-wujūd: the unity of being',
-        body: 'Ibn Arabī\'s foundational doctrine: there is only one Being (al-wujūd), and everything that exists is a manifestation (tajallī) of that one Being. The apparent multiplicity of the world is real as manifestation but not real as independent being. The mystic\'s path is the gradual removal of the veils (ḥujub) that prevent recognition of this unity.\n\nThe parallel with Advaita Vedānta is immediate and striking. Brahman alone is real; the world is not separate from Brahman but appears as such through māyā/avidyā. Dara Shikoh, in his Majmaʿ al-Baḥrayn (The Confluence of Two Oceans), argued explicitly that waḥdat al-wujūd and Advaita Vedānta were the same philosophical insight expressed in different cultural vocabularies.',
+        body: 'Ibn Arabī\'s foundational doctrine: there is only one Being (al-wujūd), and everything that exists is a manifestation (tajallī) of that one Being. The apparent multiplicity of the world is real as manifestation but not real as independent being. The mystic\'s path is the gradual removal of the veils (ḥujub) that prevent recognition of this unity.\n\nThe parallel with Advaita Vedānta is immediate and striking. Brahman alone is real; the world is not separate from Brahman but appears as such through māyā/avidyā. Dara Shikoh, in his Majmaʿ al-Baḥrayn (The Confluence of Two Oceans), argued explicitly that waḥdat al-wujūd and Advaita Vedānta were the same philosophical insight expressed in different cultural vocabularies. Whether this equation holds — whether taṭahhur (purification of Being) is really the same as vivartavāda (the theory that the world is an apparent transformation of Brahman) — remains contested.',
+      },
+      {
+        heading: 'The India encounter: Sufism meets bhakti',
+        body: 'The Chishtī order, founded in India by Muʿīn ud-Dīn Chishtī (1141–1230 CE) at Ajmer, made a deliberate choice to engage local culture — using Persian and Hindi poetry, samāʿ (devotional music), and vegetarian practice in ways unusual for Sufism elsewhere. The result was a deep intellectual encounter with the bhakti tradition — the North Indian movement of devotional Hindu poetry centred on nirguna (attribute-less) devotion.\n\nKabīr (c. 1398–1518 CE) is the most philosophically radical figure of this synthesis. His dohas systematically refuse the external markers of both traditions: he dismisses pilgrimages, caste, circumcision, and Vedic authority with equal irreverence. What remains is the interior encounter with "Sahaj" — the spontaneous natural state — that nirguna bhakti and Sufi fanāʾ were both pointing toward. Dara Shikoh (1615–1659 CE) represents the most explicitly philosophical moment of this encounter: his Sirr-e-Akbar translated 52 Upaniṣads into Persian to show they described the same reality as the Quran\'s bāṭin (inward meaning). He was executed in 1659 by his brother Aurangzeb.',
+      },
+      {
+        heading: 'The great internal debate: waḥdat al-wujūd vs waḥdat al-shuhūd',
+        body: 'Sufism is not philosophically uniform. The most consequential internal debate: Ibn Arabī\'s waḥdat al-wujūd (unity of being — there is literally only one Being) versus Aḥmad Sirhindī\'s (1564–1624 CE) waḥdat al-shuhūd (unity of witnessing — in the peak experience of union, the mystic perceives only God, but this does not mean Being is numerically one).\n\nSirhindī, the Naqshbandī Mujaddid, accepted the experience of mystical union but rejected its metaphysical interpretation. The apparent unity is a feature of subjective experience (shuhūd, witnessing) — not a statement about the ontological structure of reality. Creator and creation remain genuinely distinct; God is not the world. To claim otherwise is to slide into ḥulūl (immanentism) — the charge the conservative ulema had levelled at al-Hallāj. This debate maps precisely onto the Vedāntic divide between Advaita (Brahman alone is real, the world is apparent) and Viśiṣṭādvaita (Brahman is real, the world is Brahman\'s body — real but not independent). It is this parallelism that Dara Shikoh found philosophically irresistible — and that every serious comparativist since has had to grapple with.',
       },
     ],
     sources: [
@@ -1000,6 +1020,14 @@ export const TRADITIONS: Tradition[] = [
       {
         title: 'Majmaʿ al-Baḥrayn · Dara Shikoh',
         note: 'The Confluence of Two Oceans — Dara Shikoh\'s explicit comparison of Sufism and Vedānta',
+      },
+      {
+        title: 'Masnavi · Jalāl al-Dīn Rūmī',
+        note: 'Six volumes of Persian poetry — the definitive statement of Sufi spiritual experience in literary form',
+      },
+      {
+        title: 'Maktūbāt · Aḥmad Sirhindī',
+        note: 'The collected letters of the Mujaddid — primary source for waḥdat al-shuhūd',
       },
     ],
   },
