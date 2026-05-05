@@ -84,8 +84,8 @@ export default async function ConceptPage({ params }: { params: Promise<{ concep
             </span>
           </div>
           {result.texts.map((text, ti) =>
-            text.slug ? (
-              <Link key={ti} href={`/sources/${text.slug}`} className={styles.crtRow}>
+            text.href ? (
+              <Link key={ti} href={text.href} className={styles.crtRow}>
                 <div className={styles.crtTitle}>{text.title}</div>
                 <div className={styles.crtPassage}>{text.meta}</div>
               </Link>

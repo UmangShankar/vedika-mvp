@@ -116,8 +116,8 @@ export function SourcesIndexPage() {
           </div>
         </div>
         {texts.map((text, i) =>
-          text.slug ? (
-            <Link key={i} href={`/sources/${text.slug}`} className={styles.textRow}>
+          text.href ? (
+            <Link key={i} href={text.href} className={styles.textRow}>
               <div className={styles.textRowLeft}>
                 <span className={styles.textTitle}>{text.title}</span>
                 <span className={styles.textMeta}>{text.meta}</span>
