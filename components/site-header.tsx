@@ -21,7 +21,8 @@ export function SiteHeader() {
         {/* Desktop nav */}
         <nav aria-label="Primary" className="hidden items-center gap-6 md:flex">
           {siteConfig.nav.map((item) => {
-            const isActive = pathname === item.href || pathname.startsWith(item.href + '/');
+            const match = item.activeMatch ?? item.href;
+            const isActive = pathname === match || pathname.startsWith(match + '/');
             return (
               <Link
                 key={item.href}
@@ -65,7 +66,8 @@ export function SiteHeader() {
         <div className="border-b border-warm bg-sandal-50 md:hidden">
           <nav className="flex flex-col">
             {siteConfig.nav.map((item) => {
-              const isActive = pathname === item.href || pathname.startsWith(item.href + '/');
+              const match = item.activeMatch ?? item.href;
+              const isActive = pathname === match || pathname.startsWith(match + '/');
               return (
                 <Link
                   key={item.href}
