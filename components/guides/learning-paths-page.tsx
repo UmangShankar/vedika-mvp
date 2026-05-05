@@ -66,7 +66,7 @@ const PATHS: Record<Persona, PathData> = {
         title: 'The shape of the canon — Śruti, Smṛti, Itihāsa',
         description: 'Before reading any text, understand why Vedic literature is structured as it is. Śruti is "that which was heard" — the eternal, authorless revelation of the Vedas and Upaniṣads. Smṛti is "that which was remembered" — human commentary, law codes, devotional literature. Itihāsa is history — the epics that carry philosophy inside narrative.',
         resources: [
-          { label: 'Texts overview', type: 'text', href: '/texts' },
+          { label: 'Texts overview', type: 'text', href: '/traditions' },
           { label: 'Ask Vedika', type: 'ai' },
         ],
         meta: '~15 min',
@@ -77,7 +77,7 @@ const PATHS: Record<Persona, PathData> = {
         title: 'The Bhagavad Gita — the ideal entry point',
         description: 'Short enough to read in a weekend, rich enough to study for a lifetime. 700 verses embedded in the Mahābhārata (Itihāsa — not Smṛti). Three paths to liberation: jñāna (knowledge), bhakti (devotion), karma (action). The dialogue between Arjuna and Kṛṣṇa on the battlefield of Kurukṣetra is the closest thing Sanatan Dharma has to a universally accessible text.',
         resources: [
-          { label: 'Bhagavad Gita', type: 'text', href: '/texts/bhagavad-gita' },
+          { label: 'Bhagavad Gita', type: 'text', href: '/traditions' },
           { label: 'Ask Vedika about the Gita', type: 'ai' },
         ],
         meta: '~20 min orientation',
@@ -130,7 +130,7 @@ const PATHS: Record<Persona, PathData> = {
         title: "The Upaniṣads — Vedānta's source",
         description: '108 Upaniṣads form the philosophical culmination of the Vedas (Vedānta literally means "end of the Vedas"). The Praśna, Muṇḍaka, Māṇḍūkya, Bṛhadāraṇyaka, and Chāndogya are the essential starting points. Key formula: Tat tvam asi — "That thou art." The Upaniṣads ask: what is the nature of Brahman (ultimate reality), and what is its relationship to ātman (the individual self)?',
         resources: [
-          { label: 'Upaniṣads', type: 'text', href: '/texts/upanishads' },
+          { label: 'Upaniṣads', type: 'text', href: '/traditions' },
           { label: 'Ask Vedika', type: 'ai' },
         ],
         meta: '~30 min',
@@ -175,7 +175,7 @@ const PATHS: Record<Persona, PathData> = {
         description: "The Bhāgavata Purāṇa (Srimad Bhagavatam) and the Pāñcarātra Āgamas form the scriptural basis of Vaiṣṇava bhakti. Rāmānuja's Viśiṣṭādvaita (\"qualified non-dualism\") and Madhva's Dvaita (\"dualism\") are both theological responses to Śaṅkara — each preserving a real distinction between the devotee and God, making bhakti meaningful in a way that Advaita's complete identity cannot.",
         resources: [
           { label: 'Vaiṣṇavism', type: 'tradition', href: '/traditions' },
-          { label: 'Srimad Bhagavatam', type: 'text', href: '/texts' },
+          { label: 'Srimad Bhagavatam', type: 'text', href: '/traditions' },
           { label: 'Ask Vedika', type: 'ai' },
         ],
         meta: '~30 min',

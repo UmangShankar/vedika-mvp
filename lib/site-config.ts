@@ -7,11 +7,10 @@ export const siteConfig = {
   description: 'A content-first Sanatan Dharma research platform. Source-grounded, trust-first.',
   baseUrl,
   nav: [
-    { label: 'Research',  href: '/research'  },
-    { label: 'Traditions', href: '/traditions' },
-    { label: 'Texts',     href: '/texts'     },
-    { label: 'Guides',    href: '/guides/learning-paths', activeMatch: '/guides' },
-    { label: 'Sources',   href: '/sources'   },
-    { label: 'Purāṇas',  href: '/puranas'   },
+    { label: 'Research',        href: '/research'  },
+    { label: 'Traditions',      href: '/traditions' },
+    { label: 'Learning Paths',  href: '/guides/learning-paths', activeMatch: '/guides' },
+    { label: 'Sources',         href: '/sources'   },
+    { label: 'Purāṇas',        href: '/puranas'   },
   ],
 };

@@ -15,6 +15,8 @@ const nextConfig = {
     return [
       { source: '/topics', destination: '/traditions', permanent: true },
       { source: '/topics/:slug*', destination: '/traditions/:slug*', permanent: true },
+      { source: '/texts', destination: '/guides/learning-paths', permanent: true },
+      { source: '/texts/:slug*', destination: '/traditions', permanent: true },
     ];
   },
   async headers() {
