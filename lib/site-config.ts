@@ -10,7 +10,6 @@ export const siteConfig = {
     { label: 'Purāṇas',        href: '/puranas'   },
     { label: 'Learning Paths',  href: '/guides/learning-paths', activeMatch: '/guides' },
     { label: 'Traditions',      href: '/traditions' },
-    { label: 'Sources',         href: '/sources'   },
     { label: 'Research',        href: '/research'  },
   ],
 };

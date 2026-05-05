@@ -24,7 +24,9 @@
       "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\umang.shankar\\\\documents\\\\vedika-mvp\" -Recurse -Depth 2)",
       "Bash(Select-Object FullName)",
       "Bash(npx tsc *)",
-      "Bash(node -e ' *)"
+      "Bash(node -e ' *)",
+      "PowerShell(Get-ChildItem -Path \"C:\\\\Users\\\\umang.shankar\\\\documents\\\\vedika-mvp\\\\app\" -Directory | Where-Object { -not $_.Name.StartsWith\\('_'\\) -and -not $_.Name.StartsWith\\('['\\) -and $_.Name -notmatch '^api$' } | Select-Object -ExpandProperty Name | Sort-Object)",
+      "Bash(npx next *)"
     ]
   }
 }
