@@ -148,6 +148,10 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
     email,
     topics: [{ id: topicId, subscription: 'opt_in' }],
   }, apiKey);
+  // TEMP: log actual Resend response for debugging
+  const createBody = await createRes.json().catch(() => null);
+  console.log('Resend contacts status:', createRes.status);
+  console.log('Resend contacts body:', JSON.stringify(createBody));
   if (createRes.status === 409) {
     return NextResponse.json({ error: 'already_subscribed' }, { status: 409 });
   }
