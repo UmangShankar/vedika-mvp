@@ -11,5 +11,6 @@ export const siteConfig = {
     { label: 'Learning Paths',  href: '/guides/learning-paths', activeMatch: '/guides' },
     { label: 'Traditions',      href: '/traditions' },
     { label: 'Research',        href: '/research'  },
+    { label: 'About',           href: '/about'     },
   ],
 };
