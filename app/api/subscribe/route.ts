@@ -16,7 +16,7 @@ const WELCOME_HTML = `<!DOCTYPE html>
 
   <!-- Header -->
   <tr><td align="center" style="padding:36px 0 28px;">
-    <img src="https://askvedika.com/logo-om.png" width="64" height="64" alt="Vedika" style="display:block;margin:0 auto 10px;"/>
+    <img src="https://www.askvedika.com/om-logo.png" width="64" height="64" alt="Vedika" style="display:block;margin:0 auto 10px;"/>
     <p style="margin:0;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#C07828;font-family:system-ui,sans-serif;font-weight:500;">Vedika</p>
   </td></tr>
 
@@ -43,13 +43,13 @@ const WELCOME_HTML = `<!DOCTYPE html>
       <table width="100%" cellpadding="0" cellspacing="0">
       <tr>
         <td width="48%" style="padding-right:5px;padding-bottom:10px;vertical-align:top;">
-          <a href="https://askvedika.com/explore" style="display:block;background:#FDFAF6;border:0.5px solid rgba(192,120,40,0.22);border-radius:3px;padding:14px 16px;text-decoration:none;">
+          <a href="https://www.askvedika.com/" style="display:block;background:#FDFAF6;border:0.5px solid rgba(192,120,40,0.22);border-radius:3px;padding:14px 16px;text-decoration:none;">
             <p style="margin:0 0 3px;font-size:13px;font-weight:500;color:#1C1208;font-family:system-ui,sans-serif;">Explore</p>
             <p style="margin:0;font-size:12px;color:#7A6A56;font-family:system-ui,sans-serif;line-height:1.4;">Browse the full library of texts and traditions</p>
           </a>
         </td>
         <td width="48%" style="padding-left:5px;padding-bottom:10px;vertical-align:top;">
-          <a href="https://askvedika.com/traditions" style="display:block;background:#FDFAF6;border:0.5px solid rgba(192,120,40,0.22);border-radius:3px;padding:14px 16px;text-decoration:none;">
+          <a href="https://www.askvedika.com/traditions" style="display:block;background:#FDFAF6;border:0.5px solid rgba(192,120,40,0.22);border-radius:3px;padding:14px 16px;text-decoration:none;">
             <p style="margin:0 0 3px;font-size:13px;font-weight:500;color:#1C1208;font-family:system-ui,sans-serif;">Traditions</p>
             <p style="margin:0;font-size:12px;color:#7A6A56;font-family:system-ui,sans-serif;line-height:1.4;">17 living traditions mapped and cross-referenced</p>
           </a>
@@ -57,13 +57,13 @@ const WELCOME_HTML = `<!DOCTYPE html>
       </tr>
       <tr>
         <td width="48%" style="padding-right:5px;vertical-align:top;">
-          <a href="https://askvedika.com/darshanas" style="display:block;background:#FDFAF6;border:0.5px solid rgba(192,120,40,0.22);border-radius:3px;padding:14px 16px;text-decoration:none;">
+          <a href="https://www.askvedika.com/darshanas" style="display:block;background:#FDFAF6;border:0.5px solid rgba(192,120,40,0.22);border-radius:3px;padding:14px 16px;text-decoration:none;">
             <p style="margin:0 0 3px;font-size:13px;font-weight:500;color:#1C1208;font-family:system-ui,sans-serif;">Darśanas</p>
             <p style="margin:0;font-size:12px;color:#7A6A56;font-family:system-ui,sans-serif;line-height:1.4;">The six orthodox schools of Indian philosophy</p>
           </a>
         </td>
         <td width="48%" style="padding-left:5px;vertical-align:top;">
-          <a href="https://askvedika.com/learning-paths" style="display:block;background:#FDFAF6;border:0.5px solid rgba(192,120,40,0.22);border-radius:3px;padding:14px 16px;text-decoration:none;">
+          <a href="https://www.askvedika.com/guides/learning-paths" style="display:block;background:#FDFAF6;border:0.5px solid rgba(192,120,40,0.22);border-radius:3px;padding:14px 16px;text-decoration:none;">
             <p style="margin:0 0 3px;font-size:13px;font-weight:500;color:#1C1208;font-family:system-ui,sans-serif;">Learning paths</p>
             <p style="margin:0;font-size:12px;color:#7A6A56;font-family:system-ui,sans-serif;line-height:1.4;">Structured journeys from first text to deep study</p>
           </a>
@@ -74,7 +74,7 @@ const WELCOME_HTML = `<!DOCTYPE html>
 
     <!-- CTA -->
     <tr><td style="padding:36px 48px;text-align:center;border-bottom:0.5px solid rgba(192,120,40,0.15);">
-      <a href="https://askvedika.com/explore" style="display:inline-block;padding:11px 32px;background:#C07828;color:#FDFAF6;font-family:system-ui,sans-serif;font-size:13px;font-weight:500;letter-spacing:0.04em;text-decoration:none;border-radius:2px;">Enter Vedika →</a>
+      <a href="https://www.askvedika.com/" style="display:inline-block;padding:11px 32px;background:#C07828;color:#FDFAF6;font-family:system-ui,sans-serif;font-size:13px;font-weight:500;letter-spacing:0.04em;text-decoration:none;border-radius:2px;">Enter Vedika →</a>
     </td></tr>
 
     <!-- Closing -->
@@ -88,8 +88,7 @@ const WELCOME_HTML = `<!DOCTYPE html>
     <!-- Footer -->
     <tr><td style="padding:24px 48px;text-align:center;">
       <p style="margin:0;font-size:11px;color:#7A6A56;font-family:system-ui,sans-serif;line-height:1.9;">
-        You are receiving this because you subscribed at <a href="https://askvedika.com" style="color:#C07828;text-decoration:none;">askvedika.com</a><br/>
-        <a href="https://askvedika.com/unsubscribe" style="color:#C07828;text-decoration:none;">Unsubscribe</a> &nbsp;·&nbsp; <a href="https://askvedika.com" style="color:#C07828;text-decoration:none;">askvedika.com</a>
+        You are receiving this because you subscribed at <a href="https://www.askvedika.com" style="color:#C07828;text-decoration:none;">www.askvedika.com</a>
       </p>
     </td></tr>
 
