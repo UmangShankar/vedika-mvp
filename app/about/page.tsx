@@ -103,12 +103,14 @@ export default function AboutPage() {
             >
               askvedika.com
             </a>
-            <Link
-              href="/contact"
+            <a
+              href="https://www.umangshankar.com/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="rounded px-2.5 py-1 text-[12.5px] text-ink-muted no-underline border border-[rgba(192,120,40,0.18)] bg-sandal-100 hover:border-[rgba(192,120,40,0.30)] hover:text-ink transition-colors"
             >
               Contact
-            </Link>
+            </a>
           </div>
         </div>
       </div>
