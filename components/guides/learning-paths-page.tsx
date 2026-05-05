@@ -404,7 +404,7 @@ export function LearningPathsPage() {
                 tabIndex={0}
                 onClick={() => handleSelectPersona(p)}
                 onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleSelectPersona(p); } }}
-                className="relative cursor-pointer overflow-hidden rounded-xl border bg-white transition-all duration-200 hover:-translate-y-px hover:shadow-card-md"
+                className="relative cursor-pointer overflow-hidden rounded-xl border bg-white transition-all duration-200 hover:-translate-y-px hover:shadow-card-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-saffron-400 focus-visible:outline-offset-2"
                 style={isActive
                   ? { borderColor: ac.border, backgroundColor: ac.light }
                   : { borderColor: 'rgba(192,120,40,0.18)' }
@@ -579,7 +579,7 @@ export function LearningPathsPage() {
                     }
                   }}
                   className={`overflow-hidden rounded-xl border transition-all duration-200 ${
-                    !locked ? 'cursor-pointer hover:shadow-card' : 'cursor-default'
+                    !locked ? 'cursor-pointer hover:shadow-card focus-visible:outline focus-visible:outline-2 focus-visible:outline-saffron-400 focus-visible:outline-offset-2' : 'cursor-default'
                   }`}
                   style={cardStyle}
                 >
@@ -615,7 +615,7 @@ export function LearningPathsPage() {
                                 <Link
                                   key={ri}
                                   href={`/ask-vedika?context=learning-path-${persona}-step-${i}`}
-                                  className="inline-flex items-center gap-1.5 rounded-md px-3 py-1.5 text-[12px] font-normal text-white no-underline transition-colors hover:opacity-88"
+                                  className="inline-flex items-center gap-1.5 rounded-md px-3 py-1.5 text-[12px] font-normal text-white no-underline transition-opacity hover:[opacity:0.88]"
                                   style={{ backgroundColor: '#1C1208' }}
                                 >
                                   <span
@@ -743,7 +743,7 @@ export function LearningPathsPage() {
                 tabIndex={0}
                 onClick={() => handleSelectPersona(p)}
                 onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleSelectPersona(p); } }}
-                className="relative cursor-pointer overflow-hidden rounded-xl border bg-white transition-all duration-200 hover:border-[rgba(192,120,40,0.28)]"
+                className="relative cursor-pointer overflow-hidden rounded-xl border bg-white transition-all duration-200 hover:border-[rgba(192,120,40,0.28)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-saffron-400 focus-visible:outline-offset-2"
                 style={{ borderColor: isSelected ? 'rgba(192,120,40,0.28)' : 'rgba(192,120,40,0.12)' }}
               >
                 {/* Bottom accent line */}
