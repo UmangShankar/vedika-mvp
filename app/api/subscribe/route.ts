@@ -2,7 +2,9 @@ import { NextRequest, NextResponse } from 'next/server';
 
 const RESEND_BASE = 'https://api.resend.com';
 
-const WELCOME_HTML = `<!DOCTYPE html>
+function buildWelcomeHtml(email: string): string {
+  const unsubscribeUrl = `https://www.askvedika.com/unsubscribe?email=${encodeURIComponent(email)}`;
+  return `<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
@@ -86,9 +88,10 @@ const WELCOME_HTML = `<!DOCTYPE html>
     </td></tr>
 
     <!-- Footer -->
-    <tr><td style="padding:24px 48px;text-align:center;">
+    <tr><td style="padding:24px 48px;text-align:center;border-top:0.5px solid rgba(192,120,40,0.15);">
       <p style="margin:0;font-size:11px;color:#7A6A56;font-family:system-ui,sans-serif;line-height:1.9;">
-        You are receiving this because you subscribed at <a href="https://www.askvedika.com" style="color:#C07828;text-decoration:none;">www.askvedika.com</a>
+        You are receiving this because you subscribed at www.askvedika.com<br/>
+        <a href="${unsubscribeUrl}" style="color:#C07828;text-decoration:none;">Unsubscribe</a>
       </p>
     </td></tr>
 
@@ -100,6 +103,7 @@ const WELCOME_HTML = `<!DOCTYPE html>
 </table>
 </body>
 </html>`;
+}
 
 function isValidEmail(email: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -154,7 +158,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
     reply_to: 'namaskar@askvedika.com',
     to: [email],
     subject: 'So glad you found your way here',
-    html: WELCOME_HTML,
+    html: buildWelcomeHtml(email),
     ...(source ? { tags: [{ name: 'source', value: source }] } : {}),
   }, apiKey);
 
