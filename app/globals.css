@@ -82,6 +82,28 @@ button:focus-visible {
   --lp-purple-light: #f0ecfb;
   --lp-purple-border:#c8b8f0;
   --lp-purple-text:  #352860;
+
+  /* Semantic accent ramps (Sources + shared) */
+  --purple-fill:   #eeedfe;
+  --purple-border: #afa9ec;
+  --purple-text:   #3c3489;
+  --teal-fill:     #e1f5ee;
+  --teal-border:   #5dcaa5;
+  --teal-text:     #085041;
+  --amber-fill:    #faeeda;
+  --amber-border:  #ef9f27;
+  --amber-text:    #633806;
+
+  /* Semantic color tokens */
+  --color-background-primary:   #FDFAF6;
+  --color-background-secondary: #F5EFE5;
+  --color-background-tertiary:  #F5EFE5;
+  --color-text-primary:         #1C1208;
+  --color-text-secondary:       #4A3B28;
+  --color-text-tertiary:        #7A6A56;
+  --color-border-tertiary:      rgba(192,120,40,0.18);
+  --color-border-secondary:     rgba(192,120,40,0.30);
+  --color-border-primary:       rgba(192,120,40,0.50);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -98,6 +120,26 @@ button:focus-visible {
     --lp-purple-light: rgba(138,114,200,0.12);
     --lp-purple-border:rgba(138,114,200,0.30);
     --lp-purple-text:  #b8a8e0;
+
+    --purple-fill:   #26215c;
+    --purple-border: #534ab7;
+    --purple-text:   #cecbf6;
+    --teal-fill:     #04342c;
+    --teal-border:   #0f6e56;
+    --teal-text:     #9fe1cb;
+    --amber-fill:    #412402;
+    --amber-border:  #854f0b;
+    --amber-text:    #fac775;
+
+    --color-background-primary:   #1a1916;
+    --color-background-secondary: #242320;
+    --color-background-tertiary:  #131210;
+    --color-text-primary:         #f0ebe3;
+    --color-text-secondary:       #c8b99a;
+    --color-text-tertiary:        #8a7a66;
+    --color-border-tertiary:      rgba(255,255,255,0.10);
+    --color-border-secondary:     rgba(255,255,255,0.18);
+    --color-border-primary:       rgba(255,255,255,0.28);
   }
 }
 
