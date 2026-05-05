@@ -3,7 +3,7 @@
 import { useState, useRef, type KeyboardEvent } from 'react';
 
 type Variant = 'section' | 'footer' | 'inline';
-type State = 'idle' | 'loading' | 'success' | 'error';
+type State = 'idle' | 'loading' | 'success' | 'duplicate' | 'error';
 
 interface NewsletterSignupProps {
   source?: string;
@@ -32,6 +32,8 @@ export function NewsletterSignup({ source, variant = 'section' }: NewsletterSign
 
       if (res.ok && data.success) {
         setState('success');
+      } else if (res.status === 409) {
+        setState('duplicate');
       } else {
         setErrorMsg(data.error ?? 'Something went wrong. Please try again.');
         setState('error');
@@ -137,6 +139,11 @@ export function NewsletterSignup({ source, variant = 'section' }: NewsletterSign
               ) : 'Subscribe'}
             </button>
           </div>
+          {state === 'duplicate' && (
+            <p style={{ fontSize: '12px', color: 'var(--color-text-tertiary)', margin: 0, lineHeight: 1.6, textAlign: 'center' }}>
+              This email is already subscribed. Please check your Promotions or Spam folder for our welcome email.
+            </p>
+          )}
           {state === 'error' && (
             <p style={{ fontSize: '12.5px', color: '#C0392B', margin: 0, lineHeight: 1.5 }}>
               {errorMsg}

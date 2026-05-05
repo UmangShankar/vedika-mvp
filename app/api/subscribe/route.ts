@@ -143,12 +143,15 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
     return NextResponse.json({ error: 'Invalid email address' }, { status: 400 });
   }
 
-  // Create contact and subscribe to topic in one call (409 = already exists, treat as success)
+  // Create contact and subscribe to topic in one call
   const createRes = await resendPost('/contacts', {
     email,
     topics: [{ id: topicId, subscription: 'opt_in' }],
   }, apiKey);
-  if (!createRes.ok && createRes.status !== 409) {
+  if (createRes.status === 409) {
+    return NextResponse.json({ error: 'already_subscribed' }, { status: 409 });
+  }
+  if (!createRes.ok) {
     return NextResponse.json({ error: 'Failed to create contact' }, { status: 502 });
   }
 
