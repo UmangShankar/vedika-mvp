@@ -67,3 +67,41 @@ button:focus-visible {
 ::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { @apply bg-sandal-300 rounded-full; }
+
+/* Learning Paths accent tokens */
+:root {
+  --lp-teal:         #0f6b56;
+  --lp-teal-light:   #e4f4ef;
+  --lp-teal-border:  #a8d9cc;
+  --lp-teal-text:    #0a4d3d;
+  --lp-amber:        #a85818;
+  --lp-amber-light:  #fdf2e7;
+  --lp-amber-border: #e8c090;
+  --lp-amber-text:   #7a3e0e;
+  --lp-purple:       #4a3878;
+  --lp-purple-light: #f0ecfb;
+  --lp-purple-border:#c8b8f0;
+  --lp-purple-text:  #352860;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --lp-teal:         #2db896;
+    --lp-teal-light:   rgba(45,184,150,0.12);
+    --lp-teal-border:  rgba(45,184,150,0.30);
+    --lp-teal-text:    #6ed4ba;
+    --lp-amber:        #d4803a;
+    --lp-amber-light:  rgba(212,128,58,0.12);
+    --lp-amber-border: rgba(212,128,58,0.30);
+    --lp-amber-text:   #e8aa78;
+    --lp-purple:       #8a72c8;
+    --lp-purple-light: rgba(138,114,200,0.12);
+    --lp-purple-border:rgba(138,114,200,0.30);
+    --lp-purple-text:  #b8a8e0;
+  }
+}
+
+@keyframes expandIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
