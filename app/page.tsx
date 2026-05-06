@@ -24,7 +24,11 @@ export default function HomePage() {
       <SacredTexts />
       <ItihasaSection />
       <DarshanasSection />
-      <AskPreview />
+      <section className="py-16 px-6">
+        <div className="mx-auto max-w-wide">
+          <AskPreview />
+        </div>
+      </section>
       <NewsletterSignup />
       <SiteFooter />
     </main>
