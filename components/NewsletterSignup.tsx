@@ -114,7 +114,7 @@ export function NewsletterSignup({ source, variant = 'section' }: NewsletterSign
                 fontWeight: 500,
                 color: '#FDFAF6',
                 background: '#C07828',
-                border: 'none',
+                border: '0.5px solid var(--color-border-secondary)',
                 borderRadius: '2px',
                 cursor: state === 'loading' ? 'not-allowed' : 'pointer',
                 opacity: state === 'loading' ? 0.7 : 1,
@@ -173,7 +173,7 @@ export function NewsletterSignup({ source, variant = 'section' }: NewsletterSign
   // section variant
   return (
     <div
-      className="nl-wrap rounded-2xl border border-[rgba(192,120,40,0.20)] bg-sandal-50 p-7 sm:p-8"
+      className="nl-wrap rounded-2xl border border-[rgba(192,120,40,0.20)] bg-sandal-100 p-7 sm:p-8"
       style={{
         '--color-background-primary': '#FDFAF6',
         '--color-background-secondary': '#F5EFE5',
@@ -184,7 +184,7 @@ export function NewsletterSignup({ source, variant = 'section' }: NewsletterSign
         '--color-text-tertiary': '#7A6A56',
       } as React.CSSProperties}
     >
-      <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:gap-8">
+      <div className="flex flex-col gap-6 sm:flex-row items-center sm:gap-8">
         <div className="min-w-0 flex-1">
           <h2 className="font-serif text-subheading text-ink">Stay close to the sources</h2>
           <p className="mt-1.5 text-body-sm text-ink-muted">

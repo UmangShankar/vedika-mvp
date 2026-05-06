@@ -21,31 +21,29 @@ const SOURCE_ICONS: Record<string, string> = {
 
 export function AskPreview() {
   return (
-    <div className="mx-auto max-w-[640px] rounded-2xl border border-[rgba(192,120,40,0.20)] bg-white shadow-[0_8px_24px_rgba(28,18,8,0.10),0_2px_6px_rgba(28,18,8,0.04)] overflow-hidden">
+    <div className="mx-auto max-w-[640px] overflow-hidden rounded-xl border bg-sandal-50">
 
       {/* Header bar */}
-      <div className="flex items-center gap-3 px-5 py-4 border-b border-[rgba(192,120,40,0.12)] bg-[#FDFAF6]">
-        <div className="w-8 h-8 rounded-full bg-[#FEF7ED] border border-[#FDECD3] flex items-center justify-center shrink-0">
-          <span className="text-[#C07828] text-sm font-serif">ॐ</span>
+      <div className="flex items-center gap-3 border-b bg-sandal-100 px-5 py-4">
+        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border bg-sandal-100">
+          <span className="font-serif text-sm text-saffron-500">ॐ</span>
         </div>
-        <div className="flex-1 min-w-0">
+        <div className="min-w-0 flex-1">
           <div className="flex items-center gap-2">
-            <span className="text-[0.875rem] font-semibold text-[#1C1208]">Ask Vedika</span>
-            <span className="inline-flex items-center text-[0.625rem] tracking-[0.12em] font-semibold text-[#C07828] bg-[#FEF7ED] border border-[#FDECD3] px-1.5 py-0.5 rounded-sm uppercase">
-              Beta
-            </span>
+            <span className="text-body-sm font-semibold text-ink">Ask Vedika</span>
+            <span className="beta-badge">Beta</span>
           </div>
-          <p className="text-[0.75rem] text-[#A89880] leading-none mt-0.5">Source-grounded exploration</p>
+          <p className="mt-0.5 text-caption leading-none text-ink-faint">Source-grounded exploration</p>
         </div>
       </div>
 
       {/* Chat exchange */}
-      <div className="px-5 pt-5 pb-4 space-y-4">
+      <div className="space-y-4 px-5 pb-4 pt-5">
 
         {/* User bubble */}
         <div className="flex justify-end">
-          <div className="max-w-[75%] rounded-2xl rounded-tr-sm bg-[#F5EFE5] px-4 py-2.5">
-            <p className="text-[0.875rem] text-[#1C1208] leading-relaxed">
+          <div className="max-w-[75%] rounded-lg rounded-tr-sm bg-sandal-100 px-4 py-2.5">
+            <p className="text-body-sm leading-relaxed text-ink">
               {SAMPLE_EXCHANGE.question}
             </p>
           </div>
@@ -53,27 +51,24 @@ export function AskPreview() {
 
         {/* Vedika response */}
         <div className="flex justify-start gap-2.5">
-          <div className="w-6 h-6 rounded-full bg-[#FEF7ED] border border-[#FDECD3] flex items-center justify-center shrink-0 mt-1">
-            <span className="text-[#C07828] text-[10px] font-serif">ॐ</span>
+          <div className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border bg-sandal-100">
+            <span className="font-serif text-[10px] text-saffron-500">ॐ</span>
           </div>
           <div className="flex-1 space-y-2.5">
-            <div className="rounded-2xl rounded-tl-sm border border-[rgba(192,120,40,0.15)] bg-white px-4 py-3 shadow-[0_1px_3px_rgba(28,18,8,0.05)]">
-              <p className="text-[0.875rem] text-[#4A3B28] leading-[1.7] font-serif whitespace-pre-wrap">
+            <div className="rounded-lg rounded-tl-sm border bg-sandal-50 px-4 py-3">
+              <p className="whitespace-pre-wrap text-body-sm leading-[1.7] text-ink-light">
                 {SAMPLE_EXCHANGE.answer}
               </p>
             </div>
 
             {/* Sources */}
             <div className="space-y-1.5">
-              <p className="text-[0.625rem] tracking-[0.12em] font-semibold text-[#A89880] uppercase">
+              <p className="text-overline uppercase tracking-widest text-ink-faint">
                 Sources
               </p>
               <div className="flex flex-wrap gap-1.5">
                 {SAMPLE_EXCHANGE.sources.map((source, i) => (
-                  <span
-                    key={i}
-                    className="inline-flex items-center gap-1 text-[0.75rem] text-[#7A6A56] border border-[rgba(192,120,40,0.20)] bg-[#FDFAF6] px-2 py-1 rounded-sm"
-                  >
+                  <span key={i} className="source-badge">
                     <span className="text-[11px]">{SOURCE_ICONS[source.type] ?? '📄'}</span>
                     <span>{source.label}</span>
                   </span>
@@ -85,13 +80,13 @@ export function AskPreview() {
       </div>
 
       {/* CTA footer */}
-      <div className="px-5 py-4 bg-[#FDFAF6] border-t border-[rgba(192,120,40,0.12)] flex items-center justify-between gap-4">
-        <p className="text-[0.75rem] text-[#A89880] leading-snug">
+      <div className="flex items-center justify-between gap-4 border-t bg-sandal-100 px-5 py-4">
+        <p className="text-caption leading-snug text-ink-faint">
           AI guidance only. Always verify with the cited sources.
         </p>
         <Link
           href="/ask-vedika"
-          className="shrink-0 bg-[#C07828] hover:bg-[#9A5E1C] text-white text-[0.8125rem] font-medium px-4 py-2 rounded-lg transition-colors no-underline whitespace-nowrap"
+          className="shrink-0 whitespace-nowrap rounded-sm bg-saffron-500 px-4 py-2 text-body-sm font-medium text-white no-underline transition-colors hover:bg-saffron-600"
         >
           Try Ask Vedika →
         </Link>
