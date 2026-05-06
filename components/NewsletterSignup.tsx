@@ -172,49 +172,29 @@ export function NewsletterSignup({ source, variant = 'section' }: NewsletterSign
 
   // section variant
   return (
-    <div className="nl-wrap" style={{
-      '--color-background-primary': '#FDFAF6',
-      '--color-background-secondary': '#F5EFE5',
-      '--color-border-tertiary': 'rgba(192,120,40,0.18)',
-      '--color-border-secondary': 'rgba(192,120,40,0.30)',
-      '--color-text-primary': '#1C1208',
-      '--color-text-secondary': '#4A3B28',
-      '--color-text-tertiary': '#7A6A56',
-      background: 'var(--color-background-primary)',
-      border: '0.5px solid var(--color-border-tertiary)',
-      borderRadius: '4px',
-      padding: '32px 36px',
-    } as React.CSSProperties}>
-      <p style={{
-        margin: '0 0 6px',
-        fontSize: '15px',
-        fontWeight: 500,
-        color: 'var(--color-text-primary)',
-        lineHeight: 1.3,
-        fontFamily: 'system-ui, -apple-system, sans-serif',
-      }}>
-        Stay close to the sources
-      </p>
-      <p style={{
-        margin: '0 0 20px',
-        fontSize: '13.5px',
-        color: 'var(--color-text-secondary)',
-        lineHeight: 1.65,
-        fontFamily: 'system-ui, -apple-system, sans-serif',
-      }}>
-        Occasional deep dives on primary texts, interpretation threads, and new research paths.
-      </p>
-      {form}
-      {state !== 'success' && (
-        <p style={{
-          margin: '10px 0 0',
-          fontSize: '11.5px',
-          color: 'var(--color-text-tertiary)',
-          fontFamily: 'system-ui, -apple-system, sans-serif',
-        }}>
-          No noise. Occasional deep dives.
-        </p>
-      )}
+    <div
+      className="nl-wrap rounded-2xl border border-[rgba(192,120,40,0.20)] bg-sandal-50 p-7 sm:p-8"
+      style={{
+        '--color-background-primary': '#FDFAF6',
+        '--color-background-secondary': '#F5EFE5',
+        '--color-border-tertiary': 'rgba(192,120,40,0.18)',
+        '--color-border-secondary': 'rgba(192,120,40,0.30)',
+        '--color-text-primary': '#1C1208',
+        '--color-text-secondary': '#4A3B28',
+        '--color-text-tertiary': '#7A6A56',
+      } as React.CSSProperties}
+    >
+      <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:gap-8">
+        <div className="min-w-0 flex-1">
+          <h2 className="font-serif text-subheading text-ink">Stay close to the sources</h2>
+          <p className="mt-1.5 text-body-sm text-ink-muted">
+            Primary texts. Interpretation threads. New research paths. No noise.
+          </p>
+        </div>
+        <div className="sm:w-[280px] sm:shrink-0">
+          {form}
+        </div>
+      </div>
     </div>
   );
 }
