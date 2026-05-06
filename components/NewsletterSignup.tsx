@@ -93,31 +93,20 @@ export function NewsletterSignup({ source, variant = 'section' }: NewsletterSign
             <button
               onClick={submit}
               disabled={state === 'loading'}
+              className="rounded-sm bg-saffron-500 px-3 py-1.5 text-caption font-medium text-white no-underline transition-colors hover:bg-saffron-600"
               style={{
-                padding: '8px 18px',
-                fontSize: '13px',
-                fontWeight: 500,
-                color: 'var(--color-text-primary)',
-                background: 'var(--color-background-primary)',
-                border: '0.5px solid var(--color-border-secondary)',
-                borderRadius: '2px',
                 cursor: state === 'loading' ? 'not-allowed' : 'pointer',
                 opacity: state === 'loading' ? 0.7 : 1,
-                whiteSpace: 'nowrap',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                gap: '6px',
-                fontFamily: 'inherit',
-                flexShrink: 0,
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                gap: '6px', flexShrink: 0, border: 'none', fontFamily: 'inherit',
               }}
             >
               {state === 'loading' ? (
                 <>
                   <svg width="12" height="12" viewBox="0 0 12 12" style={{ animation: 'nl-spin 0.8s linear infinite' }}>
                     <style>{`@keyframes nl-spin { to { transform: rotate(360deg); } }`}</style>
-                    <circle cx="6" cy="6" r="4.5" fill="none" style={{ stroke: 'var(--color-border-secondary)' }} strokeWidth="1.5"/>
-                    <path d="M6 1.5a4.5 4.5 0 0 1 4.5 4.5" fill="none" style={{ stroke: 'var(--color-text-primary)' }} strokeWidth="1.5" strokeLinecap="round"/>
+                    <circle cx="6" cy="6" r="4.5" fill="none" style={{ stroke: 'currentColor', opacity: 0.4 }} strokeWidth="1.5"/>
+                    <path d="M6 1.5a4.5 4.5 0 0 1 4.5 4.5" fill="none" style={{ stroke: 'currentColor' }} strokeWidth="1.5" strokeLinecap="round"/>
                   </svg>
                   Subscribing…
                 </>

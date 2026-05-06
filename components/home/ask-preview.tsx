@@ -22,7 +22,7 @@ const SOURCE_ICONS: Record<string, string> = {
 export function AskPreview() {
   return (
     <div
-      className="mx-auto max-w-[640px] overflow-hidden rounded-xl"
+      className="overflow-hidden rounded-xl"
       style={{
         background: 'var(--color-background-primary)',
         border: '0.5px solid var(--color-border-tertiary)',
@@ -136,15 +136,8 @@ export function AskPreview() {
         </p>
         <Link
           href="/ask-vedika"
-          style={{
-            flexShrink: 0, whiteSpace: 'nowrap',
-            fontSize: '0.8125rem', fontWeight: 500,
-            color: 'var(--color-text-primary)',
-            background: 'var(--color-background-primary)',
-            border: '0.5px solid var(--color-border-secondary)',
-            padding: '6px 14px', borderRadius: '4px',
-            textDecoration: 'none',
-          }}
+          className="rounded-sm bg-saffron-500 px-3 py-1.5 text-caption font-medium text-white no-underline transition-colors hover:bg-saffron-600"
+          style={{ flexShrink: 0, whiteSpace: 'nowrap' }}
         >
           Try Ask Vedika →
         </Link>
