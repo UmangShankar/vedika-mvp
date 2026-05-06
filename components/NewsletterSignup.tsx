@@ -54,17 +54,6 @@ export function NewsletterSignup({ source, variant = 'section' }: NewsletterSign
         @media (min-width: 521px) {
           .nl-row { flex-direction: row !important; }
         }
-        @media (prefers-color-scheme: dark) {
-          .nl-wrap {
-            --color-background-primary: #1a1916;
-            --color-background-secondary: #242320;
-            --color-border-tertiary: rgba(240,237,232,0.10);
-            --color-border-secondary: rgba(240,237,232,0.18);
-            --color-text-primary: #f0ede8;
-            --color-text-secondary: #a8a49e;
-            --color-text-tertiary: #6a6760;
-          }
-        }
       `}</style>
 
       {state === 'success' ? (
@@ -76,16 +65,12 @@ export function NewsletterSignup({ source, variant = 'section' }: NewsletterSign
           alignItems: 'center',
           gap: '8px',
         }}>
-          <span style={{ color: '#2D7A6F', fontSize: '15px' }}>✓</span>
+          <span style={{ color: 'var(--color-success)', fontSize: '15px' }}>✓</span>
           You&apos;re subscribed. Expect occasional deep dives, nothing more.
         </p>
       ) : (
         <>
-          <div className="nl-row" style={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '8px',
-          }}>
+          <div className="nl-row" style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
             <input
               ref={inputRef}
               type="email"
@@ -112,8 +97,8 @@ export function NewsletterSignup({ source, variant = 'section' }: NewsletterSign
                 padding: '8px 18px',
                 fontSize: '13px',
                 fontWeight: 500,
-                color: '#FDFAF6',
-                background: '#C07828',
+                color: 'var(--color-text-primary)',
+                background: 'var(--color-background-primary)',
                 border: '0.5px solid var(--color-border-secondary)',
                 borderRadius: '2px',
                 cursor: state === 'loading' ? 'not-allowed' : 'pointer',
@@ -131,8 +116,8 @@ export function NewsletterSignup({ source, variant = 'section' }: NewsletterSign
                 <>
                   <svg width="12" height="12" viewBox="0 0 12 12" style={{ animation: 'nl-spin 0.8s linear infinite' }}>
                     <style>{`@keyframes nl-spin { to { transform: rotate(360deg); } }`}</style>
-                    <circle cx="6" cy="6" r="4.5" fill="none" stroke="rgba(253,250,246,0.4)" strokeWidth="1.5"/>
-                    <path d="M6 1.5a4.5 4.5 0 0 1 4.5 4.5" fill="none" stroke="#FDFAF6" strokeWidth="1.5" strokeLinecap="round"/>
+                    <circle cx="6" cy="6" r="4.5" fill="none" style={{ stroke: 'var(--color-border-secondary)' }} strokeWidth="1.5"/>
+                    <path d="M6 1.5a4.5 4.5 0 0 1 4.5 4.5" fill="none" style={{ stroke: 'var(--color-text-primary)' }} strokeWidth="1.5" strokeLinecap="round"/>
                   </svg>
                   Subscribing…
                 </>
@@ -145,7 +130,7 @@ export function NewsletterSignup({ source, variant = 'section' }: NewsletterSign
             </p>
           )}
           {state === 'error' && (
-            <p style={{ fontSize: '12.5px', color: '#C0392B', margin: 0, lineHeight: 1.5 }}>
+            <p style={{ fontSize: '12.5px', color: 'var(--color-error)', margin: 0, lineHeight: 1.5 }}>
               {errorMsg}
             </p>
           )}
@@ -155,34 +140,17 @@ export function NewsletterSignup({ source, variant = 'section' }: NewsletterSign
   );
 
   if (variant === 'footer' || variant === 'inline') {
-    return (
-      <div className="nl-wrap" style={{
-        '--color-background-primary': '#FDFAF6',
-        '--color-background-secondary': '#F5EFE5',
-        '--color-border-tertiary': 'rgba(192,120,40,0.18)',
-        '--color-border-secondary': 'rgba(192,120,40,0.30)',
-        '--color-text-primary': '#1C1208',
-        '--color-text-secondary': '#4A3B28',
-        '--color-text-tertiary': '#7A6A56',
-      } as React.CSSProperties}>
-        {form}
-      </div>
-    );
+    return <div>{form}</div>;
   }
 
   // section variant
   return (
     <div
-      className="nl-wrap rounded-2xl border border-[rgba(192,120,40,0.20)] bg-sandal-100 p-7 sm:p-8"
+      className="rounded-2xl p-7 sm:p-8"
       style={{
-        '--color-background-primary': '#FDFAF6',
-        '--color-background-secondary': '#F5EFE5',
-        '--color-border-tertiary': 'rgba(192,120,40,0.18)',
-        '--color-border-secondary': 'rgba(192,120,40,0.30)',
-        '--color-text-primary': '#1C1208',
-        '--color-text-secondary': '#4A3B28',
-        '--color-text-tertiary': '#7A6A56',
-      } as React.CSSProperties}
+        background: 'var(--color-background-primary)',
+        border: '0.5px solid var(--color-border-tertiary)',
+      }}
     >
       <div className="flex flex-col gap-6 sm:flex-row items-center sm:gap-8">
         <div className="min-w-0 flex-1">

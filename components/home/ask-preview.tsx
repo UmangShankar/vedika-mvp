@@ -21,55 +21,100 @@ const SOURCE_ICONS: Record<string, string> = {
 
 export function AskPreview() {
   return (
-    <div className="mx-auto max-w-[640px] overflow-hidden rounded-xl border bg-sandal-50">
+    <div
+      className="mx-auto max-w-[640px] overflow-hidden rounded-xl"
+      style={{
+        background: 'var(--color-background-primary)',
+        border: '0.5px solid var(--color-border-tertiary)',
+      }}
+    >
 
       {/* Header bar */}
-      <div className="flex items-center gap-3 border-b bg-sandal-100 px-5 py-4">
-        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border bg-sandal-100">
-          <span className="font-serif text-sm text-saffron-500">ॐ</span>
+      <div style={{
+        display: 'flex', alignItems: 'center', gap: '12px',
+        padding: '16px 20px',
+        background: 'var(--color-background-secondary)',
+        borderBottom: '0.5px solid var(--color-border-tertiary)',
+      }}>
+        <div style={{
+          width: 32, height: 32, borderRadius: '50%', flexShrink: 0,
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          background: 'var(--color-background-secondary)',
+          border: '0.5px solid var(--color-border-tertiary)',
+        }}>
+          <span style={{ color: 'var(--color-text-tertiary)', fontSize: '14px', fontFamily: 'Georgia, serif' }}>ॐ</span>
         </div>
-        <div className="min-w-0 flex-1">
-          <div className="flex items-center gap-2">
-            <span className="text-body-sm font-semibold text-ink">Ask Vedika</span>
+        <div style={{ flex: 1, minWidth: 0 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <span style={{ fontSize: '0.9375rem', fontWeight: 600, color: 'var(--color-text-primary)' }}>Ask Vedika</span>
             <span className="beta-badge">Beta</span>
           </div>
-          <p className="mt-0.5 text-caption leading-none text-ink-faint">Source-grounded exploration</p>
+          <p style={{ fontSize: '0.75rem', color: 'var(--color-text-tertiary)', lineHeight: 1, marginTop: 2 }}>
+            Source-grounded exploration
+          </p>
         </div>
       </div>
 
       {/* Chat exchange */}
-      <div className="space-y-4 px-5 pb-4 pt-5">
+      <div style={{ padding: '20px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
 
         {/* User bubble */}
-        <div className="flex justify-end">
-          <div className="max-w-[75%] rounded-lg rounded-tr-sm bg-sandal-100 px-4 py-2.5">
-            <p className="text-body-sm leading-relaxed text-ink">
+        <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+          <div style={{
+            maxWidth: '75%', padding: '10px 16px',
+            background: 'var(--color-background-secondary)',
+            border: '0.5px solid var(--color-border-tertiary)',
+            borderRadius: '12px 12px 4px 12px',
+          }}>
+            <p style={{ fontSize: '0.875rem', color: 'var(--color-text-primary)', lineHeight: 1.6 }}>
               {SAMPLE_EXCHANGE.question}
             </p>
           </div>
         </div>
 
         {/* Vedika response */}
-        <div className="flex justify-start gap-2.5">
-          <div className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border bg-sandal-100">
-            <span className="font-serif text-[10px] text-saffron-500">ॐ</span>
+        <div style={{ display: 'flex', gap: '10px' }}>
+          <div style={{
+            width: 24, height: 24, borderRadius: '50%', flexShrink: 0, marginTop: 4,
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            background: 'var(--color-background-secondary)',
+            border: '0.5px solid var(--color-border-tertiary)',
+          }}>
+            <span style={{ fontSize: '10px', color: 'var(--color-text-tertiary)', fontFamily: 'Georgia, serif' }}>ॐ</span>
           </div>
-          <div className="flex-1 space-y-2.5">
-            <div className="rounded-lg rounded-tl-sm border bg-sandal-50 px-4 py-3">
-              <p className="whitespace-pre-wrap text-body-sm leading-[1.7] text-ink-light">
+          <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            <div style={{
+              padding: '12px 16px',
+              background: 'var(--color-background-primary)',
+              border: '0.5px solid var(--color-border-tertiary)',
+              borderRadius: '4px 12px 12px 12px',
+            }}>
+              <p style={{ fontSize: '0.875rem', color: 'var(--color-text-secondary)', lineHeight: 1.7, whiteSpace: 'pre-wrap' }}>
                 {SAMPLE_EXCHANGE.answer}
               </p>
             </div>
 
             {/* Sources */}
-            <div className="space-y-1.5">
-              <p className="text-overline uppercase tracking-widest text-ink-faint">
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+              <p style={{
+                fontSize: '0.6875rem', letterSpacing: '0.12em', fontWeight: 600,
+                color: 'var(--color-text-tertiary)', textTransform: 'uppercase',
+              }}>
                 Sources
               </p>
-              <div className="flex flex-wrap gap-1.5">
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
                 {SAMPLE_EXCHANGE.sources.map((source, i) => (
-                  <span key={i} className="source-badge">
-                    <span className="text-[11px]">{SOURCE_ICONS[source.type] ?? '📄'}</span>
+                  <span
+                    key={i}
+                    style={{
+                      display: 'inline-flex', alignItems: 'center', gap: '4px',
+                      fontSize: '0.75rem', color: 'var(--color-text-secondary)',
+                      background: 'var(--color-background-secondary)',
+                      border: '0.5px solid var(--color-border-tertiary)',
+                      padding: '2px 8px', borderRadius: '4px',
+                    }}
+                  >
+                    <span style={{ fontSize: '11px' }}>{SOURCE_ICONS[source.type] ?? '📄'}</span>
                     <span>{source.label}</span>
                   </span>
                 ))}
@@ -80,13 +125,26 @@ export function AskPreview() {
       </div>
 
       {/* CTA footer */}
-      <div className="flex items-center justify-between gap-4 border-t bg-sandal-100 px-5 py-4">
-        <p className="text-caption leading-snug text-ink-faint">
+      <div style={{
+        display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '16px',
+        padding: '16px 20px',
+        background: 'var(--color-background-secondary)',
+        borderTop: '0.5px solid var(--color-border-tertiary)',
+      }}>
+        <p style={{ fontSize: '0.75rem', color: 'var(--color-text-tertiary)', lineHeight: 1.4 }}>
           AI guidance only. Always verify with the cited sources.
         </p>
         <Link
           href="/ask-vedika"
-          className="shrink-0 whitespace-nowrap rounded-sm bg-saffron-500 px-4 py-2 text-body-sm font-medium text-white no-underline transition-colors hover:bg-saffron-600"
+          style={{
+            flexShrink: 0, whiteSpace: 'nowrap',
+            fontSize: '0.8125rem', fontWeight: 500,
+            color: 'var(--color-text-primary)',
+            background: 'var(--color-background-primary)',
+            border: '0.5px solid var(--color-border-secondary)',
+            padding: '6px 14px', borderRadius: '4px',
+            textDecoration: 'none',
+          }}
         >
           Try Ask Vedika →
         </Link>

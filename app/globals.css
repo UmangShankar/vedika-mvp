@@ -6,6 +6,24 @@
 
 :root {
   color-scheme: light;
+
+  /* Surface tokens */
+  --color-background-primary:   #FDFAF6;
+  --color-background-secondary: #F5EFE5;
+  --color-background-tertiary:  #EDE0CC;
+
+  /* Text tokens */
+  --color-text-primary:   #1C1208;
+  --color-text-secondary: #4A3B28;
+  --color-text-tertiary:  #7A6A56;
+
+  /* Border tokens */
+  --color-border-tertiary:  rgba(192,120,40,0.18);
+  --color-border-secondary: rgba(192,120,40,0.30);
+
+  /* Semantic */
+  --color-success: #2D7A6F;
+  --color-error:   #C0392B;
 }
 
 html {
