@@ -2,33 +2,122 @@ import Link from 'next/link';
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-amber-100 pt-8 text-sm text-slate-700">
-      <div className="grid gap-8 sm:grid-cols-3">
-        <div className="space-y-2">
-          <p className="font-semibold text-slate-900">ॐ Vedika</p>
-          <p className="text-slate-600">A content-first Sanatan Dharma research platform. Source-grounded, trust-first.</p>
-        </div>
-        <div className="space-y-2">
-          <p className="font-semibold text-slate-900">Explore</p>
-          <nav className="flex flex-col gap-1">
-            <Link href="/topics"   className="no-underline hover:text-amber-600">Topics</Link>
-            <Link href="/texts"    className="no-underline hover:text-amber-600">Texts</Link>
-            <Link href="/guides"   className="no-underline hover:text-amber-600">Guides</Link>
-            <Link href="/glossary" className="no-underline hover:text-amber-600">Glossary</Link>
-            <Link href="/essays"   className="no-underline hover:text-amber-600">Essays</Link>
-            <Link href="/sources"  className="no-underline hover:text-amber-600">Sources</Link>
-          </nav>
-        </div>
-        <div className="space-y-2">
-          <p className="font-semibold text-slate-900">Tools</p>
-          <nav className="flex flex-col gap-1">
-            <Link href="/ask-vedika" className="no-underline hover:text-amber-600">Ask Vedika (Beta)</Link>
-            <Link href="/research"   className="no-underline hover:text-amber-600">Research Library</Link>
-          </nav>
+    <footer
+      style={{
+        borderTop: '0.5px solid var(--color-border-tertiary)',
+        background: 'var(--color-background-secondary)',
+      }}
+    >
+      <div className="mx-auto max-w-wide px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+        <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
+
+          {/* Brand */}
+          <div className="col-span-2 md:col-span-1 flex flex-col gap-3">
+            <span
+              className="font-serif text-subheading"
+              style={{ color: 'var(--color-text-primary)' }}
+            >
+              ॐ Vedika
+            </span>
+            <p
+              className="text-body-sm"
+              style={{ color: 'var(--color-text-tertiary)', lineHeight: 1.6 }}
+            >
+              A content-first Sanatan Dharma research platform. Source-grounded, trust-first.
+            </p>
+            <Link
+              href="/about"
+              className="text-caption no-underline hover:underline"
+              style={{ color: 'var(--color-text-tertiary)' }}
+            >
+              About Vedika →
+            </Link>
+          </div>
+
+          {/* Explore */}
+          <div className="flex flex-col gap-3">
+            <p
+              className="text-overline tracking-widest uppercase"
+              style={{ color: 'var(--color-text-tertiary)' }}
+            >
+              Explore
+            </p>
+            <nav className="flex flex-col gap-2">
+              <Link
+                href="/traditions"
+                className="text-body-sm no-underline hover:underline"
+                style={{ color: 'var(--color-text-secondary)' }}
+              >
+                Traditions
+              </Link>
+              <Link
+                href="/darshanas"
+                className="text-body-sm no-underline hover:underline"
+                style={{ color: 'var(--color-text-secondary)' }}
+              >
+                Darshanas
+              </Link>
+              <Link
+                href="/glossary"
+                className="text-body-sm no-underline hover:underline"
+                style={{ color: 'var(--color-text-secondary)' }}
+              >
+                Glossary
+              </Link>
+            </nav>
+          </div>
+
+          {/* Library */}
+          <div className="flex flex-col gap-3">
+            <p
+              className="text-overline tracking-widest uppercase"
+              style={{ color: 'var(--color-text-tertiary)' }}
+            >
+              Library
+            </p>
+            <nav className="flex flex-col gap-2">
+              <Link
+                href="/research"
+                className="text-body-sm no-underline hover:underline"
+                style={{ color: 'var(--color-text-secondary)' }}
+              >
+                Research
+              </Link>
+            </nav>
+          </div>
+
+          {/* Tools */}
+          <div className="flex flex-col gap-3">
+            <p
+              className="text-overline tracking-widest uppercase"
+              style={{ color: 'var(--color-text-tertiary)' }}
+            >
+              Tools
+            </p>
+            <nav className="flex flex-col gap-2">
+              <Link
+                href="/ask-vedika"
+                className="text-body-sm no-underline hover:underline"
+                style={{ color: 'var(--color-text-secondary)' }}
+              >
+                Ask Vedika
+              </Link>
+            </nav>
+          </div>
+
         </div>
       </div>
-      <div className="mt-8 border-t border-amber-100 pt-4 text-xs text-slate-500">
-        <p>© {new Date().getFullYear()} Vedika — Built with care for Dharma</p>
+
+      {/* Bottom bar */}
+      <div style={{ borderTop: '0.5px solid var(--color-border-tertiary)' }}>
+        <div className="mx-auto max-w-wide px-4 sm:px-6 lg:px-8 py-4">
+          <p
+            className="text-caption"
+            style={{ color: 'var(--color-text-tertiary)' }}
+          >
+            © {new Date().getFullYear()} Vedika — Built with care for Dharma
+          </p>
+        </div>
       </div>
     </footer>
   );
