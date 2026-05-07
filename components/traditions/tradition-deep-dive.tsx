@@ -372,31 +372,72 @@ export function TraditionDeepDivePage({ tradition: t }: Props) {
             </section>
 
             {/* ── SOURCES ───────────────────────────────────────────── */}
-            <section className="mb-12">
-              <p
-                className="font-sans uppercase font-medium mb-4"
-                style={{ fontSize: '9.5px', letterSpacing: '0.16em', color: accent.text }}
-              >
-                Foundational sources
-              </p>
-              <div className="space-y-2">
-                {t.sources.map((src, i) => (
-                  <div
-                    key={i}
-                    className="rounded-lg p-4"
-                    style={{
-                      background: '#FDFAF6',
-                      border: '1px solid rgba(192,120,40,0.18)',
-                    }}
-                  >
-                    <p className="font-serif font-medium text-ink mb-1" style={{ fontSize: '0.88rem' }}>
-                      {src.title}
-                    </p>
-                    <p className="font-sans text-caption text-ink-muted leading-relaxed">{src.note}</p>
-                  </div>
-                ))}
-              </div>
-            </section>
+            {t.sources.length > 0 && (
+              <section className="mb-12">
+                <p
+                  className="font-sans uppercase font-medium mb-4"
+                  style={{ fontSize: '9.5px', letterSpacing: '0.16em', color: accent.text }}
+                >
+                  Primary sources
+                </p>
+                <div className="space-y-3">
+                  {t.sources.map((src, i) => {
+                    const cardStyle = {
+                      background: 'var(--color-background-primary)',
+                      border: '0.5px solid var(--color-border-tertiary)',
+                    };
+                    const inner = (
+                      <>
+                        <div className="flex flex-wrap items-center gap-2 mb-1.5">
+                          <span
+                            className="font-sans text-[10px] font-medium px-1.5 py-0.5 rounded"
+                            style={{
+                              background: 'var(--color-background-secondary)',
+                              border: '0.5px solid var(--color-border-secondary)',
+                              color: 'var(--color-text-tertiary)',
+                              letterSpacing: '0.06em',
+                            }}
+                          >
+                            {src.category}
+                          </span>
+                          {src.author && (
+                            <span className="font-sans text-[11px]" style={{ color: 'var(--color-text-tertiary)' }}>
+                              {src.author}
+                            </span>
+                          )}
+                        </div>
+                        <p className="font-serif font-medium mb-1.5" style={{ fontSize: '0.88rem', color: 'var(--color-text-primary)' }}>
+                          {src.title}
+                        </p>
+                        <p className="font-sans text-caption leading-relaxed" style={{ color: 'var(--color-text-secondary)' }}>
+                          {src.relevance}
+                        </p>
+                      </>
+                    );
+                    return src.slug ? (
+                      <Link
+                        key={i}
+                        href={`/sources/${src.slug}`}
+                        className="block rounded-lg p-4 no-underline hover:opacity-90 transition-opacity"
+                        style={cardStyle}
+                      >
+                        {inner}
+                      </Link>
+                    ) : (
+                      <div key={i} className="rounded-lg p-4" style={cardStyle}>
+                        {inner}
+                      </div>
+                    );
+                  })}
+                </div>
+                <p
+                  className="mt-3 font-sans text-caption"
+                  style={{ color: 'var(--color-text-tertiary)' }}
+                >
+                  Sources are drawn from indexed primary texts and traditional commentarial literature.
+                </p>
+              </section>
+            )}
 
           </div>
 

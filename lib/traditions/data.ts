@@ -47,7 +47,13 @@ export type Tradition = {
   readTime: string;
   relatedSlugs: string[]; // other tradition slugs
   essaySections: Array<{ heading: string; body: string }>;
-  sources: Array<{ title: string; note: string }>;
+  sources: Array<{
+    title: string;
+    category: string;
+    author?: string;
+    relevance: string;
+    slug?: string;
+  }>;
 };
 
 // ── Tradition data ───────────────────────────────────────────────────────────
@@ -129,12 +135,16 @@ export const TRADITIONS: Tradition[] = [
     ],
     sources: [
       {
-        title: 'Sarva-darśana-saṃgraha · Mādhava (14th c. CE)',
-        note: 'Contains the most complete surviving account of Cārvāka philosophy, quoted from lost originals',
+        title: 'Sarva-darśana-saṃgraha',
+        category: 'Philosophical text',
+        author: 'Mādhava',
+        relevance: 'Contains the most complete surviving account of Cārvāka philosophy, quoted from lost originals.',
       },
       {
-        title: 'Nyāya-Mañjarī · Jayanta Bhaṭṭa (9th c. CE)',
-        note: 'Extensive Cārvāka quotations in the context of pramāṇa debate',
+        title: 'Nyāya-Mañjarī',
+        category: 'Philosophical text',
+        author: 'Jayanta Bhaṭṭa',
+        relevance: 'Extensive Cārvāka quotations in the context of pramāṇa debate.',
       },
     ],
   },
@@ -212,12 +222,27 @@ export const TRADITIONS: Tradition[] = [
     ],
     sources: [
       {
-        title: 'Tattvārtha Sūtra · Umāsvāti',
-        note: 'The foundational philosophical treatise of Jain metaphysics — the most systematic Jain text',
+        title: 'Tattvārthasūtra',
+        category: 'Philosophical text',
+        author: 'Umāsvāti',
+        relevance: 'The foundational Jain philosophical text — nine tattvas, doctrine of anekāntavāda, and path to liberation.',
       },
       {
-        title: 'Āptamīmāṃsā · Samantabhadra (c. 2nd c. CE)',
-        note: 'Classic defence of Jain epistemology and anekāntavāda',
+        title: 'Ācārāṅga Sūtra',
+        category: 'Āgama',
+        relevance: "Oldest surviving Jain canonical text — Mahāvīra's teachings on ahiṃsā and ascetic practice.",
+      },
+      {
+        title: 'Syādvādamañjarī',
+        category: 'Philosophical text',
+        author: 'Mallisena',
+        relevance: "Systematic exposition of syādvāda (conditional predication) — Jainism's epistemological contribution.",
+      },
+      {
+        title: 'Niyamasāra',
+        category: 'Philosophical text',
+        author: 'Kundakunda',
+        relevance: 'On the pure soul and liberation — central text of the Digambara Jain tradition.',
       },
     ],
   },
@@ -276,12 +301,14 @@ export const TRADITIONS: Tradition[] = [
     ],
     sources: [
       {
-        title: 'Sāmaññaphala Sutta · Pali Canon',
-        note: 'Contains the Buddha\'s account of Makkhali Gosāla\'s teaching — the most complete surviving description of Ājīvika doctrine',
+        title: 'Sāmaññaphala Sutta',
+        category: 'Pāli Canon',
+        relevance: "Contains the Buddha's account of Makkhali Gosāla's teaching — the most complete surviving description of Ājīvika doctrine.",
       },
       {
-        title: 'Āyāraṃga Sutta · Jain Āgamas',
-        note: 'Jain account of Gosāla, including his early relationship with Mahāvīra',
+        title: 'Āyāraṃga Sutta',
+        category: 'Āgama',
+        relevance: 'Jain account of Gosāla, including his early relationship with Mahāvīra.',
       },
     ],
   },
@@ -333,8 +360,9 @@ export const TRADITIONS: Tradition[] = [
     ],
     sources: [
       {
-        title: 'Sāmaññaphala Sutta · Pali Canon',
-        note: 'Primary source for Sañjaya\'s teaching, quoted extensively in the Buddha\'s account of contemporary schools',
+        title: 'Sāmaññaphala Sutta',
+        category: 'Pāli Canon',
+        relevance: "Primary source for Sañjaya's teaching, quoted extensively in the Buddha's account of contemporary schools.",
       },
     ],
   },
@@ -410,12 +438,26 @@ export const TRADITIONS: Tradition[] = [
     ],
     sources: [
       {
-        title: 'Dhammapada · Pali Canon',
-        note: 'The most widely read early Buddhist text — the Buddha\'s teaching in verse',
+        title: 'Dhammapada',
+        category: 'Pāli Canon',
+        relevance: "423 verses encapsulating the Buddha's ethical and philosophical teaching — the most widely read Theravāda text.",
       },
       {
-        title: 'Majjhima Nikāya · Pali Canon',
-        note: 'Middle-length discourses, containing key philosophical teachings including anātman and the middle path',
+        title: 'Majjhima Nikāya',
+        category: 'Pāli Canon',
+        relevance: "The 'Middle Length Discourses' — contains the Buddha's core teachings on the Four Noble Truths and dependent origination.",
+      },
+      {
+        title: 'Visuddhimagga',
+        category: 'Philosophical text',
+        author: 'Buddhaghosa',
+        relevance: "The definitive Theravāda systematic philosophy — the 'Path of Purification' covering sīla, samādhi, and paññā.",
+      },
+      {
+        title: 'Abhidhammattha Saṅgaha',
+        category: 'Philosophical text',
+        author: 'Anuruddha',
+        relevance: 'Comprehensive summary of Abhidhamma — the Theravāda analysis of mind, matter, and dependent origination.',
       },
     ],
   },
@@ -470,8 +512,10 @@ export const TRADITIONS: Tradition[] = [
     ],
     sources: [
       {
-        title: 'Bodhicaryāvatāra · Śāntideva',
-        note: 'The most philosophically rich guide to the bodhisattva path — combines Madhyamaka with ethics',
+        title: 'Bodhicaryāvatāra',
+        category: 'Philosophical text',
+        author: 'Śāntideva',
+        relevance: 'The most philosophically rich guide to the bodhisattva path — combines Madhyamaka with ethics.',
       },
     ],
   },
@@ -526,8 +570,10 @@ export const TRADITIONS: Tradition[] = [
     ],
     sources: [
       {
-        title: 'Lam Rim Chenmo · Tsongkhapa',
-        note: 'The great exposition of the stages of the path — the definitive Gelug integration of Madhyamaka and tantra',
+        title: 'Lam Rim Chenmo',
+        category: 'Philosophical text',
+        author: 'Tsongkhapa',
+        relevance: 'The great exposition of the stages of the path — the definitive Gelug integration of Madhyamaka and tantra.',
       },
     ],
   },
@@ -575,8 +621,10 @@ export const TRADITIONS: Tradition[] = [
     ],
     sources: [
       {
-        title: 'Zhuangzi on Taoism\'s view of Bon parallel — see Tibetan sources',
-        note: 'Primary Bon texts available in Shardza Tashi Gyaltsen\'s writings',
+        title: 'Heart Drops of Dharmakaya',
+        category: 'Philosophical text',
+        author: 'Shardza Tashi Gyaltsen',
+        relevance: "Primary Bon Dzogchen text — the most systematic modern exposition of Bon's 'great perfection' teaching.",
       },
     ],
   },
@@ -639,12 +687,28 @@ export const TRADITIONS: Tradition[] = [
     ],
     sources: [
       {
-        title: 'Mūlamadhyamakakārikā · Nāgārjuna',
-        note: 'The foundational text of Madhyamaka philosophy — 27 chapters systematically establishing śūnyatā',
+        title: 'Mūlamadhyamakakārikā',
+        category: 'Philosophical text',
+        author: 'Nāgārjuna',
+        relevance: 'The foundational text of Madhyamaka — 27 chapters examining the śūnyatā (emptiness) of all phenomena.',
       },
       {
-        title: 'Prasannapadā · Candrakīrti',
-        note: 'The definitive Prāsaṅgika commentary — the standard interpretation of Madhyamaka in Tibetan Buddhism',
+        title: 'Vigrahavyāvartanī',
+        category: 'Philosophical text',
+        author: 'Nāgārjuna',
+        relevance: "Nāgārjuna's self-defence of the Madhyamaka method — addresses the charge that śūnyatā undermines itself.",
+      },
+      {
+        title: 'Bodhicaryāvatāra',
+        category: 'Philosophical text',
+        author: 'Śāntideva',
+        relevance: 'The Bodhisattva path in Madhyamaka — Chapter 9 on wisdom (prajñā) is the most philosophically dense statement of later Madhyamaka.',
+      },
+      {
+        title: 'Madhyamakāvatāra',
+        category: 'Philosophical text',
+        author: 'Candrakīrti',
+        relevance: "Candrakīrti's development of Prāsaṅgika Madhyamaka — the dominant interpretation in Tibetan scholasticism.",
       },
     ],
   },
@@ -706,12 +770,16 @@ export const TRADITIONS: Tradition[] = [
     ],
     sources: [
       {
-        title: 'Viṃśatikā · Vasubandhu',
-        note: 'Twenty verses establishing the mind-only thesis with philosophical rigour',
+        title: 'Viṃśatikā',
+        category: 'Philosophical text',
+        author: 'Vasubandhu',
+        relevance: 'Twenty verses establishing the mind-only thesis with philosophical rigour.',
       },
       {
-        title: 'Mahāyānasaṃgraha · Asaṅga',
-        note: 'Comprehensive Yogācāra treatise covering all major philosophical topics',
+        title: 'Mahāyānasaṃgraha',
+        category: 'Philosophical text',
+        author: 'Asaṅga',
+        relevance: 'Comprehensive Yogācāra treatise covering all major philosophical topics.',
       },
     ],
   },
@@ -768,12 +836,16 @@ export const TRADITIONS: Tradition[] = [
     ],
     sources: [
       {
-        title: 'Platform Sūtra · Huineng',
-        note: 'The only indigenous Chinese Buddhist text to be accorded the status of a sūtra — the foundational text of Chan/Zen',
+        title: 'Platform Sūtra',
+        category: 'Philosophical text',
+        author: 'Huineng',
+        relevance: 'The only indigenous Chinese Buddhist text accorded the status of a sūtra — foundational text of Chan/Zen.',
       },
       {
-        title: 'Blue Cliff Record · Compiled by Xuedou (11th c.)',
-        note: 'The most celebrated collection of kōans with commentary',
+        title: 'Blue Cliff Record',
+        category: 'Philosophical text',
+        author: 'Xuedou',
+        relevance: 'The most celebrated collection of kōans with commentary.',
       },
     ],
   },
@@ -844,12 +916,28 @@ export const TRADITIONS: Tradition[] = [
     ],
     sources: [
       {
-        title: 'Tao Te Ching · Lao-tzu (trad.)',
-        note: 'The foundational text — 81 short chapters. D.C. Lau\'s translation (Penguin) is the most philosophically reliable',
+        title: 'Tao Te Ching',
+        category: 'Philosophical text',
+        author: 'Laozi (attr.)',
+        relevance: 'The foundational Taoist text — the Tao as ultimate reality compared with Brahman as nirguṇa ground of being.',
       },
       {
-        title: 'Zhuangzi · Zhuangzi',
-        note: 'The most philosophically rich Taoist text — includes the butterfly dream, the cook and the ox, and extensive epistemological reflection',
+        title: 'Zhuangzi',
+        category: 'Philosophical text',
+        author: 'Zhuangzi',
+        relevance: 'On naturalness, non-action (wu wei), and the dissolution of fixed identity — compared with Advaita and early Upaniṣadic thought.',
+      },
+      {
+        title: 'Chāndogya Upaniṣad',
+        category: 'Śruti',
+        relevance: 'Compared with Taoist cosmology on the nature of ultimate reality as the ground from which all things arise.',
+        slug: 'chandogya-upanishad',
+      },
+      {
+        title: 'Māṇḍūkya Upaniṣad',
+        category: 'Śruti',
+        relevance: 'The four states of consciousness (avasthā) compared with Taoist accounts of waking, dreaming, and deep-sleep states.',
+        slug: 'mandukya-upanishad',
       },
     ],
   },
@@ -904,12 +992,16 @@ export const TRADITIONS: Tradition[] = [
     ],
     sources: [
       {
-        title: 'Gāthās · Zarathuštra (Avesta)',
-        note: 'The 17 hymns attributed to Zarathuštra himself — among the world\'s oldest religious poetry',
+        title: 'Gāthās',
+        category: 'Āgama',
+        author: 'Zarathuštra',
+        relevance: "The 17 hymns attributed to Zarathuštra himself — among the world's oldest religious poetry.",
       },
       {
-        title: 'The Wonder That Was India · A.L. Basham',
-        note: 'Essential context for the Indo-Iranian shared tradition',
+        title: 'The Wonder That Was India',
+        category: 'Secondary scholarship',
+        author: 'A.L. Basham',
+        relevance: 'Essential context for the Indo-Iranian shared tradition.',
       },
     ],
   },
@@ -1014,20 +1106,29 @@ export const TRADITIONS: Tradition[] = [
     ],
     sources: [
       {
-        title: 'Fuṣūṣ al-Ḥikam · Ibn Arabī',
-        note: 'The most systematic exposition of waḥdat al-wujūd — the Bezels of Wisdom',
+        title: 'Fuṣūṣ al-Ḥikam',
+        category: 'Philosophical text',
+        author: 'Ibn ʿArabī',
+        relevance: "Ibn ʿArabī's most concentrated statement of waḥdat al-wujūd (unity of being) — the central point of comparison with Advaita.",
       },
       {
-        title: 'Majmaʿ al-Baḥrayn · Dara Shikoh',
-        note: 'The Confluence of Two Oceans — Dara Shikoh\'s explicit comparison of Sufism and Vedānta',
+        title: 'Futūḥāt al-Makkiyya',
+        category: 'Philosophical text',
+        author: 'Ibn ʿArabī',
+        relevance: "The encyclopaedic work of Ibn ʿArabī — contains extensive treatment of divine names, cosmology, and the self.",
       },
       {
-        title: 'Masnavi · Jalāl al-Dīn Rūmī',
-        note: 'Six volumes of Persian poetry — the definitive statement of Sufi spiritual experience in literary form',
+        title: 'Vivekacūḍāmaṇi',
+        category: 'Philosophical text',
+        author: 'Ādi Śaṃkarācārya',
+        relevance: "Compared with Sufi metaphysics on the question of the individual soul's relationship to ultimate reality.",
+        slug: 'vivekachudamani',
       },
       {
-        title: 'Maktūbāt · Aḥmad Sirhindī',
-        note: 'The collected letters of the Mujaddid — primary source for waḥdat al-shuhūd',
+        title: 'Masnavi',
+        category: 'Philosophical text',
+        author: 'Jalāl al-Dīn Rūmī',
+        relevance: "Rūmī's six-volume poem — used comparatively for its treatment of longing, separation, and union with the divine.",
       },
     ],
   },
@@ -1082,8 +1183,9 @@ export const TRADITIONS: Tradition[] = [
     ],
     sources: [
       {
-        title: 'Kojiki (Record of Ancient Matters, 712 CE)',
-        note: 'The earliest account of Japanese mythology and kami cosmology',
+        title: 'Kojiki',
+        category: 'Āgama',
+        relevance: 'The earliest account of Japanese mythology and kami cosmology (712 CE).',
       },
     ],
   },
@@ -1145,12 +1247,16 @@ export const TRADITIONS: Tradition[] = [
     ],
     sources: [
       {
-        title: 'Analects · Confucius (compiled by students)',
-        note: 'The primary source for Confucian philosophy — conversations and aphorisms',
+        title: 'Analects',
+        category: 'Philosophical text',
+        author: 'Confucius',
+        relevance: 'The primary source for Confucian philosophy — conversations and aphorisms compiled by students.',
       },
       {
         title: 'Mencius',
-        note: 'The most philosophical of the Four Books — develops human nature theory and political philosophy',
+        category: 'Philosophical text',
+        author: 'Mencius',
+        relevance: 'The most philosophical of the Four Books — develops human nature theory and political philosophy.',
       },
     ],
   },
@@ -1213,12 +1319,16 @@ export const TRADITIONS: Tradition[] = [
     ],
     sources: [
       {
-        title: 'Enneads · Plotinus (tr. A.H. Armstrong, Loeb)',
-        note: 'The foundational Neoplatonic text — six sets of nine treatises on the One, Nous, and Soul',
+        title: 'Enneads',
+        category: 'Philosophical text',
+        author: 'Plotinus',
+        relevance: 'The foundational Neoplatonic text — six sets of nine treatises on the One, Nous, and Soul.',
       },
       {
-        title: 'Neoplatonism and Indian Thought · ed. R. Baine Harris',
-        note: 'The key comparative study examining historical and philosophical parallels',
+        title: 'Neoplatonism and Indian Thought',
+        category: 'Secondary scholarship',
+        author: 'ed. R. Baine Harris',
+        relevance: 'The key comparative study examining historical and philosophical parallels.',
       },
     ],
   },
